@@ -74,17 +74,11 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/coffee/farm.jpeg')`
+            backgroundImage: `url('/images/coffee/farm.jpeg')`
           }}
         />
-        
-        {/* Fallback gradient if image doesn't load */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-warm-tan via-coffee-brown to-dark-brown opacity-80"
-          style={{ 
-            backgroundImage: 'linear-gradient(135deg, #D2B48C 0%, #8B4513 50%, #654321 100%)'
-          }}
-        />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Hero Content */}
@@ -95,7 +89,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             <span 
               className="block text-white"
               style={{
-                textShadow: '3px 3px 6px rgba(0,0,0,0.8)',
+                textShadow: '4px 4px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)',
               }}
             >
               COFFEE
@@ -103,7 +97,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             <span 
               className="block text-warm-tan mt-2 brand-name no-translate"
               style={{
-                textShadow: '3px 3px 6px rgba(0,0,0,0.8)',
+                textShadow: '4px 4px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)',
               }}
               translate="no"
               data-translate="no"
@@ -116,14 +110,14 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
 
         {/* Subtitle with emphasis */}
         <div className="mb-8">
-          <p className="text-2xl md:text-3xl font-light tracking-wide opacity-90 mb-2">
+          <p className="text-2xl md:text-3xl font-light tracking-wide opacity-95 mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             {t.subtitle}
           </p>
           <div className="w-24 h-1 bg-warm-tan mx-auto"></div>
         </div>
 
         {/* Descriptive text */}
-        <p className="text-lg md:text-xl font-light mb-12 max-w-3xl mx-auto opacity-90 leading-relaxed">
+        <p className="text-lg md:text-xl font-light mb-12 max-w-3xl mx-auto opacity-95 leading-relaxed" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
           {t.description}
         </p>
 
@@ -136,32 +130,13 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             {t.ctaSecondary}
           </Button>
         </div>
-
-        {/* Feature highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-2xl mb-2">🌱</div>
-            <h3 className="font-semibold mb-1">{t.features.organic.title}</h3>
-            <p className="text-sm opacity-80">{t.features.organic.desc}</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-2xl mb-2">🏝️</div>
-            <h3 className="font-semibold mb-1">{t.features.unique.title}</h3>
-            <p className="text-sm opacity-80">{t.features.unique.desc}</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-2xl mb-2">🔥</div>
-            <h3 className="font-semibold mb-1">{t.features.handRoasted.title}</h3>
-            <p className="text-sm opacity-80">{t.features.handRoasted.desc}</p>
-          </div>
-        </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="animate-bounce-gentle">
-          <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
       </div>
