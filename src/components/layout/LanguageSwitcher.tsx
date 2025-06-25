@@ -5,11 +5,11 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 interface LanguageSwitcherProps {
   currentLocale: string
+  isOpen: boolean
+  onToggle: () => void
 }
 
-export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
-  const [isOpen, setIsOpen] = useState(false)
-
+export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: LanguageSwitcherProps) {
   const languages = [
     { code: 'pt', name: 'Português', flag: '🇵🇹' },
     { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -23,7 +23,7 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
   return (
     <div className="relative">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         className="flex items-center space-x-2 bg-transparent rounded-lg px-3 py-2 text-white hover:bg-white/10 transition-all duration-200 border border-white/30"
       >
         <span className="text-sm">{currentLanguage.flag}</span>
@@ -37,13 +37,13 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
             <a
               key={language.code}
               href={`/${language.code}`}
-              className={`flex items-center space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 ${
+              className={`flex items-center justify-end space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 ${
                 language.code === currentLocale ? 'bg-white/20 text-white font-medium' : 'text-white'
               }`}
-              onClick={() => setIsOpen(false)}
+              onClick={onToggle}
             >
-              <span>{language.flag}</span>
               <span>{language.name}</span>
+              <span>{language.flag}</span>
             </a>
           ))}
         </div>

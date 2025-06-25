@@ -11,6 +11,17 @@ interface HeaderProps {
 
 export default function Header({ locale = 'pt' }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false)
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen)
+    setIsLanguageOpen(false) // Close language switcher when menu opens
+  }
+
+  const handleLanguageToggle = () => {
+    setIsLanguageOpen(!isLanguageOpen)
+    setIsMenuOpen(false) // Close menu when language switcher opens
+  }
 
   const navigation = {
     pt: [
@@ -74,53 +85,83 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
 
           {/* Desktop Navigation - Far Right */}
           <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
-            >
-              {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
-              ) : (
-                <Bars3Icon className="h-6 w-6" />
-              )}
-            </button>
             {/* Language Switcher */}
-            <LanguageSwitcher currentLocale={locale} />
+            <LanguageSwitcher 
+              currentLocale={locale} 
+              isOpen={isLanguageOpen}
+              onToggle={handleLanguageToggle}
+            />
+            <div className="relative">
+              <button
+                onClick={handleMenuToggle}
+                className="text-white p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
+              >
+                {isMenuOpen ? (
+                  <XMarkIcon className="h-6 w-6" />
+                ) : (
+                  <Bars3Icon className="h-6 w-6" />
+                )}
+              </button>
+              
+              {/* Desktop Navigation Menu */}
+              {isMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+                  <div className="px-4 py-2 space-y-2">
+                    {navItems.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="block text-white hover:text-warm-tan transition-colors duration-200 font-medium py-2 text-right"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button - Far Right */}
           <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
-            >
-              {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
-              ) : (
-                <Bars3Icon className="h-6 w-6" />
+            <LanguageSwitcher 
+              currentLocale={locale} 
+              isOpen={isLanguageOpen}
+              onToggle={handleLanguageToggle}
+            />
+            <div className="relative">
+              <button
+                onClick={handleMenuToggle}
+                className="text-white p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
+              >
+                {isMenuOpen ? (
+                  <XMarkIcon className="h-6 w-6" />
+                ) : (
+                  <Bars3Icon className="h-6 w-6" />
+                )}
+              </button>
+              
+              {/* Mobile Navigation Menu */}
+              {isMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+                  <div className="px-4 py-2 space-y-2">
+                    {navItems.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="block text-white hover:text-warm-tan transition-colors duration-200 font-medium py-2 text-right"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               )}
-            </button>
-            <LanguageSwitcher currentLocale={locale} />
-          </div>
-        </div>
-
-        {/* Navigation Menu - Both Desktop and Mobile */}
-        {isMenuOpen && (
-          <div className="mt-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-            <div className="px-4 py-4 space-y-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block text-white hover:text-warm-tan transition-colors duration-200 font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   )
