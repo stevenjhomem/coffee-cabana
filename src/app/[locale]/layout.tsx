@@ -6,11 +6,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 type Props = {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const locale = params.locale
+  const { locale } = await params
 
   const metaData = {
     pt: {
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return metaData[locale as keyof typeof metaData] || metaData.pt
 }
 
-export default function LocaleLayout({ children, params }: Props) {
+export default async function LocaleLayout({ children, params }: Props) {
   return (
     <>
       {children}
