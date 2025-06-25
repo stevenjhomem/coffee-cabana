@@ -74,7 +74,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/coffee/coffee-cabana-instagram.png')`
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/coffee/farm.jpeg')`
           }}
         />
         
