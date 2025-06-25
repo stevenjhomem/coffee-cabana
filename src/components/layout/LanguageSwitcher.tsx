@@ -24,7 +24,7 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 bg-white rounded-lg px-3 py-2 text-green-900 hover:bg-gray-50 transition-all duration-200 border border-green-900"
+        className="flex items-center space-x-2 bg-transparent rounded-lg px-3 py-2 text-white hover:bg-white/10 transition-all duration-200 border border-white/30"
       >
         <span className="text-sm">{currentLanguage.flag}</span>
         <span className="text-sm font-medium hidden sm:block">{currentLanguage.code.toUpperCase()}</span>
@@ -32,13 +32,13 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-green-900 py-1 z-50">
+        <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
           {languages.map((language) => (
             <a
               key={language.code}
               href={`/${language.code}`}
-              className={`flex items-center space-x-3 px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 ${
-                language.code === currentLocale ? 'bg-green-900/10 text-green-900 font-medium' : 'text-green-900'
+              className={`flex items-center space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 ${
+                language.code === currentLocale ? 'bg-white/20 text-white font-medium' : 'text-white'
               }`}
               onClick={() => setIsOpen(false)}
             >

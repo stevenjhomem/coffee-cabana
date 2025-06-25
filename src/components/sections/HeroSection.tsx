@@ -1,6 +1,8 @@
 'use client'
 
 import { Button } from '@/components/ui/Button'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 interface HeroSectionProps {
   locale?: string
@@ -13,6 +15,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       description: "O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.",
       ctaPrimary: "Prove Nosso Café",
       ctaSecondary: "Visite a Quinta",
+      scroll: "rolar",
       features: {
         organic: { title: "100% Orgânico", desc: "Cultivado sem químicos" },
         unique: { title: "Único na Terceira", desc: "Exclusivo da nossa quinta" },
@@ -24,6 +27,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       description: "The only coffee grown and roasted on Terceira Island. Experience our farm-to-cup journey in the heart of the Azores.",
       ctaPrimary: "Taste Our Coffee",
       ctaSecondary: "Visit Our Farm",
+      scroll: "scroll",
       features: {
         organic: { title: "100% Organic", desc: "Grown without chemicals" },
         unique: { title: "Unique to Terceira", desc: "Exclusive to our farm" },
@@ -35,6 +39,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       description: "Der einzige Kaffee, der auf der Insel Terceira angebaut und geröstet wird. Erleben Sie unsere Reise von der Farm zur Tasse im Herzen der Azoren.",
       ctaPrimary: "Probieren Sie unseren Kaffee",
       ctaSecondary: "Besuchen Sie unsere Farm",
+      scroll: "scrollen",
       features: {
         organic: { title: "100% Bio", desc: "Ohne Chemikalien angebaut" },
         unique: { title: "Einzigartig auf Terceira", desc: "Exklusiv von unserer Farm" },
@@ -46,6 +51,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       description: "El único café cultivado y tostado en la Isla Terceira. Experimenta nuestro viaje de la granja a la taza en el corazón de las Azores.",
       ctaPrimary: "Prueba Nuestro Café",
       ctaSecondary: "Visita Nuestra Granja",
+      scroll: "desplazar",
       features: {
         organic: { title: "100% Orgánico", desc: "Cultivado sin químicos" },
         unique: { title: "Único en Terceira", desc: "Exclusivo de nuestra granja" },
@@ -57,6 +63,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       description: "Le seul café cultivé et torréfié sur l'île de Terceira. Découvrez notre voyage de la ferme à la tasse au cœur des Açores.",
       ctaPrimary: "Goûtez Notre Café",
       ctaSecondary: "Visitez Notre Ferme",
+      scroll: "défiler",
       features: {
         organic: { title: "100% Bio", desc: "Cultivé sans produits chimiques" },
         unique: { title: "Unique à Terceira", desc: "Exclusif à notre ferme" },
@@ -68,7 +75,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const t = content[locale as keyof typeof content] || content.pt
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-start justify-center overflow-hidden">
       {/* Photo Background */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -82,62 +89,27 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-32">
         {/* Main title - Brand name stays consistent */}
         <div className="mb-8">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-4">
-            <span 
-              className="block text-white"
-              style={{
-                textShadow: '4px 4px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)',
-              }}
-            >
-              COFFEE
-            </span>
-            <span 
-              className="block text-warm-tan mt-2 brand-name no-translate"
-              style={{
-                textShadow: '4px 4px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)',
-              }}
-              translate="no"
-              data-translate="no"
-              data-google-translate="no"
-            >
-              CABANA
-            </span>
-          </h1>
-        </div>
-
-        {/* Subtitle with emphasis */}
-        <div className="mb-8">
-          <p className="text-2xl md:text-3xl font-light tracking-wide opacity-95 mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-            {t.subtitle}
-          </p>
-          <div className="w-24 h-1 bg-warm-tan mx-auto"></div>
-        </div>
-
-        {/* Descriptive text */}
-        <p className="text-lg md:text-xl font-light mb-12 max-w-3xl mx-auto opacity-95 leading-relaxed" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-          {t.description}
-        </p>
-
-        {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button variant="primary" size="lg" className="min-w-[200px]">
-            {t.ctaPrimary}
-          </Button>
-          <Button variant="outline" size="lg" className="min-w-[200px]">
-            {t.ctaSecondary}
-          </Button>
+          <div className="flex justify-center">
+            <Image
+              src="/images/coffee/coffee-cabana.svg"
+              alt="Coffee Cabana"
+              width={600}
+              height={200}
+              className="w-auto h-32 md:h-40 lg:h-48 brightness-0 invert"
+              priority
+            />
+          </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer">
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+      {/* Scroll indicator - positioned within the section */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer text-center">
+          <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">{t.scroll}</div>
+          <ChevronDownIcon className="w-4 h-4 mx-auto stroke-2" />
         </div>
       </div>
     </section>
