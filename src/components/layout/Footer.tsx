@@ -92,34 +92,6 @@ interface FooterProps {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex flex-col lg:flex-row lg:justify-between items-start gap-8">
             
-            {/* Visit Us */}
-            <div className="lg:w-auto">
-              <h3 className="text-white font-semibold text-lg mb-4 flex items-center underline">
-                {t.visit}
-              </h3>
-              <div className="space-y-2 text-sm text-gray-300">
-                <button 
-                  onClick={openGoogleMaps}
-                  className="text-left hover:text-white transition-colors cursor-pointer underline hover:no-underline text-gray-300"
-                >
-                  <p>Coffee Cabana</p>
-                  <p>R. Q.ta Dona Joana Forjaz</p>
-                  <p>9700-559, São Mateus da Calheta, Terceira</p>
-                </button>
-              </div>
-            </div>
-
-            {/* Hours */}
-            <div className="lg:w-auto">
-              <h3 className="text-white font-semibold text-lg mb-4 flex items-center underline">
-                {t.hours}
-              </h3>
-              <div className="space-y-2 text-sm text-gray-300">
-                <p>{t.openingHours}</p>
-                <p>{t.closedDay}</p>
-              </div>
-            </div>
-
             {/* Stay Connected */}
             <div className="lg:w-auto">
               <h3 className="text-white font-semibold text-lg mb-4 underline">
@@ -152,6 +124,34 @@ interface FooterProps {
                 <a href="mailto:bananaecocamp@gmail.com" className="hover:scale-110 transition-all duration-200" aria-label="Email">
                   <FontAwesomeIcon icon={faEnvelope} size="lg" className="text-white" />
                 </a>
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div className="lg:w-auto">
+              <h3 className="text-white font-semibold text-lg mb-4 flex items-center underline">
+                {t.hours}
+              </h3>
+              <div className="space-y-2 text-sm text-gray-300">
+                <p>{t.openingHours}</p>
+                <p>{t.closedDay}</p>
+              </div>
+            </div>
+
+            {/* Visit Us */}
+            <div className="lg:w-auto">
+              <h3 className="text-white font-semibold text-lg mb-4 flex items-center underline">
+                {t.visit}
+              </h3>
+              <div className="space-y-2 text-sm text-gray-300">
+                <button 
+                  onClick={openGoogleMaps}
+                  className="text-left hover:text-white transition-colors cursor-pointer underline hover:no-underline text-gray-300"
+                >
+                  <p>Coffee Cabana</p>
+                  <p>R. Q.ta Dona Joana Forjaz</p>
+                  <p>9700-559, São Mateus da Calheta, Terceira</p>
+                </button>
               </div>
             </div>
           </div>

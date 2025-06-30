@@ -320,7 +320,7 @@ export default async function MenuPage({ params }: Props) {
           <div className="max-w-6xl mx-auto px-6">
             {/* Title and Intro */}
             <div className="text-center mb-16">
-              <h1 className="text-6xl font-bold text-gray-800 mb-4">Our {t.title}</h1>
+              <h1 className="text-6xl font-bold text-black mb-4">Our {t.title}</h1>
             </div>
 
             <div className="space-y-12">
