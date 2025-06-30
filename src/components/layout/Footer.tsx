@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapPin, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faClock, faEnvelope } from '@fortawesome/free-regular-svg-icons'
@@ -8,6 +11,11 @@ interface FooterProps {
   }
   
   export default function Footer({ locale = 'pt' }: FooterProps) {
+    const openGoogleMaps = () => {
+      const address = encodeURIComponent('Coffee Cabana, R. Q.ta Dona Joana Forjaz, 9700-559, Portugal')
+      window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank')
+    }
+
     const content = {
       pt: {
         visit: "Visite-nos",
@@ -58,18 +66,24 @@ interface FooterProps {
             
             {/* Visit Us */}
             <div className="lg:w-auto">
-              <h3 className="text-warm-tan font-semibold text-lg mb-4 flex items-center">
+              <h3 className="text-warm-tan font-semibold text-lg mb-4 flex items-center underline">
                 {t.visit}
               </h3>
               <div className="space-y-2 text-sm">
-                <p>Rua da Sé</p>
-                <p>Angra do Heroísmo, Terceira</p>
+                <button 
+                  onClick={openGoogleMaps}
+                  className="text-left hover:text-warm-tan transition-colors cursor-pointer underline hover:no-underline"
+                >
+                  <p>Coffee Cabana</p>
+                  <p>R. Q.ta Dona Joana Forjaz</p>
+                  <p>9700-559, São Mateus da Calheta, Terceira</p>
+                </button>
               </div>
             </div>
 
             {/* Hours */}
             <div className="lg:w-auto">
-              <h3 className="text-warm-tan font-semibold text-lg mb-4 flex items-center">
+              <h3 className="text-warm-tan font-semibold text-lg mb-4 flex items-center underline">
                 {t.hours}
               </h3>
               <div className="space-y-2 text-sm">
@@ -79,7 +93,7 @@ interface FooterProps {
 
             {/* Stay Connected */}
             <div className="lg:w-auto">
-              <h3 className="text-warm-tan font-semibold text-lg mb-4">
+              <h3 className="text-warm-tan font-semibold text-lg mb-4 underline">
                 {t.stayConnected}
               </h3>
               
@@ -88,30 +102,33 @@ interface FooterProps {
                 <a href="#" className="hover:scale-110 transition-all duration-200" aria-label="Instagram">
                   <FontAwesomeIcon 
                     icon={faInstagram} 
-                    className="h-6 w-6 text-[#DD2A7B]" 
+                    size="2x"
+                    className="text-[#DD2A7B]" 
                   />
                 </a>
                 <a href="#" className="hover:scale-110 transition-all duration-200" aria-label="Facebook">
                   <FontAwesomeIcon 
                     icon={faFacebook} 
-                    className="h-6 w-6 text-[#1877F2]" 
+                    size="2x"
+                    className="text-[#1877F2]" 
                   />
                 </a>
                 <a href="#" className="hover:scale-110 transition-all duration-200" aria-label="WhatsApp">
                   <FontAwesomeIcon 
                     icon={faWhatsapp} 
-                    className="h-6 w-6 text-[#25D366]" 
+                    size="2x"
+                    className="text-[#25D366]" 
                   />
                 </a>
                 <a href="mailto:hello@coffeecabana.pt" className="hover:scale-110 transition-all duration-200" aria-label="Email">
-                  <FontAwesomeIcon icon={faEnvelope} className="h-6 w-6" />
+                  <FontAwesomeIcon icon={faEnvelope} size="2x" />
                 </a>
               </div>
             </div>
 
             {/* Quick Links */}
             <div className="lg:w-auto">
-              <h3 className="text-warm-tan font-semibold text-lg mb-4">
+              <h3 className="text-warm-tan font-semibold text-lg mb-4 underline">
                 {t.quickLinks}
               </h3>
               <ul className="space-y-2 text-sm">

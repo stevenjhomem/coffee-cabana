@@ -76,7 +76,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const t = content[locale as keyof typeof content] || content.pt
 
   return (
-    <section className="relative h-screen flex items-start justify-center overflow-hidden">
+    <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
       {/* Photo Background */}
       <div className="absolute inset-0 z-0">
         <div 
