@@ -95,7 +95,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
             <div className="relative">
               <button
                 onClick={handleMenuToggle}
-                className="text-black p-2 rounded-md hover:bg-black/10 transition-colors duration-200"
+                className="text-gray-600 p-2 rounded-md hover:bg-black/10 transition-colors duration-200"
               >
                 {isMenuOpen ? (
                   <FontAwesomeIcon icon={faXmark} className="h-6 w-6" />
@@ -134,7 +134,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
             <div className="relative">
               <button
                 onClick={handleMenuToggle}
-                className="text-black p-2 rounded-md hover:bg-black/10 transition-colors duration-200"
+                className="text-gray-600 p-2 rounded-md hover:bg-black/10 transition-colors duration-200"
               >
                 {isMenuOpen ? (
                   <FontAwesomeIcon icon={faXmark} className="h-6 w-6" />

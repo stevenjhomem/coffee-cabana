@@ -14,10 +14,10 @@ export default function OurMission({ locale }: OurMissionProps) {
       pt: 'Da Planta à Chávena'
     },
     description: {
-      en: "Coffee Cabana embodies the belief that the best experiences grow from authentic connections to place and community. We're " +
-      "committed to sharing exceptional coffee, fresh tropical produce, and warm hospitality that naturally flourish when people" +
-      " truly belong to the land they cultivate. Join us for coffee that tastes like nowhere else on earth, brunch ingredients picked" +
-      " fresh from our farm, or a tour that shows you how our passion created this unique corner of the Azores.",
+      en: "Coffee Cabana embodies the belief that the best experiences only grow from authentic connections to the local environment as well as the community. We're " +
+      "committed to sharing our exceptional coffee, fresh tropical produce, and our warm hospitality with all who come to visit this amazing island we call home. " +
+      " Please consider joining us for coffee that tastes like nowhere else on earth, brunch ingredients picked fresh from our farm, or a tour that shows" +
+      " you how our passion created this unique corner of the island.",
       pt: 'As nossas plantas de café crescem no microclima único da Ilha Terceira, nutridas pelo solo vulcânico e pelas brisas atlânticas.'
     }
   }

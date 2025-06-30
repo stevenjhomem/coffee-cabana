@@ -25,7 +25,7 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
     <div className="relative">
       <button
         onClick={onToggle}
-        className="flex items-center space-x-2 bg-transparent rounded-lg px-3 py-2 text-black hover:bg-black/10 transition-all duration-200 border border-black/30"
+        className="flex items-center space-x-2 bg-transparent rounded-lg px-3 py-2 text-gray-600 hover:bg-black/10 transition-all duration-200 border border-black/30"
       >
         <span className="text-sm">{currentLanguage.flag}</span>
         <span className="text-sm font-medium hidden sm:block">{currentLanguage.code.toUpperCase()}</span>
