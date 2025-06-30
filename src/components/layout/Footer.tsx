@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapPin, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faClock, faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faInstagram, faFacebook, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faFacebookF, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 interface FooterProps {
     locale?: string
@@ -87,20 +87,20 @@ interface FooterProps {
     const t = content[locale as keyof typeof content] || content.pt
   
     return (
-      <footer className="bg-[#eee9df] text-black">
+      <footer className="bg-black text-white">
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex flex-col lg:flex-row lg:justify-between items-start gap-8">
             
             {/* Visit Us */}
             <div className="lg:w-auto">
-              <h3 className="text-gray-600 font-semibold text-lg mb-4 flex items-center underline">
+              <h3 className="text-white font-semibold text-lg mb-4 flex items-center underline">
                 {t.visit}
               </h3>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-300">
                 <button 
                   onClick={openGoogleMaps}
-                  className="text-left hover:text-warm-tan transition-colors cursor-pointer underline hover:no-underline text-gray-600"
+                  className="text-left hover:text-white transition-colors cursor-pointer underline hover:no-underline text-gray-300"
                 >
                   <p>Coffee Cabana</p>
                   <p>R. Q.ta Dona Joana Forjaz</p>
@@ -111,10 +111,10 @@ interface FooterProps {
 
             {/* Hours */}
             <div className="lg:w-auto">
-              <h3 className="text-gray-600 font-semibold text-lg mb-4 flex items-center underline">
+              <h3 className="text-white font-semibold text-lg mb-4 flex items-center underline">
                 {t.hours}
               </h3>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-300">
                 <p>{t.openingHours}</p>
                 <p>{t.closedDay}</p>
               </div>
@@ -122,7 +122,7 @@ interface FooterProps {
 
             {/* Stay Connected */}
             <div className="lg:w-auto">
-              <h3 className="text-gray-600 font-semibold text-lg mb-4 underline">
+              <h3 className="text-white font-semibold text-lg mb-4 underline">
                 {t.stayConnected}
               </h3>
               
@@ -131,26 +131,26 @@ interface FooterProps {
                 <a href="https://www.instagram.com/coffee_cabana_official/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-all duration-200" aria-label="Instagram">
                   <FontAwesomeIcon 
                     icon={faInstagram} 
-                    size="2x"
-                    className="text-[#DD2A7B]" 
+                    size="lg"
+                    className="text-white" 
                   />
                 </a>
                 <a href="https://www.facebook.com/p/Coffee-Cabana-100076131101706/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-all duration-200" aria-label="Facebook">
                   <FontAwesomeIcon 
-                    icon={faFacebook} 
-                    size="2x"
-                    className="text-[#1877F2]" 
+                    icon={faFacebookF} 
+                    size="lg"
+                    className="text-white" 
                   />
                 </a>
                 <a href="https://wa.me/351919116145" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-all duration-200" aria-label="WhatsApp">
                   <FontAwesomeIcon 
                     icon={faWhatsapp} 
-                    size="2x"
-                    className="text-[#25D366]" 
+                    size="lg"
+                    className="text-white" 
                   />
                 </a>
                 <a href="mailto:bananaecocamp@gmail.com" className="hover:scale-110 transition-all duration-200" aria-label="Email">
-                  <FontAwesomeIcon icon={faEnvelope} size="2x" className="text-gray-600" />
+                  <FontAwesomeIcon icon={faEnvelope} size="lg" className="text-white" />
                 </a>
               </div>
             </div>
