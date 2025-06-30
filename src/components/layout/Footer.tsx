@@ -24,13 +24,6 @@ interface FooterProps {
         newsletter: "Novidades da quinta",
         emailPlaceholder: "O seu email",
         subscribe: "Subscrever",
-        quickLinks: "Links Rápidos",
-        links: {
-          story: "Nossa História",
-          menu: "Menu", 
-          tours: "Visitas à Quinta",
-          contact: "Contacto"
-        },
         rights: "Todos os direitos reservados",
         privacy: "Política de Privacidade",
         terms: "Termos de Uso",
@@ -44,13 +37,6 @@ interface FooterProps {
         newsletter: "Fresh updates from the farm",
         emailPlaceholder: "Your email",
         subscribe: "Subscribe",
-        quickLinks: "Quick Links",
-        links: {
-          story: "Our Story",
-          menu: "Menu",
-          tours: "Farm Tours", 
-          contact: "Contact"
-        },
         rights: "All rights reserved",
         privacy: "Privacy Policy",
         terms: "Terms of Use",
@@ -64,13 +50,6 @@ interface FooterProps {
         newsletter: "Frische Updates vom Hof",
         emailPlaceholder: "Ihre E-Mail",
         subscribe: "Abonnieren",
-        quickLinks: "Schnelllinks",
-        links: {
-          story: "Unsere Geschichte",
-          menu: "Menü",
-          tours: "Hofführungen",
-          contact: "Kontakt"
-        },
         rights: "Alle Rechte vorbehalten",
         privacy: "Datenschutzrichtlinie",
         terms: "Nutzungsbedingungen",
@@ -84,13 +63,6 @@ interface FooterProps {
         newsletter: "Actualizaciones frescas de la granja",
         emailPlaceholder: "Tu email",
         subscribe: "Suscribirse",
-        quickLinks: "Enlaces Rápidos",
-        links: {
-          story: "Nuestra Historia",
-          menu: "Menú",
-          tours: "Visitas a la Granja",
-          contact: "Contacto"
-        },
         rights: "Todos los derechos reservados",
         privacy: "Política de Privacidad",
         terms: "Términos de Uso",
@@ -104,13 +76,6 @@ interface FooterProps {
         newsletter: "Actualités fraîches de la ferme",
         emailPlaceholder: "Votre email",
         subscribe: "S'abonner",
-        quickLinks: "Liens Rapides",
-        links: {
-          story: "Notre Histoire",
-          menu: "Menu",
-          tours: "Visites de la Ferme",
-          contact: "Contact"
-        },
         rights: "Tous droits réservés",
         privacy: "Politique de Confidentialité",
         terms: "Conditions d'Utilisation",
@@ -188,17 +153,6 @@ interface FooterProps {
                   <FontAwesomeIcon icon={faEnvelope} size="2x" className="text-gray-600" />
                 </a>
               </div>
-            </div>
-
-            {/* Quick Links */}
-            <div className="lg:w-auto">
-              <h3 className="text-gray-600 font-semibold text-lg mb-4 underline">
-                {t.quickLinks}
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href={`/${locale}/story`} className="hover:text-black transition-colors">{t.links.story}</a></li>
-                <li><a href={`/${locale}/menu`} className="hover:text-black transition-colors">{t.links.menu}</a></li>
-              </ul>
             </div>
           </div>
         </div>

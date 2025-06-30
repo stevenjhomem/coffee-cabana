@@ -5,6 +5,9 @@ const nextConfig = {
     optimizeCss: true,
   },
   
+  // Development configuration
+  allowedDevOrigins: ['192.168.0.170'],
+  
   // Image optimization for coffee photos
   images: {
     domains: [],

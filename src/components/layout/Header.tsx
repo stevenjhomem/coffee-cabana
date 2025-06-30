@@ -28,37 +28,27 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
     pt: [
       { name: 'Início', href: `/pt` },
       { name: 'Nossa História', href: `/pt/story` },
-      { name: 'Café', href: `/pt/coffee` },
-      { name: 'Visite-nos', href: `/pt/visit` },
-      { name: 'Contacto', href: `/pt/contact` },
+      { name: 'Menu', href: `/pt/menu` },
     ],
     en: [
       { name: 'Home', href: `/en` },
       { name: 'Our Story', href: `/en/story` },
-      { name: 'Coffee', href: `/en/coffee` },
-      { name: 'Visit Us', href: `/en/visit` },
-      { name: 'Contact', href: `/en/contact` },
+      { name: 'Menu', href: `/en/menu` },
     ],
     de: [
       { name: 'Startseite', href: `/de` },
       { name: 'Unsere Geschichte', href: `/de/story` },
-      { name: 'Kaffee', href: `/de/coffee` },
-      { name: 'Besuchen Sie uns', href: `/de/visit` },
-      { name: 'Kontakt', href: `/de/contact` },
+      { name: 'Menü', href: `/de/menu` },
     ],
     es: [
       { name: 'Inicio', href: `/es` },
       { name: 'Nuestra Historia', href: `/es/story` },
-      { name: 'Café', href: `/es/coffee` },
-      { name: 'Visítanos', href: `/es/visit` },
-      { name: 'Contacto', href: `/es/contact` },
+      { name: 'Menú', href: `/es/menu` },
     ],
     fr: [
       { name: 'Accueil', href: `/fr` },
       { name: 'Notre Histoire', href: `/fr/story` },
-      { name: 'Café', href: `/fr/coffee` },
-      { name: 'Visitez-nous', href: `/fr/visit` },
-      { name: 'Contact', href: `/fr/contact` },
+      { name: 'Menu', href: `/fr/menu` },
     ],
   }
 
