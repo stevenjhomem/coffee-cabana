@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 interface LanguageSwitcherProps {
   currentLocale: string
@@ -24,21 +25,24 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
     <div className="relative">
       <button
         onClick={onToggle}
-        className="flex items-center space-x-2 bg-transparent rounded-lg px-3 py-2 text-white hover:bg-white/10 transition-all duration-200 border border-white/30"
+        className="flex items-center space-x-2 bg-transparent rounded-lg px-3 py-2 text-black hover:bg-black/10 transition-all duration-200 border border-black/30"
       >
         <span className="text-sm">{currentLanguage.flag}</span>
         <span className="text-sm font-medium hidden sm:block">{currentLanguage.code.toUpperCase()}</span>
-        <ChevronDownIcon className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <FontAwesomeIcon 
+          icon={faChevronDown} 
+          className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+        />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+        <div className="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
           {languages.map((language) => (
             <a
               key={language.code}
               href={`/${language.code}`}
-              className={`flex items-center justify-end space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 ${
-                language.code === currentLocale ? 'bg-white/20 text-white font-medium' : 'text-white'
+              className={`flex items-center justify-end space-x-3 px-4 py-2 text-sm hover:bg-black/10 transition-colors duration-200 ${
+                language.code === currentLocale ? 'bg-black/20 text-black font-medium' : 'text-black'
               }`}
               onClick={onToggle}
             >

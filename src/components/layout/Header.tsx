@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 
@@ -64,14 +65,14 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
   const navItems = navigation[locale as keyof typeof navigation] || navigation.pt
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-white/20 shadow-lg">
       <nav className="px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
             <a href={`/${locale}`} className="flex items-center group">
                 {/* Logo placeholder - you can replace with your SVG logo */}
-                <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
                     <Image 
                       src="/images/coffee/logo.svg" 
                       alt="Coffee Cabana Logo" 
@@ -94,24 +95,24 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
             <div className="relative">
               <button
                 onClick={handleMenuToggle}
-                className="text-white p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
+                className="text-black p-2 rounded-md hover:bg-black/10 transition-colors duration-200"
               >
                 {isMenuOpen ? (
-                  <XMarkIcon className="h-6 w-6" />
+                  <FontAwesomeIcon icon={faXmark} className="h-6 w-6" />
                 ) : (
-                  <Bars3Icon className="h-6 w-6" />
+                  <FontAwesomeIcon icon={faBars} className="h-6 w-6" />
                 )}
               </button>
               
               {/* Desktop Navigation Menu */}
               {isMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
                   <div className="px-4 py-2 space-y-2">
                     {navItems.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
-                        className="block text-white hover:text-warm-tan transition-colors duration-200 font-medium py-2 text-right"
+                        className="block text-black hover:text-gray-600 transition-colors duration-200 font-medium py-2 text-right"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.name}
@@ -133,24 +134,24 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
             <div className="relative">
               <button
                 onClick={handleMenuToggle}
-                className="text-white p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
+                className="text-black p-2 rounded-md hover:bg-black/10 transition-colors duration-200"
               >
                 {isMenuOpen ? (
-                  <XMarkIcon className="h-6 w-6" />
+                  <FontAwesomeIcon icon={faXmark} className="h-6 w-6" />
                 ) : (
-                  <Bars3Icon className="h-6 w-6" />
+                  <FontAwesomeIcon icon={faBars} className="h-6 w-6" />
                 )}
               </button>
               
               {/* Mobile Navigation Menu */}
               {isMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
                   <div className="px-4 py-2 space-y-2">
                     {navItems.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
-                        className="block text-white hover:text-warm-tan transition-colors duration-200 font-medium py-2 text-right"
+                        className="block text-black hover:text-gray-600 transition-colors duration-200 font-medium py-2 text-right"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.name}

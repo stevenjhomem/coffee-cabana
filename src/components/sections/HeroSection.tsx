@@ -1,7 +1,8 @@
 'use client'
 
 import { Button } from '@/components/ui/Button'
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 
 interface HeroSectionProps {
@@ -81,7 +82,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/images/coffee/farm.jpeg')`
+            backgroundImage: `url('/images/coffee/Banana_EcoCamp-02.jpg')`
           }}
         />
         {/* Dark overlay for better text readability */}
@@ -109,7 +110,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer text-center">
           <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">{t.scroll}</div>
-          <ChevronDownIcon className="w-4 h-4 mx-auto stroke-2" />
+          <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4 mx-auto stroke-2" />
         </div>
       </div>
     </section>
