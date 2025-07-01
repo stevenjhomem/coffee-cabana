@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Coffee Cabana - Café Orgânico Terceira | Azores',
+  title: 'Coffee Cabana - Café Orgânico Terceira | Açores',
   description: 'O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.',
   keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
   authors: [{ name: 'Coffee Cabana' }],
@@ -48,7 +50,9 @@ export default function RootLayout({
 
       </head>
       <body className={inter.className}>
+        <Header locale="pt" />
         {children}
+        <Footer locale="pt" />
       </body>
     </html>
   )

@@ -1,6 +1,11 @@
-import { redirect } from 'next/navigation'
+import HeroSection from '@/components/sections/HeroSection'
+import OurMission from '@/components/sections/OurMission'
 
-export default function RootPage() {
-  // Redirect to Portuguese (default locale)
-  redirect('/pt')
+export default function HomePage() {
+  return (
+    <main>
+      <HeroSection locale="pt" />
+      <OurMission locale="pt" />
+    </main>
+  )
 }

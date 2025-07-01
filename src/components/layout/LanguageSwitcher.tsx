@@ -2,6 +2,7 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { locales, localeNames, localeFlags, defaultLocale } from '@/lib/i18n/config'
 
 interface LanguageSwitcherProps {
   currentLocale: string
@@ -10,13 +11,11 @@ interface LanguageSwitcherProps {
 }
 
 export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: LanguageSwitcherProps) {
-  const languages = [
-    { code: 'pt', name: 'Português', flag: '🇵🇹' },
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  ]
+  const languages = locales.map(code => ({
+    code,
+    name: localeNames[code as keyof typeof localeNames],
+    flag: localeFlags[code as keyof typeof localeFlags]
+  }))
 
   const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0]
 
@@ -36,19 +35,22 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
-          {languages.map((language) => (
-            <a
-              key={language.code}
-              href={`/${language.code}`}
-              className={`flex items-center justify-end space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 ${
-                language.code === currentLocale ? 'bg-white/20 text-white font-medium' : 'text-white'
-              }`}
-              onClick={onToggle}
-            >
-              <span>{language.name}</span>
-              <span>{language.flag}</span>
-            </a>
-          ))}
+          {languages.map((language) => {
+            const href = language.code === defaultLocale ? '/' : `/${language.code}`
+            return (
+              <a
+                key={language.code}
+                href={href}
+                className={`flex items-center justify-end space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 ${
+                  language.code === currentLocale ? 'bg-white/20 text-white font-medium' : 'text-white'
+                }`}
+                onClick={onToggle}
+              >
+                <span>{language.name}</span>
+                <span>{language.flag}</span>
+              </a>
+            )
+          })}
         </div>
       )}
     </div>

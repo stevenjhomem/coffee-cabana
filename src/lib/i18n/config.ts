@@ -3,6 +3,9 @@ export type Locale = typeof locales[number];
 
 export const defaultLocale: Locale = 'pt'; // Portuguese default for Azores
 
+// Locales that should have URL prefixes (all except default)
+export const prefixedLocales = locales.filter(locale => locale !== defaultLocale);
+
 export const localeNames = {
   pt: 'Português',
   en: 'English', 

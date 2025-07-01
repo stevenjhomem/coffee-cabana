@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
+import { defaultLocale } from '@/lib/i18n/config'
 
 interface HeaderProps {
   locale?: string
@@ -26,9 +27,9 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
 
   const navigation = {
     pt: [
-      { name: 'Início', href: `/pt` },
-      { name: 'Nossa História', href: `/pt/story` },
-      { name: 'Menu', href: `/pt/menu` },
+      { name: 'Início', href: `/` },
+      { name: 'Nossa História', href: `/story` },
+      { name: 'Menu', href: `/menu` },
     ],
     en: [
       { name: 'Home', href: `/en` },
@@ -60,7 +61,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <a href={`/${locale}`} className="flex items-center group">
+            <a href={locale === defaultLocale ? '/' : `/${locale}`} className="flex items-center group">
                 {/* Logo placeholder - you can replace with your SVG logo */}
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
                     <Image 
