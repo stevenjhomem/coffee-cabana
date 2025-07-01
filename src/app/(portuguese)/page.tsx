@@ -11,12 +11,21 @@ export const metadata: Metadata = {
   publisher: 'Coffee Cabana',
   robots: 'index, follow',
   openGraph: {
-    title: 'Coffee Cabana - Authentic Azores Coffee',
-    description: 'The only coffee grown and roasted on Terceira Island',
+    title: 'Coffee Cabana - Café Orgânico Terceira | Açores',
+    description: 'O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.',
     url: 'https://coffeecabana.pt',
     siteName: 'Coffee Cabana',
     locale: 'pt_PT',
     type: 'website',
+    images: [
+      {
+        url: '/images/coffee/coffee-cabana-instagram.png',
+        width: 1200,
+        height: 630,
+        alt: 'Coffee Cabana - Café Orgânico Terceira | Açores',
+        type: 'image/png',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://coffeecabana.pt',
