@@ -14,11 +14,14 @@ export default function MenuPage() {
       specialtyCoffee: {
         title: 'Café Especial',
         items: [
-          { name: 'Espresso', price: '€2.50' },
-          { name: 'Cappuccino', price: '€3.50' },
-          { name: 'Latte', price: '€3.00' },
-          { name: 'Americano', price: '€2.80' },
-          { name: 'Mocha', price: '€4.00' }
+          { name: 'Espresso', price: '€2.00' },
+          { name: 'Americano', price: '€2.00' },
+          { name: 'Latte', price: '€2.50' },
+          { name: 'Café com Leite', price: '€2.50' },
+          { name: 'Café Filtrado', price: '€2.50' },
+          { name: 'Cappuccino', price: '€3.00' },
+          { name: 'Café Gelado', price: '€3.00' },
+          { name: 'Café Irlandês', price: '€4.00' }
         ]
       },
       tea: {

@@ -45,11 +45,14 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Café Especial',
           items: [
-            { name: 'Espresso', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.50' },
-            { name: 'Latte', price: '€3.00' },
-            { name: 'Americano', price: '€2.80' },
-            { name: 'Mocha', price: '€4.00' }
+            { name: 'Espresso', price: '€2.00' },
+            { name: 'Americano', price: '€2.00' },
+            { name: 'Latte', price: '€2.50' },
+            { name: 'Café com Leite', price: '€2.50' },
+            { name: 'Café Filtrado', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.00' },
+            { name: 'Café Gelado', price: '€3.00' },
+            { name: 'Café Irlandês', price: '€4.00' }
           ]
         },
         tea: {
@@ -98,11 +101,14 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Specialty Coffee',
           items: [
-            { name: 'Espresso', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.50' },
-            { name: 'Latte', price: '€3.00' },
-            { name: 'Americano', price: '€2.80' },
-            { name: 'Mocha', price: '€4.00' }
+            { name: 'Espresso', price: '€2.00' },
+            { name: 'Americano', price: '€2.00' },
+            { name: 'Latte', price: '€2.50' },
+            { name: 'Coffee w/ Milk', price: '€2.50' },
+            { name: 'Drip Coffee', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.00' },
+            { name: 'Iced Coffee', price: '€3.00' },
+            { name: 'Irish Coffee', price: '€4.00' }
           ]
         },
         tea: {
@@ -151,11 +157,14 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Spezialkaffee',
           items: [
-            { name: 'Espresso', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.50' },
-            { name: 'Latte', price: '€3.00' },
-            { name: 'Americano', price: '€2.80' },
-            { name: 'Mocha', price: '€4.00' }
+            { name: 'Espresso', price: '€2.00' },
+            { name: 'Americano', price: '€2.00' },
+            { name: 'Latte', price: '€2.50' },
+            { name: 'Kaffee mit Milch', price: '€2.50' },
+            { name: 'Filterkaffee', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.00' },
+            { name: 'Eiskaffee', price: '€3.00' },
+            { name: 'Irish Coffee', price: '€4.00' }
           ]
         },
         tea: {
@@ -204,11 +213,14 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Café Especial',
           items: [
-            { name: 'Espresso', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.50' },
-            { name: 'Latte', price: '€3.00' },
-            { name: 'Americano', price: '€2.80' },
-            { name: 'Mocha', price: '€4.00' }
+            { name: 'Espresso', price: '€2.00' },
+            { name: 'Americano', price: '€2.00' },
+            { name: 'Latte', price: '€2.50' },
+            { name: 'Café con Leche', price: '€2.50' },
+            { name: 'Café de Filtro', price: '€2.50' },
+            { name: 'Capuchino', price: '€3.00' },
+            { name: 'Café Helado', price: '€3.00' },
+            { name: 'Café Irlandés', price: '€4.00' }
           ]
         },
         tea: {
@@ -257,11 +269,14 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Café Spécial',
           items: [
-            { name: 'Espresso', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.50' },
-            { name: 'Latte', price: '€3.00' },
-            { name: 'Americano', price: '€2.80' },
-            { name: 'Mocha', price: '€4.00' }
+            { name: 'Espresso', price: '€2.00' },
+            { name: 'Américain', price: '€2.00' },
+            { name: 'Latte', price: '€2.50' },
+            { name: 'Café au Lait', price: '€2.50' },
+            { name: 'Café Filtré', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.00' },
+            { name: 'Café Glacé', price: '€3.00' },
+            { name: 'Irish Coffee', price: '€4.00' }
           ]
         },
         tea: {
