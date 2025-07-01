@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapPin, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { faClock, faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faInstagram, faFacebookF, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 interface FooterProps {
