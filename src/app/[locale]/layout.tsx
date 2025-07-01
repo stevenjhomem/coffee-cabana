@@ -34,7 +34,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   }
 
-  return metaData[locale as keyof typeof metaData] || metaData.pt
+  const currentMeta = metaData[locale as keyof typeof metaData] || metaData.pt
+
+  return {
+    ...currentMeta,
+    keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
+    authors: [{ name: 'Coffee Cabana' }],
+    creator: 'Coffee Cabana',
+    publisher: 'Coffee Cabana',
+    robots: 'index, follow',
+    openGraph: {
+      title: currentMeta.title,
+      description: currentMeta.description,
+      url: `https://coffeecabana.pt/${locale}`,
+      siteName: 'Coffee Cabana',
+      locale: locale === 'pt' ? 'pt_PT' : `${locale}_${locale.toUpperCase()}`,
+      type: 'website',
+    },
+    alternates: {
+      canonical: `https://coffeecabana.pt/${locale}`,
+      languages: {
+        'pt': 'https://coffeecabana.pt',
+        'en': 'https://coffeecabana.pt/en',
+        'de': 'https://coffeecabana.pt/de',
+        'es': 'https://coffeecabana.pt/es',
+        'fr': 'https://coffeecabana.pt/fr',
+      },
+    },
+  }
 }
 
 export default async function LocaleLayout({ children, params }: Props) {

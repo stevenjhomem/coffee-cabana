@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 interface Props {
   params: Promise<{ locale: string }>
@@ -8,10 +8,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
 
   const metaData = {
-    pt: {
-      title: 'Menu - Coffee Cabana | Açores',
-      description: 'Explore o nosso menu de café artesanal e produtos frescos da quinta no Coffee Cabana.',
-    },
     en: {
       title: 'Menu - Coffee Cabana | Azores',
       description: 'Explore our artisanal coffee menu and fresh farm products at Coffee Cabana.',
@@ -30,7 +26,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   }
 
-  return metaData[locale as keyof typeof metaData] || metaData.pt
+  const currentMeta = metaData[locale as keyof typeof metaData] || metaData.en
+
+  return {
+    ...currentMeta,
+    keywords: 'menu café Terceira, café orgânico menu, coffee menu Azores, specialty coffee Terceira',
+    authors: [{ name: 'Coffee Cabana' }],
+    creator: 'Coffee Cabana',
+    publisher: 'Coffee Cabana',
+    robots: 'index, follow',
+    openGraph: {
+      title: currentMeta.title,
+      description: currentMeta.description,
+      url: `https://coffeecabana.pt/${locale}/menu`,
+      siteName: 'Coffee Cabana',
+      locale: `${locale}_${locale.toUpperCase()}`,
+      type: 'website',
+    },
+    alternates: {
+      canonical: `https://coffeecabana.pt/${locale}/menu`,
+      languages: {
+        'pt': 'https://coffeecabana.pt/menu',
+        'en': 'https://coffeecabana.pt/en/menu',
+        'de': 'https://coffeecabana.pt/de/menu',
+        'es': 'https://coffeecabana.pt/es/menu',
+        'fr': 'https://coffeecabana.pt/fr/menu',
+      },
+    },
+  }
 }
 
 export default async function MenuPage({ params }: Props) {

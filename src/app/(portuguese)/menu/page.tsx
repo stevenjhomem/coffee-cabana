@@ -1,8 +1,31 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Menu - Coffee Cabana | Açores',
-  description: 'Explore o nosso menu de café artesanal e produtos frescos da quinta no Coffee Cabana.',
+  title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
+  description: 'Descubra nosso menu de café orgânico cultivado e torrado na Ilha Terceira. Desde grãos especiais até bebidas artesanais.',
+  keywords: 'menu café Terceira, café orgânico menu, coffee menu Azores, specialty coffee Terceira',
+  authors: [{ name: 'Coffee Cabana' }],
+  creator: 'Coffee Cabana',
+  publisher: 'Coffee Cabana',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Menu - Coffee Cabana',
+    description: 'Discover our organic coffee menu grown and roasted on Terceira Island',
+    url: 'https://coffeecabana.pt/menu',
+    siteName: 'Coffee Cabana',
+    locale: 'pt_PT',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://coffeecabana.pt/menu',
+    languages: {
+      'pt': 'https://coffeecabana.pt/menu',
+      'en': 'https://coffeecabana.pt/en/menu',
+      'de': 'https://coffeecabana.pt/de/menu',
+      'es': 'https://coffeecabana.pt/es/menu',
+      'fr': 'https://coffeecabana.pt/fr/menu',
+    },
+  },
 }
 
 export default function MenuPage() {

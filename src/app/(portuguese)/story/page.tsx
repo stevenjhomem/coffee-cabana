@@ -1,8 +1,31 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Nossa História - Coffee Cabana | Açores',
-  description: 'Descubra a história do Coffee Cabana, desde a plantação até à chávena, no coração da Ilha Terceira.',
+  title: 'Nossa História - Coffee Cabana | Café Orgânico Terceira',
+  description: 'Conheça a história do Coffee Cabana, desde a plantação até à chávena. O único café cultivado e torrado na Ilha Terceira.',
+  keywords: 'história café Terceira, coffee story Azores, plantation café Açores, coffee farm Terceira',
+  authors: [{ name: 'Coffee Cabana' }],
+  creator: 'Coffee Cabana',
+  publisher: 'Coffee Cabana',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Nossa História - Coffee Cabana',
+    description: 'Discover the story of Coffee Cabana, from plantation to cup',
+    url: 'https://coffeecabana.pt/story',
+    siteName: 'Coffee Cabana',
+    locale: 'pt_PT',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://coffeecabana.pt/story',
+    languages: {
+      'pt': 'https://coffeecabana.pt/story',
+      'en': 'https://coffeecabana.pt/en/story',
+      'de': 'https://coffeecabana.pt/de/story',
+      'es': 'https://coffeecabana.pt/es/story',
+      'fr': 'https://coffeecabana.pt/fr/story',
+    },
+  },
 }
 
 export default function StoryPage() {

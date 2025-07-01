@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 interface Props {
   params: Promise<{ locale: string }>
@@ -8,10 +8,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
 
   const metaData = {
-    pt: {
-      title: 'Nossa História - Coffee Cabana | Açores',
-      description: 'Descubra a história do Coffee Cabana, desde a plantação até à chávena, no coração da Ilha Terceira.',
-    },
     en: {
       title: 'Our Story - Coffee Cabana | Azores',
       description: 'Discover the story of Coffee Cabana, from plantation to cup, in the heart of Terceira Island.',
@@ -30,7 +26,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   }
 
-  return metaData[locale as keyof typeof metaData] || metaData.pt
+  const currentMeta = metaData[locale as keyof typeof metaData] || metaData.en
+
+  return {
+    ...currentMeta,
+    keywords: 'história café Terceira, coffee story Azores, plantation café Açores, coffee farm Terceira',
+    authors: [{ name: 'Coffee Cabana' }],
+    creator: 'Coffee Cabana',
+    publisher: 'Coffee Cabana',
+    robots: 'index, follow',
+    openGraph: {
+      title: currentMeta.title,
+      description: currentMeta.description,
+      url: `https://coffeecabana.pt/${locale}/story`,
+      siteName: 'Coffee Cabana',
+      locale: `${locale}_${locale.toUpperCase()}`,
+      type: 'website',
+    },
+    alternates: {
+      canonical: `https://coffeecabana.pt/${locale}/story`,
+      languages: {
+        'pt': 'https://coffeecabana.pt/story',
+        'en': 'https://coffeecabana.pt/en/story',
+        'de': 'https://coffeecabana.pt/de/story',
+        'es': 'https://coffeecabana.pt/es/story',
+        'fr': 'https://coffeecabana.pt/fr/story',
+      },
+    },
+  }
 }
 
 export default async function StoryPage({ params }: Props) {
