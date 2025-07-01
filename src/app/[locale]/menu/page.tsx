@@ -42,6 +42,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: 'Coffee Cabana',
       locale: `${locale}_${locale.toUpperCase()}`,
       type: 'website',
+      images: [
+        {
+          url: '/images/coffee/coffee-cabana-instagram.png',
+          width: 1200,
+          height: 630,
+          alt: currentMeta.title,
+          type: 'image/png',
+        },
+      ],
     },
     alternates: {
       canonical: `https://coffeecabana.pt/${locale}/menu`,

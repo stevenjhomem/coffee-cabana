@@ -9,12 +9,21 @@ export const metadata: Metadata = {
   publisher: 'Coffee Cabana',
   robots: 'index, follow',
   openGraph: {
-    title: 'Menu - Coffee Cabana',
-    description: 'Discover our organic coffee menu grown and roasted on Terceira Island',
+    title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
+    description: 'Descubra nosso menu de café orgânico cultivado e torrado na Ilha Terceira. Desde grãos especiais até bebidas artesanais.',
     url: 'https://coffeecabana.pt/menu',
     siteName: 'Coffee Cabana',
     locale: 'pt_PT',
     type: 'website',
+    images: [
+      {
+        url: '/images/coffee/coffee-cabana-instagram.png',
+        width: 1200,
+        height: 630,
+        alt: 'Menu - Coffee Cabana | Café Orgânico Terceira',
+        type: 'image/png',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://coffeecabana.pt/menu',

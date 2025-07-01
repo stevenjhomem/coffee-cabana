@@ -9,12 +9,21 @@ export const metadata: Metadata = {
   publisher: 'Coffee Cabana',
   robots: 'index, follow',
   openGraph: {
-    title: 'Nossa História - Coffee Cabana',
-    description: 'Discover the story of Coffee Cabana, from plantation to cup',
+    title: 'Nossa História - Coffee Cabana | Café Orgânico Terceira',
+    description: 'Conheça a história do Coffee Cabana, desde a plantação até à chávena. O único café cultivado e torrado na Ilha Terceira.',
     url: 'https://coffeecabana.pt/story',
     siteName: 'Coffee Cabana',
     locale: 'pt_PT',
     type: 'website',
+    images: [
+      {
+        url: '/images/coffee/coffee-cabana-instagram.png',
+        width: 1200,
+        height: 630,
+        alt: 'Nossa História - Coffee Cabana | Café Orgânico Terceira',
+        type: 'image/png',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://coffeecabana.pt/story',
