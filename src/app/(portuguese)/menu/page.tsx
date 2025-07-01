@@ -59,28 +59,48 @@ export default function MenuPage() {
       tea: {
         title: 'Chá',
         items: [
-          { name: 'Chá Preto', price: '€2.00' },
-          { name: 'Chá Verde', price: '€2.00' },
-          { name: 'Chá de Ervas', price: '€2.50' },
-          { name: 'Chá de Frutos', price: '€2.50' }
+          { name: 'Coffee Bark Tea', price: '€2.00' },
+          { name: 'Gorreana Tea', price: '€2.00' },
+          { name: 'Chá do Dia', price: '€2.00' }
         ]
       },
       lightMeals: {
         title: 'Refeições Ligeiras',
         items: [
-          { name: 'Pão Caseiro', price: '€1.50' },
-          { name: 'Tosta Mista', price: '€4.50' },
-          { name: 'Bolo Caseiro', price: '€3.00' },
-          { name: 'Sanduíche Vegetariano', price: '€5.00' }
+          { name: 'Pequeno-Almoço Saudável', price: '€6.50', description: 'Tosta de abacate e ovo, com chá e sumo de laranja' },
+          { name: 'Pequeno-Almoço Leve', price: '€6.50', description: 'Iogurte grego com granola, fruta e mel, chá e sumo de laranja' },
+          { name: 'Pequeno-Almoço Tradicional', price: '€6.50', description: 'Tosta de bolo levedo com presunto e queijo, chá e sumo de laranja' },
+          { name: 'Fruta da Época', price: '€2.50' },
+          { name: 'Pão de Banana', price: '€3.00' },
+          { name: 'Bolo do Dia', price: '€3.00' },
+          { name: 'Pastelaria', price: '€2.50' },
+          { name: 'Pastelaria Pequena', price: '€1.50' },
+          { name: 'Waffles com fruta | mel | chocolate', price: '€4.00' },
+          { name: 'Panquecas com fruta | mel | chocolate', price: '€4.00' },
+          { name: 'Iogurte Grego com Granola e Fruta', price: '€4.00' },
+          { name: 'Tosta de Abacate e Ovo', price: '€4.00' },
+          { name: 'Tosta de Bolo Levedo', price: '€4.00' },
+          { name: 'Tosta', price: '€3.00' },
+          { name: 'Tosta de Presunto e Queijo', price: '€3.50' },
+          { name: 'Tosta de Pão', price: '€2.00' }
         ]
       },
       beverages: {
         title: 'Bebidas',
         items: [
-          { name: 'Sumo Natural', price: '€3.50' },
-          { name: 'Limonada', price: '€3.00' },
-          { name: 'Água Mineral', price: '€1.50' },
-          { name: 'Refrigerante', price: '€2.50' }
+          { name: 'Água 33cl', price: '€1.00' },
+          { name: 'Água 1.5L', price: '€2.00' },
+          { name: 'Sumo de Laranja', price: '€1.50' },
+          { name: 'Refrigerante', price: '€1.50' },
+          { name: 'Leite com Chocolate', price: '€2.50' },
+          { name: 'Batido', price: '€3.50' },
+          { name: 'Smoothie', price: '€4.00' },
+          { name: 'Caipirinha', price: '€4.50' },
+          { name: 'Sumo de Cana', price: '€3.50' },
+          { name: 'Gin', price: '€6.00' },
+          { name: 'Digestivo | Shot | Licor', price: '€3.00' },
+          { name: 'Cerveja', price: '€1.50' },
+          { name: 'Bananika', price: '€4.00' }
         ]
       },
       iceCream: {
@@ -96,10 +116,10 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen relative">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70 hidden md:block" 
-           style={{ backgroundImage: 'url(/images/coffee/Banana_EcoCamp-49.jpg)' }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70" 
+           style={{ backgroundImage: 'url(/images/coffee/farm.jpeg)' }}>
       </div>
       
       {/* Content */}
@@ -111,74 +131,92 @@ export default function MenuPage() {
             <div className="text-center mb-16">
               <h1 className="text-6xl font-bold text-black mb-4">Nosso {t.title}</h1>
             </div>
+          </div>
 
-            <div className="space-y-12">
-              {/* First Row: Specialty Coffee, Tea, Beverages */}
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 md:shadow-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)]">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.specialtyCoffee.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.specialtyCoffee.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
+          {/* First Row: Combined Coffee, Tea & Beverages */}
+          <div className="max-w-6xl mx-auto px-6 mb-12">
+            <div className="flex justify-center">
+              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 md:shadow-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] w-full max-w-5xl">
+                <div className="grid grid-cols-12 divide-x divide-gray-300">
+                  {/* Specialty Coffee Section */}
+                  <div className="col-span-3 px-4">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.specialtyCoffee.title}</h2>
+                    <div className="space-y-1">
+                      {t.categories.specialtyCoffee.items.map((item, index) => (
+                        <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-1">
+                          <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
+                          <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.tea.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.tea.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
+                  
+                  {/* Tea Section */}
+                  <div className="col-span-3 px-4">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.tea.title}</h2>
+                    <div className="space-y-1">
+                      {t.categories.tea.items.map((item, index) => (
+                        <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-1">
+                          <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
+                          <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.beverages.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.beverages.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Second Row: Light Meals */}
-              <div className="flex justify-center">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.lightMeals.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.lightMeals.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
+                  
+                  {/* Beverages Section */}
+                  <div className="col-span-6 px-4">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
+                    <div className="grid grid-cols-2 gap-y-1">
+                      {t.categories.beverages.items.map((item, index) => (
+                        <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-1 px-2">
+                          <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
+                          <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Third Row: Ice Cream */}
-              <div className="flex justify-center">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.iceCream.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+          {/* Second Row: Light Meals */}
+          <div className="max-w-6xl mx-auto px-6 mb-12">
+            <div className="flex justify-center">
+              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
+                <div className="grid grid-cols-2 gap-y-2">
+                  {t.categories.lightMeals.items.map((item, index) => (
+                    <div key={index} className="border-b border-gray-200 pb-2 px-4">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+                          {'description' in item && item.description && (
+                            <p className="text-sm text-gray-600 mt-1 italic">{item.description}</p>
+                          )}
+                        </div>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Third Row: Ice Cream */}
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex justify-center">
+              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
+                <div className="space-y-4">
+                  {t.categories.iceCream.items.map((item, index) => (
+                    <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                      <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+                      <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

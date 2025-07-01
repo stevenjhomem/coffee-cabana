@@ -99,19 +99,40 @@ export default async function MenuPage({ params }: Props) {
         lightMeals: {
           title: 'Refeições Ligeiras',
           items: [
-            { name: 'Pão Caseiro', price: '€1.50' },
-            { name: 'Tosta Mista', price: '€4.50' },
-            { name: 'Bolo Caseiro', price: '€3.00' },
-            { name: 'Sanduíche Vegetariano', price: '€5.00' }
+            { name: 'Pequeno-Almoço Saudável', price: '€6.50', description: 'Tosta de abacate e ovo, com chá e sumo de laranja' },
+            { name: 'Pequeno-Almoço Leve', price: '€6.50', description: 'Iogurte grego com granola, fruta e mel, chá e sumo de laranja' },
+            { name: 'Pequeno-Almoço Tradicional', price: '€6.50', description: 'Tosta de bolo levedo com presunto e queijo, chá e sumo de laranja' },
+            { name: 'Fruta da Época', price: '€2.50' },
+            { name: 'Pão de Banana', price: '€3.00' },
+            { name: 'Bolo do Dia', price: '€3.00' },
+            { name: 'Pastelaria', price: '€2.50' },
+            { name: 'Pastelaria Pequena', price: '€1.50' },
+            { name: 'Waffles com fruta | mel | chocolate', price: '€4.00' },
+            { name: 'Panquecas com fruta | mel | chocolate', price: '€4.00' },
+            { name: 'Iogurte Grego com Granola e Fruta', price: '€4.00' },
+            { name: 'Tosta de Abacate e Ovo', price: '€4.00' },
+            { name: 'Tosta de Bolo Levedo', price: '€4.00' },
+            { name: 'Tosta', price: '€3.00' },
+            { name: 'Tosta de Presunto e Queijo', price: '€3.50' },
+            { name: 'Tosta de Pão', price: '€2.00' }
           ]
         },
         beverages: {
           title: 'Bebidas',
           items: [
-            { name: 'Sumo Natural', price: '€3.50' },
-            { name: 'Limonada', price: '€3.00' },
-            { name: 'Água Mineral', price: '€1.50' },
-            { name: 'Refrigerante', price: '€2.50' }
+            { name: 'Água 33cl', price: '€1.00' },
+            { name: 'Água 1.5L', price: '€2.00' },
+            { name: 'Sumo de Laranja', price: '€1.50' },
+            { name: 'Refrigerante', price: '€1.50' },
+            { name: 'Leite com Chocolate', price: '€2.50' },
+            { name: 'Batido', price: '€3.50' },
+            { name: 'Smoothie', price: '€4.00' },
+            { name: 'Caipirinha', price: '€4.50' },
+            { name: 'Sumo de Cana', price: '€3.50' },
+            { name: 'Gin', price: '€6.00' },
+            { name: 'Digestivo | Shot | Licor', price: '€3.00' },
+            { name: 'Cerveja', price: '€1.50' },
+            { name: 'Bananika', price: '€4.00' }
           ]
         },
         iceCream: {
@@ -146,28 +167,48 @@ export default async function MenuPage({ params }: Props) {
         tea: {
           title: 'Tea',
           items: [
-            { name: 'Black Tea', price: '€2.00' },
-            { name: 'Green Tea', price: '€2.00' },
-            { name: 'Herbal Tea', price: '€2.50' },
-            { name: 'Fruit Tea', price: '€2.50' }
+            { name: 'Coffee Bark Tea', price: '€2.00' },
+            { name: 'Gorreana Tea', price: '€2.00' },
+            { name: 'Tea of the Day', price: '€2.00' }
           ]
         },
         lightMeals: {
           title: 'Light Meals',
           items: [
-            { name: 'Homemade Bread', price: '€1.50' },
-            { name: 'Grilled Sandwich', price: '€4.50' },
-            { name: 'Homemade Cake', price: '€3.00' },
-            { name: 'Vegetarian Sandwich', price: '€5.00' }
+            { name: 'Healthy Breakfast', price: '€6.50', description: 'Avocado and egg toast, with tea and orange juice' },
+            { name: 'Light Breakfast', price: '€6.50', description: 'Greek yogurt with granola, fruit and honey, tea and orange juice' },
+            { name: 'Traditional Breakfast', price: '€6.50', description: 'Bolo levedo toast with ham and cheese, tea and orange juice' },
+            { name: 'Seasonal Fruit', price: '€2.50' },
+            { name: 'Banana Bread', price: '€3.00' },
+            { name: 'Cake of the Day', price: '€3.00' },
+            { name: 'Pastry', price: '€2.50' },
+            { name: 'Small Pastry', price: '€1.50' },
+            { name: 'Waffles with fruit | honey | chocolate', price: '€4.00' },
+            { name: 'Pancakes with fruit | honey | chocolate', price: '€4.00' },
+            { name: 'Greek Yogurt with Granola and Fruit', price: '€4.00' },
+            { name: 'Avocado and Egg Toast', price: '€4.00' },
+            { name: 'Bolo Levedo Toast', price: '€4.00' },
+            { name: 'Toast', price: '€3.00' },
+            { name: 'Ham and Cheese Toast', price: '€3.50' },
+            { name: 'Bread Toast', price: '€2.00' }
           ]
         },
         beverages: {
           title: 'Beverages',
           items: [
-            { name: 'Natural Juice', price: '€3.50' },
-            { name: 'Lemonade', price: '€3.00' },
-            { name: 'Mineral Water', price: '€1.50' },
-            { name: 'Soda', price: '€2.50' }
+            { name: 'Water 33cl', price: '€1.00' },
+            { name: 'Water 1.5L', price: '€2.00' },
+            { name: 'Orange Juice', price: '€1.50' },
+            { name: 'Soda', price: '€1.50' },
+            { name: 'Chocolate Milk', price: '€2.50' },
+            { name: 'Milkshake', price: '€3.50' },
+            { name: 'Smoothie', price: '€4.00' },
+            { name: 'Caipirinha', price: '€4.50' },
+            { name: 'Sugar Cane Juice', price: '€3.50' },
+            { name: 'Gin', price: '€6.00' },
+            { name: 'Digestive | Shot | Liquor', price: '€3.00' },
+            { name: 'Beer', price: '€1.50' },
+            { name: 'Bananika', price: '€4.00' }
           ]
         },
         iceCream: {
@@ -202,28 +243,48 @@ export default async function MenuPage({ params }: Props) {
         tea: {
           title: 'Tee',
           items: [
-            { name: 'Schwarztee', price: '€2.00' },
-            { name: 'Grüntee', price: '€2.00' },
-            { name: 'Kräutertee', price: '€2.50' },
-            { name: 'Früchtetee', price: '€2.50' }
+            { name: 'Coffee Bark Tea', price: '€2.00' },
+            { name: 'Gorreana Tea', price: '€2.00' },
+            { name: 'Tee des Tages', price: '€2.00' }
           ]
         },
         lightMeals: {
           title: 'Lichtes Essen',
           items: [
-            { name: 'Hausgemachtes Brot', price: '€1.50' },
-            { name: 'Grill-Sandwich', price: '€4.50' },
-            { name: 'Hausgemachter Kuchen', price: '€3.00' },
-            { name: 'Vegetarischer Sandwich', price: '€5.00' }
+            { name: 'Gesundes Frühstück', price: '€6.50', description: 'Avocado und Ei Toast, mit Tee und Orangensaft' },
+            { name: 'Leichtes Frühstück', price: '€6.50', description: 'Griechischer Joghurt mit Granola, Obst und Honig, Tee und Orangensaft' },
+            { name: 'Traditionelles Frühstück', price: '€6.50', description: 'Bolo levedo Toast mit Schinken und Käse, Tee und Orangensaft' },
+            { name: 'Saisonales Obst', price: '€2.50' },
+            { name: 'Bananenbrot', price: '€3.00' },
+            { name: 'Kuchen des Tages', price: '€3.00' },
+            { name: 'Gebäck', price: '€2.50' },
+            { name: 'Kleines Gebäck', price: '€1.50' },
+            { name: 'Waffeln mit Obst | Honig | Schokolade', price: '€4.00' },
+            { name: 'Pfannkuchen mit Obst | Honig | Schokolade', price: '€4.00' },
+            { name: 'Griechischer Joghurt mit Granola und Obst', price: '€4.00' },
+            { name: 'Avocado und Ei Toast', price: '€4.00' },
+            { name: 'Bolo Levedo Toast', price: '€4.00' },
+            { name: 'Toast', price: '€3.00' },
+            { name: 'Schinken und Käse Toast', price: '€3.50' },
+            { name: 'Brot Toast', price: '€2.00' }
           ]
         },
         beverages: {
           title: 'Getränke',
           items: [
-            { name: 'Natürliches Saft', price: '€3.50' },
-            { name: 'Limonade', price: '€3.00' },
-            { name: 'Mineralwasser', price: '€1.50' },
-            { name: 'Sodawasser', price: '€2.50' }
+            { name: 'Wasser 33cl', price: '€1.00' },
+            { name: 'Wasser 1.5L', price: '€2.00' },
+            { name: 'Orangensaft', price: '€1.50' },
+            { name: 'Soda', price: '€1.50' },
+            { name: 'Schokoladenmilch', price: '€2.50' },
+            { name: 'Milchshake', price: '€3.50' },
+            { name: 'Smoothie', price: '€4.00' },
+            { name: 'Caipirinha', price: '€4.50' },
+            { name: 'Zuckerrohrsaft', price: '€3.50' },
+            { name: 'Gin', price: '€6.00' },
+            { name: 'Digestif | Shot | Likör', price: '€3.00' },
+            { name: 'Bier', price: '€1.50' },
+            { name: 'Bananika', price: '€4.00' }
           ]
         },
         iceCream: {
@@ -256,30 +317,50 @@ export default async function MenuPage({ params }: Props) {
           ]
         },
         tea: {
-          title: 'Chá',
+          title: 'Té',
           items: [
-            { name: 'Chá Preto', price: '€2.00' },
-            { name: 'Chá Verde', price: '€2.00' },
-            { name: 'Chá de Ervas', price: '€2.50' },
-            { name: 'Chá de Frutos', price: '€2.50' }
+            { name: 'Coffee Bark Tea', price: '€2.00' },
+            { name: 'Gorreana Tea', price: '€2.00' },
+            { name: 'Té del Día', price: '€2.00' }
           ]
         },
         lightMeals: {
-          title: 'Refeições Ligeiras',
+          title: 'Comidas Ligeras',
           items: [
-            { name: 'Pan Casero', price: '€1.50' },
-            { name: 'Sándwich Tostado', price: '€4.50' },
-            { name: 'Pastel Casero', price: '€3.00' },
-            { name: 'Sanduíche Vegetariano', price: '€5.00' }
+            { name: 'Desayuno Saludable', price: '€6.50', description: 'Tostada de aguacate y huevo, con té y zumo de naranja' },
+            { name: 'Desayuno Ligero', price: '€6.50', description: 'Yogur griego con granola, fruta y miel, té y zumo de naranja' },
+            { name: 'Desayuno Tradicional', price: '€6.50', description: 'Tostada de bolo levedo con jamón y queso, té y zumo de naranja' },
+            { name: 'Fruta de Temporada', price: '€2.50' },
+            { name: 'Pan de Plátano', price: '€3.00' },
+            { name: 'Pastel del Día', price: '€3.00' },
+            { name: 'Pastelería', price: '€2.50' },
+            { name: 'Pastelería Pequeña', price: '€1.50' },
+            { name: 'Gofres con fruta | miel | chocolate', price: '€4.00' },
+            { name: 'Tortitas con fruta | miel | chocolate', price: '€4.00' },
+            { name: 'Yogur Griego con Granola y Fruta', price: '€4.00' },
+            { name: 'Tostada de Aguacate y Huevo', price: '€4.00' },
+            { name: 'Tostada de Bolo Levedo', price: '€4.00' },
+            { name: 'Tostada', price: '€3.00' },
+            { name: 'Tostada de Jamón y Queso', price: '€3.50' },
+            { name: 'Tostada de Pan', price: '€2.00' }
           ]
         },
         beverages: {
           title: 'Bebidas',
           items: [
-            { name: 'Sumo Natural', price: '€3.50' },
-            { name: 'Limonada', price: '€3.00' },
-            { name: 'Água Mineral', price: '€1.50' },
-            { name: 'Refrigerante', price: '€2.50' }
+            { name: 'Agua 33cl', price: '€1.00' },
+            { name: 'Agua 1.5L', price: '€2.00' },
+            { name: 'Zumo de Naranja', price: '€1.50' },
+            { name: 'Refresco', price: '€1.50' },
+            { name: 'Leche con Chocolate', price: '€2.50' },
+            { name: 'Batido', price: '€3.50' },
+            { name: 'Smoothie', price: '€4.00' },
+            { name: 'Caipirinha', price: '€4.50' },
+            { name: 'Zumo de Caña', price: '€3.50' },
+            { name: 'Ginebra', price: '€6.00' },
+            { name: 'Digestivo | Shot | Licor', price: '€3.00' },
+            { name: 'Cerveza', price: '€1.50' },
+            { name: 'Bananika', price: '€4.00' }
           ]
         },
         iceCream: {
@@ -314,28 +395,48 @@ export default async function MenuPage({ params }: Props) {
         tea: {
           title: 'Thé',
           items: [
-            { name: 'Thé Noir', price: '€2.00' },
-            { name: 'Thé Vert', price: '€2.00' },
-            { name: 'Thé d\'Herbes', price: '€2.50' },
-            { name: 'Thé de Fruits', price: '€2.50' }
+            { name: 'Coffee Bark Tea', price: '€2.00' },
+            { name: 'Gorreana Tea', price: '€2.00' },
+            { name: 'Thé du Jour', price: '€2.00' }
           ]
         },
         lightMeals: {
           title: 'Petits Repas',
           items: [
-            { name: 'Pain Maison', price: '€1.50' },
-            { name: 'Sandwich Grillé', price: '€4.50' },
-            { name: 'Gâteau Maison', price: '€3.00' },
-            { name: 'Sandwich Végétarien', price: '€5.00' }
+            { name: 'Petit Déjeuner Sain', price: '€6.50', description: 'Toast à l\'avocat et aux œufs, avec thé et jus d\'orange' },
+            { name: 'Petit Déjeuner Léger', price: '€6.50', description: 'Yaourt grec avec granola, fruits et miel, thé et jus d\'orange' },
+            { name: 'Petit Déjeuner Traditionnel', price: '€6.50', description: 'Toast de bolo levedo avec jambon et fromage, thé et jus d\'orange' },
+            { name: 'Fruits de Saison', price: '€2.50' },
+            { name: 'Pain aux Bananes', price: '€3.00' },
+            { name: 'Gâteau du Jour', price: '€3.00' },
+            { name: 'Pâtisserie', price: '€2.50' },
+            { name: 'Petite Pâtisserie', price: '€1.50' },
+            { name: 'Gaufres avec fruits | miel | chocolat', price: '€4.00' },
+            { name: 'Crêpes avec fruits | miel | chocolat', price: '€4.00' },
+            { name: 'Yaourt Grec avec Granola et Fruits', price: '€4.00' },
+            { name: 'Toast à l\'Avocat et aux Œufs', price: '€4.00' },
+            { name: 'Toast de Bolo Levedo', price: '€4.00' },
+            { name: 'Toast', price: '€3.00' },
+            { name: 'Toast Jambon et Fromage', price: '€3.50' },
+            { name: 'Toast de Pain', price: '€2.00' }
           ]
         },
         beverages: {
           title: 'Boissons',
           items: [
-            { name: 'Jus Naturel', price: '€3.50' },
-            { name: 'Limonade', price: '€3.00' },
-            { name: 'Eau Minérale', price: '€1.50' },
-            { name: 'Soda', price: '€2.50' }
+            { name: 'Eau 33cl', price: '€1.00' },
+            { name: 'Eau 1.5L', price: '€2.00' },
+            { name: 'Jus d\'Orange', price: '€1.50' },
+            { name: 'Soda', price: '€1.50' },
+            { name: 'Lait au Chocolat', price: '€2.50' },
+            { name: 'Milkshake', price: '€3.50' },
+            { name: 'Smoothie', price: '€4.00' },
+            { name: 'Caipirinha', price: '€4.50' },
+            { name: 'Jus de Canne', price: '€3.50' },
+            { name: 'Gin', price: '€6.00' },
+            { name: 'Digestif | Shot | Liqueur', price: '€3.00' },
+            { name: 'Bière', price: '€1.50' },
+            { name: 'Bananika', price: '€4.00' }
           ]
         },
         iceCream: {
@@ -354,10 +455,10 @@ export default async function MenuPage({ params }: Props) {
   const t = content[locale as keyof typeof content] || content.pt
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen relative">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70 hidden md:block" 
-           style={{ backgroundImage: 'url(/images/coffee/Banana_EcoCamp-49.jpg)' }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70" 
+           style={{ backgroundImage: 'url(/images/coffee/farm.jpeg)' }}>
       </div>
       
       {/* Content */}
@@ -369,82 +470,92 @@ export default async function MenuPage({ params }: Props) {
             <div className="text-center mb-16">
               <h1 className="text-6xl font-bold text-black mb-4">Our {t.title}</h1>
             </div>
+          </div>
 
-            <div className="space-y-12">
-              {/* First Row: Specialty Coffee, Tea, Beverages */}
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 md:shadow-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)]">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.specialtyCoffee.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.specialtyCoffee.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
+          {/* First Row: Combined Coffee, Tea & Beverages */}
+          <div className="max-w-6xl mx-auto px-6 mb-12">
+            <div className="flex justify-center">
+              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 md:shadow-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] w-full max-w-5xl">
+                <div className="grid grid-cols-12 divide-x divide-gray-300">
+                  {/* Specialty Coffee Section */}
+                  <div className="col-span-3 px-4">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.specialtyCoffee.title}</h2>
+                    <div className="space-y-1">
+                      {t.categories.specialtyCoffee.items.map((item, index) => (
+                        <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-1">
+                          <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
+                          <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.tea.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.tea.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
+                  
+                  {/* Tea Section */}
+                  <div className="col-span-3 px-4">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.tea.title}</h2>
+                    <div className="space-y-1">
+                      {t.categories.tea.items.map((item, index) => (
+                        <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-1">
+                          <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
+                          <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.beverages.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.beverages.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Second Row: Light Meals */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.lightMeals.title}</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    {t.categories.lightMeals.items.slice(0, 2).map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="space-y-4">
-                    {t.categories.lightMeals.items.slice(2).map((item, index) => (
-                      <div key={index + 2} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
+                  
+                  {/* Beverages Section */}
+                  <div className="col-span-6 px-4">
+                    <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
+                    <div className="grid grid-cols-2 gap-y-1">
+                      {t.categories.beverages.items.map((item, index) => (
+                        <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-1 px-2">
+                          <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
+                          <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Third Row: Ice Cream */}
-              <div className="flex justify-center">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.iceCream.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+          {/* Second Row: Light Meals */}
+          <div className="max-w-6xl mx-auto px-6 mb-12">
+            <div className="flex justify-center">
+              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
+                <div className="grid grid-cols-2 gap-y-2">
+                  {t.categories.lightMeals.items.map((item, index) => (
+                    <div key={index} className="border-b border-gray-200 pb-2 px-4">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+                          {'description' in item && item.description && (
+                            <p className="text-sm text-gray-600 mt-1 italic">{item.description}</p>
+                          )}
+                        </div>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Third Row: Ice Cream */}
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex justify-center">
+              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
+                <div className="space-y-4">
+                  {t.categories.iceCream.items.map((item, index) => (
+                    <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                      <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+                      <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
