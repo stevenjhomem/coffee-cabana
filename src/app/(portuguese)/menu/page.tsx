@@ -14,47 +14,47 @@ export default function MenuPage() {
       specialtyCoffee: {
         title: 'Café Especial',
         items: [
-          { name: 'Espresso', description: 'Café puro e intenso', price: '€2.50' },
-          { name: 'Cappuccino', description: 'Espresso com leite cremoso', price: '€3.50' },
-          { name: 'Latte', description: 'Café suave com leite', price: '€3.00' },
-          { name: 'Americano', description: 'Café longo e suave', price: '€2.80' },
-          { name: 'Mocha', description: 'Café com chocolate e leite', price: '€4.00' }
+          { name: 'Espresso', price: '€2.50' },
+          { name: 'Cappuccino', price: '€3.50' },
+          { name: 'Latte', price: '€3.00' },
+          { name: 'Americano', price: '€2.80' },
+          { name: 'Mocha', price: '€4.00' }
         ]
       },
       tea: {
         title: 'Chá',
         items: [
-          { name: 'Chá Preto', description: 'Chá preto tradicional', price: '€2.00' },
-          { name: 'Chá Verde', description: 'Chá verde fresco', price: '€2.00' },
-          { name: 'Chá de Ervas', description: 'Infusão de ervas locais', price: '€2.50' },
-          { name: 'Chá de Frutos', description: 'Chá de frutos silvestres', price: '€2.50' }
+          { name: 'Chá Preto', price: '€2.00' },
+          { name: 'Chá Verde', price: '€2.00' },
+          { name: 'Chá de Ervas', price: '€2.50' },
+          { name: 'Chá de Frutos', price: '€2.50' }
         ]
       },
       lightMeals: {
         title: 'Refeições Ligeiras',
         items: [
-          { name: 'Pão Caseiro', description: 'Pão fresco da nossa padaria', price: '€1.50' },
-          { name: 'Tosta Mista', description: 'Queijo e fiambre grelhados', price: '€4.50' },
-          { name: 'Bolo Caseiro', description: 'Bolos frescos diários', price: '€3.00' },
-          { name: 'Sanduíche Vegetariano', description: 'Legumes frescos da quinta', price: '€5.00' }
+          { name: 'Pão Caseiro', price: '€1.50' },
+          { name: 'Tosta Mista', price: '€4.50' },
+          { name: 'Bolo Caseiro', price: '€3.00' },
+          { name: 'Sanduíche Vegetariano', price: '€5.00' }
         ]
       },
       beverages: {
         title: 'Bebidas',
         items: [
-          { name: 'Sumo Natural', description: 'Sumos frescos de frutas locais', price: '€3.50' },
-          { name: 'Limonada', description: 'Limonada caseira', price: '€3.00' },
-          { name: 'Água Mineral', description: 'Água natural ou com gás', price: '€1.50' },
-          { name: 'Refrigerante', description: 'Bebidas refrigerantes', price: '€2.50' }
+          { name: 'Sumo Natural', price: '€3.50' },
+          { name: 'Limonada', price: '€3.00' },
+          { name: 'Água Mineral', price: '€1.50' },
+          { name: 'Refrigerante', price: '€2.50' }
         ]
       },
       iceCream: {
         title: 'Gelado Quinta dos Açores',
         items: [
-          { name: 'Gelado de Baunilha', description: 'Gelado cremoso de baunilha', price: '€3.50' },
-          { name: 'Gelado de Chocolate', description: 'Gelado rico de chocolate', price: '€3.50' },
-          { name: 'Gelado de Frutos Silvestres', description: 'Gelado de frutos locais', price: '€4.00' },
-          { name: 'Copo de Gelados', description: '3 bolas à escolha', price: '€5.00' }
+          { name: 'Gelado de Baunilha', price: '€3.50' },
+          { name: 'Gelado de Chocolate', price: '€3.50' },
+          { name: 'Gelado de Frutos Silvestres', price: '€4.00' },
+          { name: 'Copo de Gelados', price: '€5.00' }
         ]
       }
     }
@@ -84,11 +84,8 @@ export default function MenuPage() {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.specialtyCoffee.title}</h2>
                   <div className="space-y-4">
                     {t.categories.specialtyCoffee.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -99,11 +96,8 @@ export default function MenuPage() {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.tea.title}</h2>
                   <div className="space-y-4">
                     {t.categories.tea.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -114,11 +108,8 @@ export default function MenuPage() {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.beverages.title}</h2>
                   <div className="space-y-4">
                     {t.categories.beverages.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -132,11 +123,8 @@ export default function MenuPage() {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.lightMeals.title}</h2>
                   <div className="space-y-4">
                     {t.categories.lightMeals.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -150,11 +138,8 @@ export default function MenuPage() {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
                   <div className="space-y-4">
                     {t.categories.iceCream.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}

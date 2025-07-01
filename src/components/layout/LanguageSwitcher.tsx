@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { locales, localeNames, localeFlags, defaultLocale } from '@/lib/i18n/config'
@@ -11,6 +12,8 @@ interface LanguageSwitcherProps {
 }
 
 export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: LanguageSwitcherProps) {
+  const pathname = usePathname()
+  
   const languages = locales.map(code => ({
     code,
     name: localeNames[code as keyof typeof localeNames],
@@ -18,6 +21,29 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
   }))
 
   const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0]
+
+  // Function to generate the correct URL for each language
+  const getLanguageUrl = (targetLocale: string) => {
+    // If we're on the default locale (Portuguese), remove the locale prefix
+    if (currentLocale === defaultLocale) {
+      // We're on a Portuguese page, so we need to add the locale prefix for other languages
+      if (targetLocale === defaultLocale) {
+        return pathname // Stay on the same Portuguese page
+      } else {
+        // Add the locale prefix for other languages
+        return `/${targetLocale}${pathname}`
+      }
+    } else {
+      // We're on a non-default locale page
+      if (targetLocale === defaultLocale) {
+        // Remove the locale prefix for Portuguese
+        return pathname.replace(`/${currentLocale}`, '')
+      } else {
+        // Replace the current locale with the target locale
+        return pathname.replace(`/${currentLocale}`, `/${targetLocale}`)
+      }
+    }
+  }
 
   return (
     <div className="relative">
@@ -36,7 +62,7 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
           {languages.map((language) => {
-            const href = language.code === defaultLocale ? '/' : `/${language.code}`
+            const href = getLanguageUrl(language.code)
             return (
               <a
                 key={language.code}

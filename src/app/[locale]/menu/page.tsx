@@ -45,47 +45,47 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Café Especial',
           items: [
-            { name: 'Espresso', description: 'Café puro e intenso', price: '€2.50' },
-            { name: 'Cappuccino', description: 'Espresso com leite cremoso', price: '€3.50' },
-            { name: 'Latte', description: 'Café suave com leite', price: '€3.00' },
-            { name: 'Americano', description: 'Café longo e suave', price: '€2.80' },
-            { name: 'Mocha', description: 'Café com chocolate e leite', price: '€4.00' }
+            { name: 'Espresso', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.50' },
+            { name: 'Latte', price: '€3.00' },
+            { name: 'Americano', price: '€2.80' },
+            { name: 'Mocha', price: '€4.00' }
           ]
         },
         tea: {
           title: 'Chá',
           items: [
-            { name: 'Chá Preto', description: 'Chá preto tradicional', price: '€2.00' },
-            { name: 'Chá Verde', description: 'Chá verde fresco', price: '€2.00' },
-            { name: 'Chá de Ervas', description: 'Infusão de ervas locais', price: '€2.50' },
-            { name: 'Chá de Frutos', description: 'Chá de frutos silvestres', price: '€2.50' }
+            { name: 'Chá Preto', price: '€2.00' },
+            { name: 'Chá Verde', price: '€2.00' },
+            { name: 'Chá de Ervas', price: '€2.50' },
+            { name: 'Chá de Frutos', price: '€2.50' }
           ]
         },
         lightMeals: {
           title: 'Refeições Ligeiras',
           items: [
-            { name: 'Pão Caseiro', description: 'Pão fresco da nossa padaria', price: '€1.50' },
-            { name: 'Tosta Mista', description: 'Queijo e fiambre grelhados', price: '€4.50' },
-            { name: 'Bolo Caseiro', description: 'Bolos frescos diários', price: '€3.00' },
-            { name: 'Sanduíche Vegetariano', description: 'Legumes frescos da quinta', price: '€5.00' }
+            { name: 'Pão Caseiro', price: '€1.50' },
+            { name: 'Tosta Mista', price: '€4.50' },
+            { name: 'Bolo Caseiro', price: '€3.00' },
+            { name: 'Sanduíche Vegetariano', price: '€5.00' }
           ]
         },
         beverages: {
           title: 'Bebidas',
           items: [
-            { name: 'Sumo Natural', description: 'Sumos frescos de frutas locais', price: '€3.50' },
-            { name: 'Limonada', description: 'Limonada caseira', price: '€3.00' },
-            { name: 'Água Mineral', description: 'Água natural ou com gás', price: '€1.50' },
-            { name: 'Refrigerante', description: 'Bebidas refrigerantes', price: '€2.50' }
+            { name: 'Sumo Natural', price: '€3.50' },
+            { name: 'Limonada', price: '€3.00' },
+            { name: 'Água Mineral', price: '€1.50' },
+            { name: 'Refrigerante', price: '€2.50' }
           ]
         },
         iceCream: {
           title: 'Gelado Quinta dos Açores',
           items: [
-            { name: 'Gelado de Baunilha', description: 'Gelado cremoso de baunilha', price: '€3.50' },
-            { name: 'Gelado de Chocolate', description: 'Gelado rico de chocolate', price: '€3.50' },
-            { name: 'Gelado de Frutos Silvestres', description: 'Gelado de frutos locais', price: '€4.00' },
-            { name: 'Copo de Gelados', description: '3 bolas à escolha', price: '€5.00' }
+            { name: 'Gelado de Baunilha', price: '€3.50' },
+            { name: 'Gelado de Chocolate', price: '€3.50' },
+            { name: 'Gelado de Frutos Silvestres', price: '€4.00' },
+            { name: 'Copo de Gelados', price: '€5.00' }
           ]
         }
       }
@@ -98,47 +98,47 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Specialty Coffee',
           items: [
-            { name: 'Espresso', description: 'Pure and intense coffee', price: '€2.50' },
-            { name: 'Cappuccino', description: 'Espresso with creamy milk', price: '€3.50' },
-            { name: 'Latte', description: 'Smooth coffee with milk', price: '€3.00' },
-            { name: 'Americano', description: 'Long and smooth coffee', price: '€2.80' },
-            { name: 'Mocha', description: 'Coffee with chocolate and milk', price: '€4.00' }
+            { name: 'Espresso', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.50' },
+            { name: 'Latte', price: '€3.00' },
+            { name: 'Americano', price: '€2.80' },
+            { name: 'Mocha', price: '€4.00' }
           ]
         },
         tea: {
           title: 'Tea',
           items: [
-            { name: 'Black Tea', description: 'Traditional black tea', price: '€2.00' },
-            { name: 'Green Tea', description: 'Fresh green tea', price: '€2.00' },
-            { name: 'Herbal Tea', description: 'Infusion of local herbs', price: '€2.50' },
-            { name: 'Fruit Tea', description: 'Wild fruit tea', price: '€2.50' }
+            { name: 'Black Tea', price: '€2.00' },
+            { name: 'Green Tea', price: '€2.00' },
+            { name: 'Herbal Tea', price: '€2.50' },
+            { name: 'Fruit Tea', price: '€2.50' }
           ]
         },
         lightMeals: {
           title: 'Light Meals',
           items: [
-            { name: 'Homemade Bread', description: 'Fresh bread from our bakery', price: '€1.50' },
-            { name: 'Grilled Sandwich', description: 'Grilled cheese and ham', price: '€4.50' },
-            { name: 'Homemade Cake', description: 'Fresh daily cakes', price: '€3.00' },
-            { name: 'Vegetarian Sandwich', description: 'Fresh vegetables from the farm', price: '€5.00' }
+            { name: 'Homemade Bread', price: '€1.50' },
+            { name: 'Grilled Sandwich', price: '€4.50' },
+            { name: 'Homemade Cake', price: '€3.00' },
+            { name: 'Vegetarian Sandwich', price: '€5.00' }
           ]
         },
         beverages: {
           title: 'Beverages',
           items: [
-            { name: 'Natural Juice', description: 'Fresh local fruit juice', price: '€3.50' },
-            { name: 'Lemonade', description: 'Homemade lemonade', price: '€3.00' },
-            { name: 'Mineral Water', description: 'Natural water or with gas', price: '€1.50' },
-            { name: 'Soda', description: 'Refreshing drinks', price: '€2.50' }
+            { name: 'Natural Juice', price: '€3.50' },
+            { name: 'Lemonade', price: '€3.00' },
+            { name: 'Mineral Water', price: '€1.50' },
+            { name: 'Soda', price: '€2.50' }
           ]
         },
         iceCream: {
           title: 'Quinta dos Açores Ice Cream',
           items: [
-            { name: 'Vanilla Ice Cream', description: 'Creamy vanilla ice cream', price: '€3.50' },
-            { name: 'Chocolate Ice Cream', description: 'Rich chocolate ice cream', price: '€3.50' },
-            { name: 'Wild Fruit Ice Cream', description: 'Local fruit ice cream', price: '€4.00' },
-            { name: 'Ice Cream Scoop', description: '3 scoops to choose from', price: '€5.00' }
+            { name: 'Vanilla Ice Cream', price: '€3.50' },
+            { name: 'Chocolate Ice Cream', price: '€3.50' },
+            { name: 'Wild Fruit Ice Cream', price: '€4.00' },
+            { name: 'Ice Cream Scoop', price: '€5.00' }
           ]
         }
       }
@@ -151,47 +151,47 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Spezialkaffee',
           items: [
-            { name: 'Espresso', description: 'Reiner und intensiver Kaffee', price: '€2.50' },
-            { name: 'Cappuccino', description: 'Espresso mit cremiger Milch', price: '€3.50' },
-            { name: 'Latte', description: 'Sanfter Kaffee mit Milch', price: '€3.00' },
-            { name: 'Americano', description: 'Langer und sanfter Kaffee', price: '€2.80' },
-            { name: 'Mocha', description: 'Kaffee mit Schokolade und Milch', price: '€4.00' }
+            { name: 'Espresso', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.50' },
+            { name: 'Latte', price: '€3.00' },
+            { name: 'Americano', price: '€2.80' },
+            { name: 'Mocha', price: '€4.00' }
           ]
         },
         tea: {
           title: 'Tee',
           items: [
-            { name: 'Schwarztee', description: 'Traditioneller Schwarztee', price: '€2.00' },
-            { name: 'Grüntee', description: 'Frischer Grüntee', price: '€2.00' },
-            { name: 'Kräutertee', description: 'Kräutertee aus lokalen Kräutern', price: '€2.50' },
-            { name: 'Früchtetee', description: 'Wildfrüchtetee', price: '€2.50' }
+            { name: 'Schwarztee', price: '€2.00' },
+            { name: 'Grüntee', price: '€2.00' },
+            { name: 'Kräutertee', price: '€2.50' },
+            { name: 'Früchtetee', price: '€2.50' }
           ]
         },
         lightMeals: {
           title: 'Lichtes Essen',
           items: [
-            { name: 'Hausgemachtes Brot', description: 'Frisches Brot aus unserer Bäckerei', price: '€1.50' },
-            { name: 'Grill-Sandwich', description: 'Gegrilltes Käse- und Schinkensandwich', price: '€4.50' },
-            { name: 'Hausgemachter Kuchen', description: 'Frische tägliche Kuchen', price: '€3.00' },
-            { name: 'Vegetarischer Sandwich', description: 'Frische Gemüsesandwiches', price: '€5.00' }
+            { name: 'Hausgemachtes Brot', price: '€1.50' },
+            { name: 'Grill-Sandwich', price: '€4.50' },
+            { name: 'Hausgemachter Kuchen', price: '€3.00' },
+            { name: 'Vegetarischer Sandwich', price: '€5.00' }
           ]
         },
         beverages: {
           title: 'Getränke',
           items: [
-            { name: 'Natürliches Saft', description: 'Natürlicher Fruchtensaft aus lokalen Früchten', price: '€3.50' },
-            { name: 'Limonade', description: 'Zitronenlimonade', price: '€3.00' },
-            { name: 'Mineralwasser', description: 'Natürliches Wasser oder mit Gas', price: '€1.50' },
-            { name: 'Sodawasser', description: 'Erfrischendes Wasser', price: '€2.50' }
+            { name: 'Natürliches Saft', price: '€3.50' },
+            { name: 'Limonade', price: '€3.00' },
+            { name: 'Mineralwasser', price: '€1.50' },
+            { name: 'Sodawasser', price: '€2.50' }
           ]
         },
         iceCream: {
           title: 'Gelato Quinta dos Açores',
           items: [
-            { name: 'Vanillegelato', description: 'Klassisches Vanillegelato', price: '€3.50' },
-            { name: 'Schokogelato', description: 'Fruchtiges Schokogelato', price: '€3.50' },
-            { name: 'Wildfrüchtegelato', description: 'Wildfrüchtegelato aus lokalen Früchten', price: '€4.00' },
-            { name: 'Gelatobüchlein', description: '3 Kugeln zum Auswählen', price: '€5.00' }
+            { name: 'Vanillegelato', price: '€3.50' },
+            { name: 'Schokogelato', price: '€3.50' },
+            { name: 'Wildfrüchtegelato', price: '€4.00' },
+            { name: 'Gelatobüchlein', price: '€5.00' }
           ]
         }
       }
@@ -204,47 +204,47 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Café Especial',
           items: [
-            { name: 'Espresso', description: 'Café puro e intenso', price: '€2.50' },
-            { name: 'Cappuccino', description: 'Espresso con leche cremosa', price: '€3.50' },
-            { name: 'Latte', description: 'Café suave con leche', price: '€3.00' },
-            { name: 'Americano', description: 'Café largo y suave', price: '€2.80' },
-            { name: 'Mocha', description: 'Café con chocolate y leche', price: '€4.00' }
+            { name: 'Espresso', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.50' },
+            { name: 'Latte', price: '€3.00' },
+            { name: 'Americano', price: '€2.80' },
+            { name: 'Mocha', price: '€4.00' }
           ]
         },
         tea: {
           title: 'Chá',
           items: [
-            { name: 'Chá Preto', description: 'Chá preto tradicional', price: '€2.00' },
-            { name: 'Chá Verde', description: 'Chá verde fresco', price: '€2.00' },
-            { name: 'Chá de Ervas', description: 'Infusão de ervas locais', price: '€2.50' },
-            { name: 'Chá de Frutos', description: 'Chá de frutos silvestres', price: '€2.50' }
+            { name: 'Chá Preto', price: '€2.00' },
+            { name: 'Chá Verde', price: '€2.00' },
+            { name: 'Chá de Ervas', price: '€2.50' },
+            { name: 'Chá de Frutos', price: '€2.50' }
           ]
         },
         lightMeals: {
           title: 'Refeições Ligeiras',
           items: [
-            { name: 'Pan Casero', description: 'Pan fresco de nuestra panadería', price: '€1.50' },
-            { name: 'Sándwich Tostado', description: 'Queso y jamón a la plancha', price: '€4.50' },
-            { name: 'Pastel Casero', description: 'Pasteles frescos diarios', price: '€3.00' },
-            { name: 'Sanduíche Vegetariano', description: 'Legumes frescos da quinta', price: '€5.00' }
+            { name: 'Pan Casero', price: '€1.50' },
+            { name: 'Sándwich Tostado', price: '€4.50' },
+            { name: 'Pastel Casero', price: '€3.00' },
+            { name: 'Sanduíche Vegetariano', price: '€5.00' }
           ]
         },
         beverages: {
           title: 'Bebidas',
           items: [
-            { name: 'Sumo Natural', description: 'Sumos frescos de frutas locais', price: '€3.50' },
-            { name: 'Limonada', description: 'Limonada caseira', price: '€3.00' },
-            { name: 'Água Mineral', description: 'Água natural ou com gás', price: '€1.50' },
-            { name: 'Refrigerante', description: 'Bebidas refrigerantes', price: '€2.50' }
+            { name: 'Sumo Natural', price: '€3.50' },
+            { name: 'Limonada', price: '€3.00' },
+            { name: 'Água Mineral', price: '€1.50' },
+            { name: 'Refrigerante', price: '€2.50' }
           ]
         },
         iceCream: {
           title: 'Gelado Quinta dos Açores',
           items: [
-            { name: 'Gelado de Baunilha', description: 'Gelado cremoso de baunilha', price: '€3.50' },
-            { name: 'Gelado de Chocolate', description: 'Gelado rico de chocolate', price: '€3.50' },
-            { name: 'Gelado de Frutos Silvestres', description: 'Gelado de frutos locais', price: '€4.00' },
-            { name: 'Copo de Gelados', description: '3 bolas à escolha', price: '€5.00' }
+            { name: 'Gelado de Baunilha', price: '€3.50' },
+            { name: 'Gelado de Chocolate', price: '€3.50' },
+            { name: 'Gelado de Frutos Silvestres', price: '€4.00' },
+            { name: 'Copo de Gelados', price: '€5.00' }
           ]
         }
       }
@@ -257,47 +257,47 @@ export default async function MenuPage({ params }: Props) {
         specialtyCoffee: {
           title: 'Café Spécial',
           items: [
-            { name: 'Espresso', description: 'Café pur et intense', price: '€2.50' },
-            { name: 'Cappuccino', description: 'Espresso avec lait crémeux', price: '€3.50' },
-            { name: 'Latte', description: 'Café doux avec lait', price: '€3.00' },
-            { name: 'Americano', description: 'Café long et doux', price: '€2.80' },
-            { name: 'Mocha', description: 'Café avec chocolat et lait', price: '€4.00' }
+            { name: 'Espresso', price: '€2.50' },
+            { name: 'Cappuccino', price: '€3.50' },
+            { name: 'Latte', price: '€3.00' },
+            { name: 'Americano', price: '€2.80' },
+            { name: 'Mocha', price: '€4.00' }
           ]
         },
         tea: {
           title: 'Thé',
           items: [
-            { name: 'Thé Noir', description: 'Thé noir traditionnel', price: '€2.00' },
-            { name: 'Thé Vert', description: 'Thé vert frais', price: '€2.00' },
-            { name: 'Thé d\'Herbes', description: 'Infusion d\'herbes locales', price: '€2.50' },
-            { name: 'Thé de Fruits', description: 'Thé de fruits sauvages', price: '€2.50' }
+            { name: 'Thé Noir', price: '€2.00' },
+            { name: 'Thé Vert', price: '€2.00' },
+            { name: 'Thé d\'Herbes', price: '€2.50' },
+            { name: 'Thé de Fruits', price: '€2.50' }
           ]
         },
         lightMeals: {
           title: 'Petits Repas',
           items: [
-            { name: 'Pain Maison', description: 'Pain frais de notre boulangerie', price: '€1.50' },
-            { name: 'Sandwich Grillé', description: 'Fromage et jambon grillés', price: '€4.50' },
-            { name: 'Gâteau Maison', description: 'Gâteaux frais quotidiens', price: '€3.00' },
-            { name: 'Sandwich Végétarien', description: 'Légumes frais de la ferme', price: '€5.00' }
+            { name: 'Pain Maison', price: '€1.50' },
+            { name: 'Sandwich Grillé', price: '€4.50' },
+            { name: 'Gâteau Maison', price: '€3.00' },
+            { name: 'Sandwich Végétarien', price: '€5.00' }
           ]
         },
         beverages: {
           title: 'Boissons',
           items: [
-            { name: 'Jus Naturel', description: 'Jus de fruits frais de la ferme', price: '€3.50' },
-            { name: 'Limonade', description: 'Limonade maison', price: '€3.00' },
-            { name: 'Eau Minérale', description: 'Eau naturelle ou gazeuse', price: '€1.50' },
-            { name: 'Soda', description: 'Boissons rafraîchissantes', price: '€2.50' }
+            { name: 'Jus Naturel', price: '€3.50' },
+            { name: 'Limonade', price: '€3.00' },
+            { name: 'Eau Minérale', price: '€1.50' },
+            { name: 'Soda', price: '€2.50' }
           ]
         },
         iceCream: {
           title: 'Gelato Quinta dos Açores',
           items: [
-            { name: 'Gelato alla Vaniglia', description: 'Gelato cremoso alla vaniglia', price: '€3.50' },
-            { name: 'Gelato al Cioccolato', description: 'Gelato ricco al cioccolato', price: '€3.50' },
-            { name: 'Gelato ai Frutti Silvestri', description: 'Gelato ai frutti locali', price: '€4.00' },
-            { name: 'Cono di Gelato', description: '3 boules à choisir', price: '€5.00' }
+            { name: 'Gelato alla Vaniglia', price: '€3.50' },
+            { name: 'Gelato al Cioccolato', price: '€3.50' },
+            { name: 'Gelato ai Frutti Silvestri', price: '€4.00' },
+            { name: 'Cono di Gelato', price: '€5.00' }
           ]
         }
       }
@@ -330,11 +330,8 @@ export default async function MenuPage({ params }: Props) {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.specialtyCoffee.title}</h2>
                   <div className="space-y-4">
                     {t.categories.specialtyCoffee.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -345,11 +342,8 @@ export default async function MenuPage({ params }: Props) {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.tea.title}</h2>
                   <div className="space-y-4">
                     {t.categories.tea.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -360,11 +354,8 @@ export default async function MenuPage({ params }: Props) {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.beverages.title}</h2>
                   <div className="space-y-4">
                     {t.categories.beverages.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -378,22 +369,16 @@ export default async function MenuPage({ params }: Props) {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-4">
                     {t.categories.lightMeals.items.slice(0, 2).map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
                   </div>
                   <div className="space-y-4">
                     {t.categories.lightMeals.items.slice(2).map((item, index) => (
-                      <div key={index + 2} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index + 2} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
@@ -407,11 +392,8 @@ export default async function MenuPage({ params }: Props) {
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
                   <div className="space-y-4">
                     {t.categories.iceCream.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-start border-b border-gray-200 pb-3">
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">{item.name}</h3>
-                          <p className="text-sm text-gray-600">{item.description}</p>
-                        </div>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                         <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                       </div>
                     ))}
