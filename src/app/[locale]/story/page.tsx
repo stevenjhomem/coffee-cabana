@@ -91,20 +91,13 @@ export default async function StoryPage({ params }: Props) {
         ]
       },
       coffeeCraft: {
-        title: 'Crafted With',
-        subtitle: 'Precision & Care',
+        title: 'Our Story Continues With',
+        subtitle: 'Marcel and Marta',
         paragraphs: [
-          'Our approach to coffee is rooted in the same attention to detail we bring to farming. Every bean is carefully selected, every roast is meticulously crafted.',
-          'We believe that great coffee is more than just a beverage—it&apos;s a moment of connection, a pause in the day, a celebration of craftsmanship.',
-          'From our hands to your cup, we ensure that every step of the process honors the journey from farm to table.'
-        ]
-      },
-      family: {
-        title: 'A Family Tradition',
-        subtitle: 'At the heart of everything we do is family—the foundation that keeps us grounded and the inspiration that drives us forward.',
-        paragraphs: [
-          'Our children play in the same fields where we work, learning the value of hard work and the importance of caring for the land. This is more than a business—it&apos;s a legacy we&apos;re building together.',
-          'Every decision we make is guided by the question: &quot;What kind of world do we want to leave for the next generation?&quot; The answer shapes everything from our sustainable farming practices to our commitment to quality.'
+          'Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.',
+          'During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.',
+          'He settled on Terceira Island, where Marta was living. In 2023, Bernardo was searching for someone new to manage Banana Eco Camp and Coffee Cabana. After an extensive search, he recognized that Marcel&apos;s farming background and the versatile skills he had acquired at sea made him the ideal candidate.',
+          'Today, Marcel and Marta live on the farm with their two young daughters. Together, they are always on hand to welcome guests with warmth and care.'
         ]
       },
       footer: {
@@ -132,20 +125,13 @@ export default async function StoryPage({ params }: Props) {
         ]
       },
       coffeeCraft: {
-        title: 'Crafted With',
-        subtitle: 'Precision & Care',
+        title: 'Our Story Continues With',
+        subtitle: 'Marcel and Marta',
         paragraphs: [
-          'Our approach to coffee is rooted in the same attention to detail we bring to farming. Every bean is carefully selected, every roast is meticulously crafted.',
-          'We believe that great coffee is more than just a beverage—it&apos;s a moment of connection, a pause in the day, a celebration of craftsmanship.',
-          'From our hands to your cup, we ensure that every step of the process honors the journey from farm to table.'
-        ]
-      },
-      family: {
-        title: 'A Family Tradition',
-        subtitle: 'At the heart of everything we do is family—the foundation that keeps us grounded and the inspiration that drives us forward.',
-        paragraphs: [
-          'Our children play in the same fields where we work, learning the value of hard work and the importance of caring for the land. This is more than a business—it&apos;s a legacy we&apos;re building together.',
-          'Every decision we make is guided by the question: &quot;What kind of world do we want to leave for the next generation?&quot; The answer shapes everything from our sustainable farming practices to our commitment to quality.'
+          'Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.',
+          'During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.',
+          'He settled on Terceira Island, where Marta was living. In 2023, Bernardo was searching for someone new to manage Banana Eco Camp and Coffee Cabana. After an extensive search, he recognized that Marcel&apos;s farming background and the versatile skills he had acquired at sea made him the ideal candidate.',
+          'Today, Marcel and Marta live on the farm with their two young daughters. Together, they are always on hand to welcome guests with warmth and care.'
         ]
       },
       footer: {
@@ -181,14 +167,6 @@ export default async function StoryPage({ params }: Props) {
           'Von unseren Händen zu Ihrer Tasse stellen wir sicher, dass jeder Schritt des Prozesses die Reise von der Farm zum Tisch ehrt.'
         ]
       },
-      family: {
-        title: 'Eine Familientradition',
-        subtitle: 'Im Herzen alles, was wir tun, steht die Familie—das Fundament, das uns erdet, und die Inspiration, die uns vorantreibt.',
-        paragraphs: [
-          'Unsere Kinder spielen in denselben Feldern, in denen wir arbeiten, und lernen den Wert harter Arbeit und die Bedeutung der Fürsorge für das Land. Dies ist mehr als ein Geschäft—es ist ein Vermächtnis, das wir gemeinsam aufbauen.',
-          'Jede Entscheidung, die wir treffen, wird von der Frage geleitet: &quot;Welche Art von Welt wollen wir für die nächste Generation hinterlassen?&quot; Die Antwort prägt alles, von unseren nachhaltigen Anbaumethoden bis zu unserem Engagement für Qualität.'
-        ]
-      },
       footer: {
         title: 'Erleben Sie unsere Geschichte',
         subtitle: 'Eine Tasse nach der anderen',
@@ -222,14 +200,6 @@ export default async function StoryPage({ params }: Props) {
           'De nuestras manos a su taza, nos aseguramos de que cada paso del proceso honre el viaje de la granja a la mesa.'
         ]
       },
-      family: {
-        title: 'Una Tradición Familiar',
-        subtitle: 'En el corazón de todo lo que hacemos está la familia—la base que nos mantiene conectados a tierra y la inspiración que nos impulsa hacia adelante.',
-        paragraphs: [
-          'Nuestros hijos juegan en los mismos campos donde trabajamos, aprendiendo el valor del trabajo duro y la importancia de cuidar la tierra. Esto es más que un negocio—es un legado que estamos construyendo juntos.',
-          'Cada decisión que tomamos está guiada por la pregunta: &quot;¿Qué tipo de mundo queremos dejar para la próxima generación?&quot; La respuesta moldea todo, desde nuestras prácticas agrícolas sostenibles hasta nuestro compromiso con la calidad.'
-        ]
-      },
       footer: {
         title: 'Experimenta Nuestra Historia',
         subtitle: 'Una Taza a la Vez',
@@ -261,14 +231,6 @@ export default async function StoryPage({ params }: Props) {
           'Notre approche du café est ancrée dans le même souci du détail que nous apportons à l\'agriculture. Chaque grain est soigneusement sélectionné, chaque torréfaction est méticuleusement élaborée.',
           'Nous croyons que le grand café est plus qu\'une simple boisson—c\'est un moment de connexion, une pause dans la journée, une célébration de l\'artisanat.',
           'De nos mains à votre tasse, nous nous assurons que chaque étape du processus honore le voyage de la ferme à la table.'
-        ]
-      },
-      family: {
-        title: 'Une Tradition Familiale',
-        subtitle: 'Au cœur de tout ce que nous faisons se trouve la famille—la fondation qui nous garde ancrés et l\'inspiration qui nous pousse vers l\'avant.',
-        paragraphs: [
-          'Nos enfants jouent dans les mêmes champs où nous travaillons, apprenant la valeur du travail acharné et l\'importance de prendre soin de la terre. C\'est plus qu\'une entreprise—c\'est un héritage que nous construisons ensemble.',
-          'Chaque décision que nous prenons est guidée par la question : &quot;Quel type de monde voulons-nous laisser à la prochaine génération ?&quot; La réponse façonne tout, de nos pratiques agricoles durables à notre engagement envers la qualité.'
         ]
       },
       footer: {
@@ -331,7 +293,7 @@ export default async function StoryPage({ params }: Props) {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight text-black">
+              <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
                 {t.story.title}
                 <br />
                 <span className="text-amber-600">{t.story.name}</span>
@@ -362,8 +324,8 @@ export default async function StoryPage({ params }: Props) {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
               <Image
-                src="/images/coffee/Banana_EcoCamp-01.jpg"
-                alt="Artisan coffee brewing process"
+                src="/images/coffee/family.png"
+                alt="Marcel and Marta family"
                 width={600}
                 height={600}
                 className="rounded-lg"
@@ -371,7 +333,7 @@ export default async function StoryPage({ params }: Props) {
               <div className="absolute -top-6 -left-6 w-32 h-32 border border-amber-600 opacity-20 rounded-full" />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight text-black">
+              <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
                 {t.coffeeCraft.title}
                 <br />
                 <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
@@ -386,53 +348,10 @@ export default async function StoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Family Section */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#fafaf9' }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-black">
-              {t.family.title.split(' ').slice(0, 1).join(' ')} <span className="text-amber-600">{t.family.title.split(' ').slice(1).join(' ')}</span>
-            </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              {t.family.subtitle}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div className="relative">
-              <Image
-                src="/images/coffee/family.png"
-                alt="Our family"
-                width={600}
-                height={400}
-                className="rounded-lg w-full h-80 object-cover"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/images/coffee/marta.png"
-                alt="Marta with child"
-                width={600}
-                height={400}
-                className="rounded-lg w-full h-80 object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-gray-700">
-              {t.family.paragraphs.map((paragraph, index) => (
-                <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer CTA */}
-      <section className="py-24 px-6 bg-amber-50">
+      <section className="py-24 px-6 bg-stone-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-light mb-8 text-black">
+          <h2 className="text-3xl md:text-4xl font-light mb-8 text-black">
             {t.footer.title}
             <br />
             <span className="text-amber-600">{t.footer.subtitle}</span>

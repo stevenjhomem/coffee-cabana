@@ -61,20 +61,13 @@ export default function StoryPage() {
       ]
     },
     coffeeCraft: {
-      title: 'Crafted With',
-      subtitle: 'Precision & Care',
+      title: 'Our Story Continues With',
+      subtitle: 'Marcel and Marta',
       paragraphs: [
-        'Our approach to coffee is rooted in the same attention to detail we bring to farming. Every bean is carefully selected, every roast is meticulously crafted.',
-        'We believe that great coffee is more than just a beverage—it&apos;s a moment of connection, a pause in the day, a celebration of craftsmanship.',
-        'From our hands to your cup, we ensure that every step of the process honors the journey from farm to table.'
-      ]
-    },
-    family: {
-      title: 'A Family Tradition',
-      subtitle: 'At the heart of everything we do is family—the foundation that keeps us grounded and the inspiration that drives us forward.',
-      paragraphs: [
-        'Our children play in the same fields where we work, learning the value of hard work and the importance of caring for the land. This is more than a business—it&apos;s a legacy we&apos;re building together.',
-        'Every decision we make is guided by the question: &quot;What kind of world do we want to leave for the next generation?&quot; The answer shapes everything from our sustainable farming practices to our commitment to quality.'
+        'Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.',
+        'During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.',
+        'He settled on Terceira Island, where Marta was living. In 2023, Bernardo was searching for someone new to manage Banana Eco Camp and Coffee Cabana. After an extensive search, he recognized that Marcel&apos;s farming background and the versatile skills he had acquired at sea made him the ideal candidate.',
+        'Today, Marcel and Marta live on the farm with their two young daughters. Together, they are always on hand to welcome guests with warmth and care.'
       ]
     },
     footer: {
@@ -136,7 +129,7 @@ export default function StoryPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight text-black">
+              <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
                 {t.story.title}
                 <br />
                 <span className="text-amber-600">{t.story.name}</span>
@@ -167,8 +160,8 @@ export default function StoryPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
               <Image
-                src="/images/coffee/Banana_EcoCamp-01.jpg"
-                alt="Artisan coffee brewing process"
+                src="/images/coffee/family.png"
+                alt="Marcel and Marta family"
                 width={600}
                 height={600}
                 className="rounded-lg"
@@ -176,7 +169,7 @@ export default function StoryPage() {
               <div className="absolute -top-6 -left-6 w-32 h-32 border border-amber-600 opacity-20 rounded-full" />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight text-black">
+              <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
                 {t.coffeeCraft.title}
                 <br />
                 <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
@@ -191,53 +184,10 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* Family Section */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#fafaf9' }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-black">
-              {t.family.title.split(' ').slice(0, 1).join(' ')} <span className="text-amber-600">{t.family.title.split(' ').slice(1).join(' ')}</span>
-            </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              {t.family.subtitle}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div className="relative">
-              <Image
-                src="/images/coffee/family.png"
-                alt="Our family"
-                width={600}
-                height={400}
-                className="rounded-lg w-full h-80 object-cover"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/images/coffee/marta.png"
-                alt="Marta with child"
-                width={600}
-                height={400}
-                className="rounded-lg w-full h-80 object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-gray-700">
-              {t.family.paragraphs.map((paragraph, index) => (
-                <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer CTA */}
-      <section className="py-24 px-6 bg-amber-50">
+      <section className="py-24 px-6 bg-stone-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-light mb-8 text-black">
+          <h2 className="text-3xl md:text-4xl font-light mb-8 text-black">
             {t.footer.title}
             <br />
             <span className="text-amber-600">{t.footer.subtitle}</span>
