@@ -118,7 +118,7 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-white">
       {/* Background Image (hidden on mobile) */}
       <div className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
            style={{ backgroundImage: 'url(/images/coffee/farm.jpeg)' }}>
