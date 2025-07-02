@@ -84,8 +84,6 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             backgroundImage: `url('/images/coffee/Banana_EcoCamp-02.jpg')`
           }}
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Hero Content */}
