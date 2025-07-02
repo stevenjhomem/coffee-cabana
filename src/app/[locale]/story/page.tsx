@@ -347,7 +347,32 @@ export default async function StoryPage({ params }: Props) {
       <section className="py-24 bg-amber-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 relative">
+            {/* Mobile: Title + Image + Text */}
+            <div className="lg:hidden">
+              <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
+                {t.coffeeCraft.title}
+                <br />
+                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
+              </h2>
+              <div className="relative mb-8">
+                <Image
+                  src="/images/coffee/family.png"
+                  alt="Marcel and Marta family"
+                  width={600}
+                  height={600}
+                  className="rounded-lg"
+                />
+                <div className="absolute -top-6 -left-6 w-32 h-32 border border-amber-600 opacity-20 rounded-full" />
+              </div>
+              <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+                {t.coffeeCraft.paragraphs.map((paragraph, index) => (
+                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                ))}
+              </div>
+            </div>
+            
+            {/* Desktop: Image + Text (original layout) */}
+            <div className="hidden lg:block order-2 lg:order-1 relative">
               <Image
                 src="/images/coffee/family.png"
                 alt="Marcel and Marta family"
@@ -357,7 +382,7 @@ export default async function StoryPage({ params }: Props) {
               />
               <div className="absolute -top-6 -left-6 w-32 h-32 border border-amber-600 opacity-20 rounded-full" />
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="hidden lg:block order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
                 {t.coffeeCraft.title}
                 <br />
