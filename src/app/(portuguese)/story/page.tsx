@@ -1,46 +1,15 @@
-import type { Metadata } from 'next'
+'use client'
+
 import React from 'react'
 import Image from "next/image"
 import { Button } from "@/components/ui/Button"
 
-export const metadata: Metadata = {
-  title: 'Sobre Nós - Coffee Cabana | Açores',
-  description: 'Descubra a história por detrás do Coffee Cabana, a única quinta de café na Ilha Terceira, e o nosso compromisso com o café orgânico e a agricultura sustentável.',
-  keywords: 'sobre Coffee Cabana, quinta de café Terceira, café orgânico Açores, agricultura sustentável',
-  authors: [{ name: 'Coffee Cabana' }],
-  creator: 'Coffee Cabana',
-  publisher: 'Coffee Cabana',
-  robots: 'index, follow',
-  openGraph: {
-    title: 'Sobre Nós - Coffee Cabana | Açores',
-    description: 'Descubra a história por detrás do Coffee Cabana, a única quinta de café na Ilha Terceira, e o nosso compromisso com o café orgânico e a agricultura sustentável.',
-    url: 'https://coffeecabana.pt/about',
-    siteName: 'Coffee Cabana',
-    locale: 'pt_PT',
-    type: 'website',
-    images: [
-      {
-        url: '/images/coffee/coffee-cabana-instagram.png',
-        width: 1200,
-        height: 630,
-        alt: 'Sobre Nós - Coffee Cabana | Açores',
-        type: 'image/png',
-      },
-    ],
-  },
-  alternates: {
-    canonical: 'https://coffeecabana.pt/about',
-    languages: {
-      'pt': 'https://coffeecabana.pt/about',
-      'en': 'https://coffeecabana.pt/en/about',
-      'de': 'https://coffeecabana.pt/de/about',
-      'es': 'https://coffeecabana.pt/es/about',
-      'fr': 'https://coffeecabana.pt/fr/about',
-    },
-  },
-}
-
 export default function StoryPage() {
+  const openGoogleMaps = () => {
+    const address = encodeURIComponent('Coffee Cabana, R. Q.ta Dona Joana Forjaz, 9700-559, Portugal')
+    window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank')
+  }
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
@@ -186,7 +155,7 @@ export default function StoryPage() {
           </div>
 
           <div className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-gray-700 mb-12">
+            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-gray-700">
               <p>
                 Our children play in the same fields where we work, learning the value of hard work and the importance
                 of caring for the land. This is more than a business—it's a legacy we're building together.
@@ -197,15 +166,12 @@ export default function StoryPage() {
                 quality.
               </p>
             </div>
-            <Button size="lg" className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-3 text-lg font-medium">
-              Visit Our Café
-            </Button>
           </div>
         </div>
       </section>
 
       {/* Footer CTA */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-amber-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-light mb-8 text-black">
             Experience Our Story
@@ -215,16 +181,13 @@ export default function StoryPage() {
           <p className="text-xl text-gray-700 mb-12 leading-relaxed">
             Visit us to taste the difference that passion, quality, and family tradition make.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-3 text-lg font-medium">
-              Find Our Location
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 text-lg font-medium bg-transparent"
+          <div className="flex justify-center">
+            <Button 
+              size="lg" 
+              className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-3 text-lg font-medium"
+              onClick={openGoogleMaps}
             >
-              Shop Our Coffee
+              Come Visit Us
             </Button>
           </div>
         </div>

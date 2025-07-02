@@ -1,73 +1,14 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Image from "next/image"
 import { Button } from "@/components/ui/Button"
 
-interface Props {
-  params: Promise<{ locale: string }>
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params
-
-  const metaData = {
-    en: {
-      title: 'Our Story - Coffee Cabana | Azores',
-      description: 'Discover the story of Coffee Cabana, from plantation to cup, in the heart of Terceira Island.',
-    },
-    de: {
-      title: 'Unsere Geschichte - Coffee Cabana | Azoren',
-      description: 'Entdecken Sie die Geschichte von Coffee Cabana, von der Plantage bis zur Tasse, im Herzen der Insel Terceira.',
-    },
-    es: {
-      title: 'Nuestra Historia - Coffee Cabana | Azores',
-      description: 'Descubre la historia de Coffee Cabana, desde la plantación hasta la taza, en el corazón de la Isla Terceira.',
-    },
-    fr: {
-      title: 'Notre Histoire - Coffee Cabana | Açores',
-      description: 'Découvrez l\'histoire de Coffee Cabana, de la plantation à la tasse, au cœur de l\'île de Terceira.',
-    },
-  }
-
-  const currentMeta = metaData[locale as keyof typeof metaData] || metaData.en
-
-  return {
-    ...currentMeta,
-    keywords: 'história café Terceira, coffee story Azores, plantation café Açores, coffee farm Terceira',
-    authors: [{ name: 'Coffee Cabana' }],
-    creator: 'Coffee Cabana',
-    publisher: 'Coffee Cabana',
-    robots: 'index, follow',
-    openGraph: {
-      title: currentMeta.title,
-      description: currentMeta.description,
-      url: `https://coffeecabana.pt/${locale}/story`,
-      siteName: 'Coffee Cabana',
-      locale: `${locale}_${locale.toUpperCase()}`,
-      type: 'website',
-      images: [
-        {
-          url: '/images/coffee/coffee-cabana-instagram.png',
-          width: 1200,
-          height: 630,
-          alt: currentMeta.title,
-          type: 'image/png',
-        },
-      ],
-    },
-    alternates: {
-      canonical: `https://coffeecabana.pt/${locale}/story`,
-      languages: {
-        'pt': 'https://coffeecabana.pt/story',
-        'en': 'https://coffeecabana.pt/en/story',
-        'de': 'https://coffeecabana.pt/de/story',
-        'es': 'https://coffeecabana.pt/es/story',
-        'fr': 'https://coffeecabana.pt/fr/story',
-      },
-    },
-  }
-}
-
 export default function StoryPage() {
+  const openGoogleMaps = () => {
+    const address = encodeURIComponent('Coffee Cabana, R. Q.ta Dona Joana Forjaz, 9700-559, Portugal')
+    window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank')
+  }
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
@@ -211,7 +152,7 @@ export default function StoryPage() {
           </div>
 
           <div className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-gray-700 mb-12">
+            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-gray-700">
               <p>
                 Our children play in the same fields where we work, learning the value of hard work and the importance
                 of caring for the land. This is more than a business—it's a legacy we're building together.
@@ -222,15 +163,12 @@ export default function StoryPage() {
                 quality.
               </p>
             </div>
-            <Button size="lg" className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-3 text-lg font-medium">
-              Visit Our Café
-            </Button>
           </div>
         </div>
       </section>
 
       {/* Footer CTA */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-amber-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-light mb-8 text-black">
             Experience Our Story
@@ -240,16 +178,13 @@ export default function StoryPage() {
           <p className="text-xl text-gray-700 mb-12 leading-relaxed">
             Visit us to taste the difference that passion, quality, and family tradition make.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-3 text-lg font-medium">
-              Find Our Location
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 text-lg font-medium bg-transparent"
+          <div className="flex justify-center">
+            <Button 
+              size="lg" 
+              className="bg-amber-400 text-black hover:bg-amber-300 px-8 py-3 text-lg font-medium"
+              onClick={openGoogleMaps}
             >
-              Shop Our Coffee
+              Come Visit Us
             </Button>
           </div>
         </div>
