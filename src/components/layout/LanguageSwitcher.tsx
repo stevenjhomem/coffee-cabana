@@ -36,8 +36,13 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
     } else {
       // We're on a non-default locale page
       if (targetLocale === defaultLocale) {
-        // Remove the locale prefix for Portuguese
-        return pathname.replace(`/${currentLocale}`, '')
+        // Remove the locale prefix for Portuguese, and also handle /pt or /pt/ if present
+        let newPath = pathname.replace(`/${currentLocale}`, '')
+        // Extra safety: remove /pt or /pt/ if present at the start
+        newPath = newPath.replace(/^\/pt(\/|$)/, '/')
+        // Ensure single leading slash
+        if (!newPath.startsWith('/')) newPath = '/' + newPath
+        return newPath
       } else {
         // Replace the current locale with the target locale
         return pathname.replace(`/${currentLocale}`, `/${targetLocale}`)
