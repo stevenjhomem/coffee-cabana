@@ -69,8 +69,8 @@ export default function StoryPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/coffee/marcelworking.png"
-                alt="Marcel working in the banana plantation"
+                src="/images/coffee/bernardo.jpeg"
+                alt="Bernardo working in the banana plantation"
                 width={600}
                 height={600}
                 className="rounded-lg"

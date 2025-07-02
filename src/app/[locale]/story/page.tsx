@@ -64,16 +64,16 @@ export default function StoryPage() {
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <Image
-                src="/images/coffee/marcelworking.png"
-                alt="Marcel working in the banana plantation"
-                width={600}
-                height={600}
-                className="rounded-lg"
-              />
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-amber-600 rounded-full opacity-60" />
-            </div>
+                          <div className="relative">
+                <Image
+                  src="/images/coffee/bernardo.jpeg"
+                  alt="Bernardo working in the banana plantation"
+                  width={600}
+                  height={600}
+                  className="rounded-lg"
+                />
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-amber-600 rounded-full opacity-60" />
+              </div>
           </div>
         </div>
       </section>
