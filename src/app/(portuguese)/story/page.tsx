@@ -128,7 +128,32 @@ export default function StoryPage() {
       <section className="py-24 px-6 bg-white text-black">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-            <div>
+            {/* Mobile: Title + Image + Text */}
+            <div className="lg:hidden">
+              <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
+                {t.story.title}
+                <br />
+                <span className="text-amber-600">{t.story.name}</span>
+              </h2>
+              <div className="relative mb-8">
+                <Image
+                  src="/images/coffee/bernardo.jpeg"
+                  alt="Bernardo working in the banana plantation"
+                  width={600}
+                  height={600}
+                  className="rounded-lg"
+                />
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-amber-600 rounded-full opacity-60" />
+              </div>
+              <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+                {t.story.paragraphs.map((paragraph, index) => (
+                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                ))}
+              </div>
+            </div>
+            
+            {/* Desktop: Text + Image (original layout) */}
+            <div className="hidden lg:block">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
                 {t.story.title}
                 <br />
@@ -140,7 +165,7 @@ export default function StoryPage() {
                 ))}
               </div>
             </div>
-            <div className="relative">
+            <div className="hidden lg:block relative">
               <Image
                 src="/images/coffee/bernardo.jpeg"
                 alt="Bernardo working in the banana plantation"
