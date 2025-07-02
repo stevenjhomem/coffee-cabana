@@ -45,9 +45,9 @@ export default function StoryPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
               <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight text-black">
-                Our Story Begins
+                Our Story Begins With
                 <br />
-                <span className="text-amber-600"> WithJosé Bernardo</span>
+                <span className="text-amber-600">José Bernardo</span>
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 <p>
@@ -57,10 +57,10 @@ export default function StoryPage() {
                   When the war broke out in Angola, like many other Portuguese families, they were forced to flee—returning to Portugal empty-handed.
                 </p>
                 <p>
-                  Soon after, they emigrated to California, USA. However, it wasn't long before José decided to return to his roots on Terceira. Back home, he worked for the regional government as the CEO of the Agriculture Department.
+                  Soon after, they emigrated to California, USA. However, it wasn&apos;t long before José decided to return to his roots on Terceira. Back home, he worked for the regional government as the CEO of the Agriculture Department.
                 </p>
                 <p>
-                  After retiring, he purchased a piece of land he believed had the potential to grow tropical fruits. That's when he began planting bananas and coffee.
+                  After retiring, he purchased a piece of land he believed had the potential to grow tropical fruits. That&apos;s when he began planting bananas and coffee.
                 </p>
                 <p>
                   In 2016, as a personal project and hobby, he built his first wooden cabin. Today, that vision has expanded into a beautiful eco retreat with six simple cabins, three luxury cabins, and various amenities throughout the property.
@@ -110,7 +110,7 @@ export default function StoryPage() {
                   carefully selected, every roast is meticulously crafted.
                 </p>
                 <p>
-                  We believe that great coffee is more than just a beverage—it's a moment of connection, a pause in the
+                  We believe that great coffee is more than just a beverage—it&apos;s a moment of connection, a pause in the
                   day, a celebration of craftsmanship.
                 </p>
                 <p>
@@ -159,15 +159,15 @@ export default function StoryPage() {
 
           <div className="text-center">
             <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-gray-700">
-              <p>
-                Our children play in the same fields where we work, learning the value of hard work and the importance
-                of caring for the land. This is more than a business—it's a legacy we're building together.
-              </p>
-              <p>
-                Every decision we make is guided by the question: "What kind of world do we want to leave for the next
-                generation?" The answer shapes everything from our sustainable farming practices to our commitment to
-                quality.
-              </p>
+                              <p>
+                  Our children play in the same fields where we work, learning the value of hard work and the importance
+                  of caring for the land. This is more than a business—it&apos;s a legacy we&apos;re building together.
+                </p>
+                              <p>
+                  Every decision we make is guided by the question: &quot;What kind of world do we want to leave for the next
+                  generation?&quot; The answer shapes everything from our sustainable farming practices to our commitment to
+                  quality.
+                </p>
             </div>
           </div>
         </div>
