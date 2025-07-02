@@ -458,7 +458,7 @@ export default async function MenuPage({ params }: Props) {
   return (
     <div className="min-h-screen relative">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70" 
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
            style={{ backgroundImage: 'url(/images/coffee/farm.jpeg)' }}>
       </div>
       
@@ -477,7 +477,7 @@ export default async function MenuPage({ params }: Props) {
           <div className="block md:hidden">
             {/* Specialty Coffee */}
             <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-5 shadow-2xl border border-white/30 w-full">
+              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
                 <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.specialtyCoffee.title}</h2>
                 <div className="space-y-1">
                   {t.categories.specialtyCoffee.items.map((item, index) => (
@@ -491,7 +491,7 @@ export default async function MenuPage({ params }: Props) {
             </div>
             {/* Tea */}
             <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-5 shadow-2xl border border-white/30 w-full">
+              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
                 <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.tea.title}</h2>
                 <div className="space-y-1">
                   {t.categories.tea.items.map((item, index) => (
@@ -505,7 +505,7 @@ export default async function MenuPage({ params }: Props) {
             </div>
             {/* Beverages */}
             <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-5 shadow-2xl border border-white/30 w-full">
+              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
                 <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
                 <div className="space-y-1">
                   {t.categories.beverages.items.map((item, index) => (
@@ -519,7 +519,7 @@ export default async function MenuPage({ params }: Props) {
             </div>
             {/* Light Meals */}
             <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-5 shadow-2xl border border-white/30 w-full">
+              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
                 <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
                 <div className="space-y-2">
                   {t.categories.lightMeals.items.map((item, index) => (
@@ -538,7 +538,7 @@ export default async function MenuPage({ params }: Props) {
             </div>
             {/* Ice Cream */}
             <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-5 shadow-2xl border border-white/30 w-full">
+              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
                 <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.iceCream.title}</h2>
                 <div className="space-y-1">
                   {t.categories.iceCream.items.map((item, index) => (
@@ -557,7 +557,7 @@ export default async function MenuPage({ params }: Props) {
             {/* Coffee & Tea Section: Two Columns in One Card */}
             <div className="max-w-6xl mx-auto px-6 mb-8">
               <div className="flex justify-center">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+                <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
                   <div className="flex flex-col md:flex-row gap-8">
                     {/* Specialty Coffee Column */}
                     <div className="flex-1">
@@ -591,7 +591,7 @@ export default async function MenuPage({ params }: Props) {
             {/* Beverages Section (remains below) */}
             <div className="max-w-6xl mx-auto px-6 mb-12">
               <div className="flex justify-center">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+                <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
                   <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
                   <div className="flex">
                     {(() => {
@@ -622,7 +622,7 @@ export default async function MenuPage({ params }: Props) {
             {/* Second Row: Light Meals */}
             <div className="max-w-6xl mx-auto px-6 mb-12">
               <div className="flex justify-center">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+                <div className="bg-white rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
                   <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
                   <div className="grid grid-cols-2 gap-y-2">
                     {t.categories.lightMeals.items.map((item, index) => (
@@ -646,7 +646,7 @@ export default async function MenuPage({ params }: Props) {
             {/* Third Row: Ice Cream */}
             <div className="max-w-6xl mx-auto px-6">
               <div className="flex justify-center">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
+                <div className="bg-white rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
                   <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
                   <div className="space-y-4">
                     {t.categories.iceCream.items.map((item, index) => (
