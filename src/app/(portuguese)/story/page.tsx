@@ -48,22 +48,28 @@ export default function StoryPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
               <h2 className="text-4xl md:text-5xl font-light mb-8 leading-tight text-black">
-                Our Story Begins
+                Our Story Begins With
                 <br />
-                <span className="text-amber-600">In The Fields</span>
+                <span className="text-amber-600">José Bernardo</span>
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 <p>
-                  What started as a passion for sustainable agriculture has grown into something beautiful—a connection
-                  between the earth we tend and the coffee we craft.
+                  José is the one who started it all. Born on Terceira Island, he moved to Angola, Africa, with his family in 1958 at the age of eight. From the late 1950s through the early 1970s, they managed a farm, where José gained extensive knowledge and experience in African agriculture.
                 </p>
                 <p>
-                  Our journey began in the banana plantations, where we learned the value of patience, quality, and
-                  respect for the land. These same principles guide everything we do today.
+                  When the war broke out in Angola, like many other Portuguese families, they were forced to flee—returning to Portugal empty-handed.
                 </p>
                 <p>
-                  Every cup tells a story of dedication, from the farmers who nurture the beans to the baristas who
-                  perfect each brew.
+                  Soon after, they emigrated to California, USA. However, it wasn't long before José decided to return to his roots on Terceira. Back home, he worked for the regional government as the CEO of the Agriculture Department.
+                </p>
+                <p>
+                  After retiring, he purchased a piece of land he believed had the potential to grow tropical fruits. That's when he began planting bananas and coffee.
+                </p>
+                <p>
+                  In 2016, as a personal project and hobby, he built his first wooden cabin. Today, that vision has expanded into a beautiful eco retreat with six simple cabins, three luxury cabins, and various amenities throughout the property.
+                </p>
+                <p>
+                  In 2019, he created Coffee Cabana. Originally intended to serve guests, it quickly became a place to share their unique, homegrown coffee with the public.
                 </p>
               </div>
             </div>
