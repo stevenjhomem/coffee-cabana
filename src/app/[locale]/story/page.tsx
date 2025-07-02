@@ -291,7 +291,7 @@ export default async function StoryPage({ params }: Props) {
       {/* Story Section */}
       <section className="py-24 px-6 bg-white text-black">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Mobile: Title + Image + Text */}
             <div className="lg:hidden">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
