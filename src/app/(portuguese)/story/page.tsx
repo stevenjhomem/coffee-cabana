@@ -71,7 +71,7 @@ export default function StoryPage() {
       ]
     },
     footer: {
-      title: 'Experience Our Story',
+      title: 'Come Be Part Of Our Story',
       subtitle: 'One Cup At A Time',
       description: 'Visit us to taste the difference that passion, quality, and family tradition make.',
       button: 'Come Visit Us'

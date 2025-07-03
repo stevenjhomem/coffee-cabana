@@ -1,79 +1,21 @@
-import type { Metadata } from 'next'
-import React, { Fragment } from 'react'
+'use client'
 
-interface Props {
-  params: Promise<{ locale: string }>
-}
+import React, { Fragment, useState } from 'react'
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params
-
-  const metaData = {
-    en: {
-      title: 'Menu - Coffee Cabana | Azores',
-      description: 'Explore our artisanal coffee menu and fresh farm products at Coffee Cabana.',
-    },
-    de: {
-      title: 'Menü - Coffee Cabana | Azoren',
-      description: 'Entdecken Sie unser handwerkliches Kaffeemenü und frische Hofprodukte bei Coffee Cabana.',
-    },
-    es: {
-      title: 'Menú - Coffee Cabana | Azores',
-      description: 'Explora nuestro menú de café artesanal y productos frescos de la granja en Coffee Cabana.',
-    },
-    fr: {
-      title: 'Menu - Coffee Cabana | Açores',
-      description: 'Découvrez notre menu de café artisanal et nos produits frais de la ferme chez Coffee Cabana.',
-    },
-  }
-
-  const currentMeta = metaData[locale as keyof typeof metaData] || metaData.en
-
-  return {
-    ...currentMeta,
-    keywords: 'menu café Terceira, café orgânico menu, coffee menu Azores, specialty coffee Terceira',
-    authors: [{ name: 'Coffee Cabana' }],
-    creator: 'Coffee Cabana',
-    publisher: 'Coffee Cabana',
-    robots: 'index, follow',
-    openGraph: {
-      title: currentMeta.title,
-      description: currentMeta.description,
-      url: `https://coffeecabana.pt/${locale}/menu`,
-      siteName: 'Coffee Cabana',
-      locale: `${locale}_${locale.toUpperCase()}`,
-      type: 'website',
-      images: [
-        {
-          url: '/images/coffee/coffee-cabana-instagram.png',
-          width: 1200,
-          height: 630,
-          alt: currentMeta.title,
-          type: 'image/png',
-        },
-      ],
-    },
-    alternates: {
-      canonical: `https://coffeecabana.pt/${locale}/menu`,
-      languages: {
-        'pt': 'https://coffeecabana.pt/menu',
-        'en': 'https://coffeecabana.pt/en/menu',
-        'de': 'https://coffeecabana.pt/de/menu',
-        'es': 'https://coffeecabana.pt/es/menu',
-        'fr': 'https://coffeecabana.pt/fr/menu',
-      },
-    },
-  }
-}
-
-export default async function MenuPage({ params }: Props) {
-  const { locale } = await params
+export default function MenuPage() {
+  const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
 
   const content = {
     pt: {
       title: 'Menu',
       subtitle: 'Café Artesanal & Produtos Frescos',
       intro: 'Descubra os nossos cafés especiais e produtos frescos da quinta, todos preparados com ingredientes locais e métodos tradicionais.',
+      tabs: {
+        specialtyCoffeeAndTea: 'Café Especial e Chá',
+        beverages: 'Bebidas',
+        lightMeals: 'Refeições Ligeiras',
+        iceCream: 'Gelado Quinta dos Açores'
+      },
       categories: {
         specialtyCoffee: {
           title: 'Café Especial',
@@ -151,6 +93,12 @@ export default async function MenuPage({ params }: Props) {
       title: 'Menu',
       subtitle: 'Artisanal Coffee & Fresh Products',
       intro: 'Discover our special coffees and fresh farm products, all prepared with local ingredients and traditional methods.',
+      tabs: {
+        specialtyCoffeeAndTea: 'Specialty Coffee and Tea',
+        beverages: 'Beverages',
+        lightMeals: 'Light Meals',
+        iceCream: 'Quinta dos Açores Ice Cream'
+      },
       categories: {
         specialtyCoffee: {
           title: 'Specialty Coffee',
@@ -227,6 +175,12 @@ export default async function MenuPage({ params }: Props) {
       title: 'Menü',
       subtitle: 'Handwerklicher Kaffee & Frische Produkte',
       intro: 'Entdecken Sie unsere Spezialkaffees und frischen Hofprodukte, alle zubereitet mit lokalen Zutaten und traditionellen Methoden.',
+      tabs: {
+        specialtyCoffeeAndTea: 'Spezialkaffee und Tee',
+        beverages: 'Getränke',
+        lightMeals: 'Lichtes Essen',
+        iceCream: 'Gelato Quinta dos Açores'
+      },
       categories: {
         specialtyCoffee: {
           title: 'Spezialkaffee',
@@ -303,6 +257,12 @@ export default async function MenuPage({ params }: Props) {
       title: 'Menú',
       subtitle: 'Café Artesanal y Productos Frescos',
       intro: 'Descubre nuestros cafés especiales y productos frescos de la granja, todos preparados con ingredientes locales y métodos tradicionales.',
+      tabs: {
+        specialtyCoffeeAndTea: 'Café Especial y Té',
+        beverages: 'Bebidas',
+        lightMeals: 'Comidas Ligeras',
+        iceCream: 'Gelado Quinta dos Açores'
+      },
       categories: {
         specialtyCoffee: {
           title: 'Café Especial',
@@ -379,6 +339,12 @@ export default async function MenuPage({ params }: Props) {
       title: 'Menu',
       subtitle: 'Café Artisanal et Produits Frais',
       intro: 'Découvrez nos cafés spéciaux et nos produits frais de la ferme, tous préparés avec des ingrédients locaux et des méthodes traditionnelles.',
+      tabs: {
+        specialtyCoffeeAndTea: 'Café Spécial et Thé',
+        beverages: 'Boissons',
+        lightMeals: 'Petits Repas',
+        iceCream: 'Gelato Quinta dos Açores'
+      },
       categories: {
         specialtyCoffee: {
           title: 'Café Spécial',
@@ -453,13 +419,115 @@ export default async function MenuPage({ params }: Props) {
     }
   }
 
-  const t = content[locale as keyof typeof content] || content.pt
+  // For now, default to English content - you can add locale detection later
+  const t = content.en
+
+  const renderMenuContent = () => {
+    switch (activeTab) {
+      case 'specialtyCoffeeAndTea':
+        return (
+          <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Specialty Coffee Column */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.specialtyCoffee.title}</h3>
+                <div className="space-y-1">
+                  {t.categories.specialtyCoffee.items.map((item, index) => (
+                    <div key={index} className="flex justify-between items-center py-1">
+                      <h4 className="text-sm font-semibold text-gray-800">{item.name}</h4>
+                      <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Tea Column */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.tea.title}</h3>
+                <div className="space-y-1">
+                  {t.categories.tea.items.map((item, index) => (
+                    <div key={index} className="flex justify-between items-center py-1">
+                      <h4 className="text-sm font-semibold text-gray-800">{item.name}</h4>
+                      <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      case 'beverages':
+        return (
+          <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+            <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
+            <div className="flex">
+              {(() => {
+                const items = t.categories.beverages.items;
+                const mid = Math.ceil(items.length / 2);
+                const firstCol = items.slice(0, mid);
+                const secondCol = items.slice(mid);
+                return [firstCol, secondCol].map((col, colIdx) => (
+                  <Fragment key={colIdx}>
+                    <div className="flex-1 px-2 flex flex-col">
+                      <div className="space-y-1 flex-1">
+                        {col.map((item, index) => (
+                          <div key={index} className="flex justify-between items-center py-1">
+                            <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
+                            <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </Fragment>
+                ));
+              })()}
+            </div>
+          </div>
+        )
+      case 'lightMeals':
+        return (
+          <div className="bg-white rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2">
+              {t.categories.lightMeals.items.map((item, index) => (
+                <div key={index} className="border-b border-gray-200 pb-2 px-4">
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1">
+                      <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+                      {'description' in item && item.description && (
+                        <p className="text-sm text-gray-600 mt-1 italic">{item.description}</p>
+                      )}
+                    </div>
+                    <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      case 'iceCream':
+        return (
+          <div className="bg-white rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
+            <div className="space-y-4">
+              {t.categories.iceCream.items.map((item, index) => (
+                <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                  <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+                  <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      default:
+        return null
+    }
+  }
 
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: '#9e520a' }}>
       {/* Background Image (hidden on mobile) */}
       <div className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
-           style={{ backgroundImage: 'url(/images/coffee/farm.jpeg)' }}>
+           style={{ backgroundImage: 'url(/images/coffee/Banana_EcoCamp-52.jpg)' }}>
       </div>
       
       {/* Content */}
@@ -469,195 +537,35 @@ export default async function MenuPage({ params }: Props) {
           <div className="max-w-6xl mx-auto px-6">
             {/* Title and Intro */}
             <div className="text-center mb-16">
-              <h1 className="text-6xl font-bold text-black mb-4">Our {t.title}</h1>
-            </div>
-          </div>
-
-          {/* Mobile: One section per category */}
-          <div className="block md:hidden">
-            {/* Specialty Coffee */}
-            <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
-                <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.specialtyCoffee.title}</h2>
-                <div className="space-y-1">
-                  {t.categories.specialtyCoffee.items.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center py-1">
-                      <span className="text-sm font-semibold text-gray-800">{item.name}</span>
-                      <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* Tea */}
-            <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
-                <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.tea.title}</h2>
-                <div className="space-y-1">
-                  {t.categories.tea.items.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center py-1">
-                      <span className="text-sm font-semibold text-gray-800">{item.name}</span>
-                      <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* Beverages */}
-            <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
-                <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
-                <div className="space-y-1">
-                  {t.categories.beverages.items.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center py-1">
-                      <span className="text-sm font-semibold text-gray-800">{item.name}</span>
-                      <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* Light Meals */}
-            <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
-                <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
-                <div className="space-y-2">
-                  {t.categories.lightMeals.items.map((item, index) => (
-                    <div key={index} className="flex justify-between items-start py-1">
-                      <div>
-                        <span className="text-sm font-semibold text-gray-800">{item.name}</span>
-                        {'description' in item && item.description && (
-                          <p className="text-xs text-gray-600 mt-1 italic">{item.description}</p>
-                        )}
-                      </div>
-                      <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* Ice Cream */}
-            <div className="max-w-6xl mx-auto px-4 mb-6">
-              <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full">
-                <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.iceCream.title}</h2>
-                <div className="space-y-1">
-                  {t.categories.iceCream.items.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center py-1">
-                      <span className="text-sm font-semibold text-gray-800">{item.name}</span>
-                      <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop/Tablet: Current layout (hidden on mobile) */}
-          <div className="hidden md:block">
-            {/* Coffee & Tea Section: Two Columns in One Card */}
-            <div className="max-w-6xl mx-auto px-6 mb-8">
               <div className="flex justify-center">
-                <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    {/* Specialty Coffee Column */}
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.specialtyCoffee.title}</h3>
-                      <div className="space-y-1">
-                        {t.categories.specialtyCoffee.items.map((item, index) => (
-                          <div key={index} className="flex justify-between items-center py-1">
-                            <h4 className="text-sm font-semibold text-gray-800">{item.name}</h4>
-                            <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {/* Tea Column */}
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.tea.title}</h3>
-                      <div className="space-y-1">
-                        {t.categories.tea.items.map((item, index) => (
-                          <div key={index} className="flex justify-between items-center py-1">
-                            <h4 className="text-sm font-semibold text-gray-800">{item.name}</h4>
-                            <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <img 
+                  src="/images/coffee/menulogo.png" 
+                  alt="Our Menu" 
+                  className="h-32 md:h-40 lg:h-48 object-contain invert"
+                />
               </div>
             </div>
 
-            {/* Beverages Section (remains below) */}
-            <div className="max-w-6xl mx-auto px-6 mb-12">
-              <div className="flex justify-center">
-                <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
-                  <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
-                  <div className="flex">
-                    {(() => {
-                      const items = t.categories.beverages.items;
-                      const mid = Math.ceil(items.length / 2);
-                      const firstCol = items.slice(0, mid);
-                      const secondCol = items.slice(mid);
-                      return [firstCol, secondCol].map((col, colIdx) => (
-                        <Fragment key={colIdx}>
-                          <div className="flex-1 px-2 flex flex-col">
-                            <div className="space-y-1 flex-1">
-                              {col.map((item, index) => (
-                                <div key={index} className="flex justify-between items-center py-1">
-                                  <h3 className="text-sm font-semibold text-gray-800">{item.name}</h3>
-                                  <span className="text-sm font-bold text-gray-800 ml-2">{item.price}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </Fragment>
-                      ));
-                    })()}
-                  </div>
-                </div>
-              </div>
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {Object.entries(t.tabs).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveTab(key)}
+                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                    activeTab === key
+                      ? 'bg-white text-black shadow-lg'
+                      : 'bg-black/20 text-white hover:bg-black/30'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
 
-            {/* Second Row: Light Meals */}
-            <div className="max-w-6xl mx-auto px-6 mb-12">
-              <div className="flex justify-center">
-                <div className="bg-white rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
-                  <div className="grid grid-cols-2 gap-y-2">
-                    {t.categories.lightMeals.items.map((item, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-2 px-4">
-                        <div className="flex justify-between items-start">
-                          <div className="flex-1">
-                            <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                            {'description' in item && item.description && (
-                              <p className="text-sm text-gray-600 mt-1 italic">{item.description}</p>
-                            )}
-                          </div>
-                          <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Third Row: Ice Cream */}
-            <div className="max-w-6xl mx-auto px-6">
-              <div className="flex justify-center">
-                <div className="bg-white rounded-lg p-6 max-w-md w-full shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
-                  <div className="space-y-4">
-                    {t.categories.iceCream.items.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                        <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            {/* Menu Content */}
+            <div className="flex justify-center">
+              {renderMenuContent()}
             </div>
           </div>
         </section>
