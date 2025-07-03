@@ -191,7 +191,7 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="min-h-screen relative" style={{ backgroundColor: '#9e520a' }}>
+    <div className="min-h-screen relative">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
            style={{ backgroundImage: 'url(/images/coffee/Banana_EcoCamp-52.jpg)' }}>
