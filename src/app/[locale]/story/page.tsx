@@ -259,7 +259,7 @@ export default async function StoryPage({ params }: Props) {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-50">
+        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-41">
           {/* Main title - Brand name stays consistent */}
           <div className="mb-8">
             <div className="flex justify-center">
