@@ -92,6 +92,8 @@ export default function StoryPage() {
               backgroundImage: `url('/images/coffee/farm.jpeg')`
             }}
           />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/15"></div>
         </div>
 
         {/* Hero Content */}
