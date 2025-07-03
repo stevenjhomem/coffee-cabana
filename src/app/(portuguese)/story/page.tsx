@@ -112,9 +112,6 @@ export default function StoryPage() {
           <h1 className="text-5xl md:text-7xl font-light tracking-wide mb-6">
             {t.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl font-light opacity-90 max-w-2xl mx-auto leading-relaxed">
-            {t.hero.subtitle}
-          </p>
         </div>
 
         {/* Scroll indicator - positioned within the section */}
