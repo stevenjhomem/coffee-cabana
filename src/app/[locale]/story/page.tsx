@@ -259,24 +259,23 @@ export default async function StoryPage({ params }: Props) {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto pt-32">
+        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-50">
+          {/* Main title - Brand name stays consistent */}
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-6 relative">
-              <div className="absolute inset-0 border-2 border-white rounded-full opacity-60" />
-              <div className="absolute inset-2 border border-white rounded-full opacity-40" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-2xl font-light tracking-[0.3em]">CAFÉ</div>
-              </div>
+            <div className="flex justify-center">
+              <Image
+                src="/images/coffee/ourstorylogo.png"
+                alt="Coffee Cabana"
+                width={600}
+                height={200}
+                className="w-auto h-32 md:h-40 lg:h-48 brightness-0 invert"
+                priority
+              />
             </div>
           </div>
           <h1 className="text-5xl md:text-7xl font-light tracking-wide mb-6 drop-shadow-lg">
-            {t.hero.title.split(' ').slice(0, 2).join(' ')}
-            <br />
-            {t.hero.title.split(' ').slice(2).join(' ')}
+            {t.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl font-light opacity-90 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-            {t.hero.subtitle}
-          </p>
         </div>
 
         {/* Scroll indicator - positioned within the section */}
@@ -307,7 +306,6 @@ export default async function StoryPage({ params }: Props) {
                   height={600}
                   className="rounded-lg"
                 />
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-amber-600 rounded-full opacity-60" />
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.story.paragraphs.map((paragraph, index) => (
@@ -337,7 +335,6 @@ export default async function StoryPage({ params }: Props) {
                 height={600}
                 className="rounded-lg"
               />
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-amber-600 rounded-full opacity-60" />
             </div>
           </div>
         </div>
@@ -362,7 +359,6 @@ export default async function StoryPage({ params }: Props) {
                   height={600}
                   className="rounded-lg"
                 />
-                <div className="absolute -top-6 -left-6 w-32 h-32 border border-amber-600 opacity-20 rounded-full" />
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (
@@ -380,7 +376,6 @@ export default async function StoryPage({ params }: Props) {
                 height={600}
                 className="rounded-lg"
               />
-              <div className="absolute -top-6 -left-6 w-32 h-32 border border-amber-600 opacity-20 rounded-full" />
             </div>
             <div className="hidden lg:block order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">

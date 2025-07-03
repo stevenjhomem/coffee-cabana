@@ -87,12 +87,12 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-32">
+      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-50">
         {/* Main title - Brand name stays consistent */}
         <div className="mb-8">
           <div className="flex justify-center">
             <Image
-              src="/images/coffee/coffee-cabana.svg"
+              src="/images/coffee/homepagelogo.png"
               alt="Coffee Cabana"
               width={600}
               height={200}
