@@ -211,59 +211,54 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="relative flex items-start justify-center overflow-hidden">
-        {/* Photo Background */}
-        <div className="absolute inset-0 z-0">
-          <div 
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/coffeecabana/Banana_EcoCamp-52.jpg')`
-            }}
-          />
-        </div>
+    <div className="min-h-screen relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+           style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)' }}>
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Content Section */}
+        <section className="pt-48 pb-20">
+          <div className="max-w-6xl mx-auto px-6">
+            {/* Title and Intro */}
+            <div className="text-center mb-16">
+              <div className="flex justify-center">
+                <Image 
+                  src="/images/logos/menu/portuguese/menulogopt.png" 
+                  alt="Nosso Menu" 
+                  width={600}
+                  height={200}
+                  className="h-32 md:h-40 lg:h-48 object-contain invert"
+                />
+              </div>
+            </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-white px-6 max-w-5xl mx-auto pt-41">
-          {/* Main title - Brand name stays consistent */}
-          <div className="mb-8">
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {Object.entries(t.tabs).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveTab(key)}
+                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                    activeTab === key
+                      ? 'bg-white text-black shadow-lg'
+                      : 'bg-black/20 text-white hover:bg-black/30'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {/* Menu Content */}
             <div className="flex justify-center">
-              <Image 
-                src="/images/logos/menu/portuguese/menulogopt.png" 
-                alt="Nosso Menu" 
-                width={600}
-                height={200}
-                className="h-32 md:h-40 lg:h-48 brightness-0 invert"
-                priority
-              />
+              {renderMenuContent()}
             </div>
           </div>
-
-          {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {Object.entries(t.tabs).map(([key, label]) => (
-              <button
-                key={key}
-                onClick={() => setActiveTab(key)}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === key
-                    ? 'bg-white text-black shadow-lg'
-                    : 'bg-black/20 text-white hover:bg-black/30'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-
-          {/* Menu Content */}
-          <div className="flex justify-center">
-            {renderMenuContent()}
-          </div>
-        </div>
-
-      </section>
+        </section>
+      </div>
     </div>
   )
 } 
