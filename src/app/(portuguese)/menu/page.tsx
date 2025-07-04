@@ -164,20 +164,32 @@ export default function MenuPage() {
         return (
           <div className="bg-white rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2">
-              {t.categories.lightMeals.items.map((item, index) => (
-                <div key={index} className="border-b border-gray-200 pb-2 px-4">
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
-                      {'description' in item && item.description && (
-                        <p className="text-sm text-gray-600 mt-1 italic">{item.description}</p>
-                      )}
+            <div className="flex">
+              {(() => {
+                const items = t.categories.lightMeals.items;
+                const mid = Math.ceil(items.length / 2);
+                const firstCol = items.slice(0, mid);
+                const secondCol = items.slice(mid);
+                return [firstCol, secondCol].map((col, colIdx) => (
+                  <Fragment key={colIdx}>
+                    <div className="flex-1 px-2 flex flex-col">
+                      <div className="space-y-1 flex-1">
+                        {col.map((item, index) => (
+                          <div key={index} className="flex justify-between items-start py-1">
+                            <div className="flex-1">
+                              <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
+                              {'description' in item && item.description && (
+                                <p className="text-sm text-gray-600 mt-1 italic">{item.description}</p>
+                              )}
+                            </div>
+                            <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
-                  </div>
-                </div>
-              ))}
+                  </Fragment>
+                ));
+              })()}
             </div>
           </div>
         )
@@ -187,7 +199,7 @@ export default function MenuPage() {
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t.categories.iceCream.title}</h2>
             <div className="space-y-4">
               {t.categories.iceCream.items.map((item, index) => (
-                <div key={index} className="flex justify-between items-center border-b border-gray-200 pb-3">
+                <div key={index} className="flex justify-between items-center pb-3">
                   <h3 className="text-base font-semibold text-gray-800">{item.name}</h3>
                   <span className="text-base font-bold text-gray-800 ml-3">{item.price}</span>
                 </div>
@@ -215,7 +227,7 @@ export default function MenuPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-41">
+        <div className="relative z-10 text-white px-6 max-w-5xl mx-auto pt-41">
           {/* Main title - Brand name stays consistent */}
           <div className="mb-8">
             <div className="flex justify-center">
