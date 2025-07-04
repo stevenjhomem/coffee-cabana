@@ -2,8 +2,6 @@
 
 import React, { Fragment, useState } from 'react'
 import Image from 'next/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
