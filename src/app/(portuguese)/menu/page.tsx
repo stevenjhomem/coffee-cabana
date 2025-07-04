@@ -1,6 +1,7 @@
 'use client'
 
 import React, { Fragment, useState } from 'react'
+import Image from 'next/image'
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
@@ -201,7 +202,7 @@ export default function MenuPage() {
     <div className="min-h-screen relative">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-           style={{ backgroundImage: 'url(/images/coffee/Banana_EcoCamp-52.jpg)' }}>
+           style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)' }}>
       </div>
       
       {/* Content */}
@@ -212,9 +213,11 @@ export default function MenuPage() {
             {/* Title and Intro */}
             <div className="text-center mb-16">
               <div className="flex justify-center">
-                <img 
-                  src="/images/coffee/menulogo.png" 
+                <Image 
+                  src="/images/logos/menu/portuguese/menulogopt.png" 
                   alt="Nosso Menu" 
+                  width={600}
+                  height={200}
                   className="h-32 md:h-40 lg:h-48 object-contain invert"
                 />
               </div>

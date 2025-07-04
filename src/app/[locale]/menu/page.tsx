@@ -280,7 +280,7 @@ export default function MenuPage() {
     <div className="min-h-screen relative">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-           style={{ backgroundImage: 'url(/images/coffee/Banana_EcoCamp-52.jpg)' }}>
+           style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)' }}>
       </div>
       
       {/* Content */}
@@ -292,8 +292,10 @@ export default function MenuPage() {
             <div className="text-center mb-16">
               <div className="flex justify-center">
                 <img 
-                  src="/images/coffee/menulogo.png" 
+                  src="/images/logos/menu/english/menulogoen.png" 
                   alt="Our Menu" 
+                  width={600}
+                  height={200}
                   className="h-32 md:h-40 lg:h-48 object-contain invert"
                 />
               </div>
