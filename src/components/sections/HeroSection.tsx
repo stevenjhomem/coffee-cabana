@@ -56,7 +56,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         <div className="mb-8">
           <div className="flex justify-center">
             <Image
-              src="/images/coffeecabana/homepagelogo.png"
+              src="/images/logos/home/coffeecabana.png"
               alt="Coffee Cabana"
               width={600}
               height={200}
