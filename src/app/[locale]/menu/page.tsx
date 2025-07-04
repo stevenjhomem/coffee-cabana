@@ -1,6 +1,9 @@
 'use client'
 
 import React, { Fragment, useState } from 'react'
+import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
@@ -277,54 +280,60 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="min-h-screen relative">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-           style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)' }}>
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10">
-        {/* Content Section */}
-        <section className="pt-48 pb-20">
-          <div className="max-w-6xl mx-auto px-6">
-            {/* Title and Intro */}
-            <div className="text-center mb-16">
-              <div className="flex justify-center">
-                <img 
-                  src="/images/logos/menu/english/menulogoen.png" 
-                  alt="Our Menu" 
-                  width={600}
-                  height={200}
-                  className="h-32 md:h-40 lg:h-48 object-contain invert"
-                />
-              </div>
-            </div>
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
+        {/* Photo Background */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/images/coffeecabana/Banana_EcoCamp-52.jpg')`
+            }}
+          />
+        </div>
 
-            {/* Tab Navigation */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {Object.entries(t.tabs).map(([key, label]) => (
-                <button
-                  key={key}
-                  onClick={() => setActiveTab(key)}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                    activeTab === key
-                      ? 'bg-white text-black shadow-lg'
-                      : 'bg-black/20 text-white hover:bg-black/30'
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            {/* Menu Content */}
+        {/* Hero Content */}
+        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-41">
+          {/* Main title - Brand name stays consistent */}
+          <div className="mb-8">
             <div className="flex justify-center">
-              {renderMenuContent()}
+              <Image 
+                src="/images/logos/menu/english/menulogoen.png" 
+                alt="Our Menu" 
+                width={600}
+                height={200}
+                className="h-32 md:h-40 lg:h-48 brightness-0 invert"
+                priority
+              />
             </div>
           </div>
-        </section>
-      </div>
+
+          {/* Tab Navigation */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {Object.entries(t.tabs).map(([key, label]) => (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key)}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  activeTab === key
+                    ? 'bg-white text-black shadow-lg'
+                    : 'bg-black/20 text-white hover:bg-black/30'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {/* Menu Content */}
+          <div className="flex justify-center">
+            {renderMenuContent()}
+          </div>
+        </div>
+
+
+      </section>
     </div>
   )
 } 
