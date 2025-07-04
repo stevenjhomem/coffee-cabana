@@ -134,7 +134,7 @@ export default function MenuPage() {
         return (
           <div className="bg-white rounded-lg p-6 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
             <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">{t.categories.beverages.title}</h2>
-            <div className="flex">
+            <div className="flex flex-col md:flex-row">
               {(() => {
                 const items = t.categories.beverages.items;
                 const mid = Math.ceil(items.length / 2);
@@ -162,7 +162,7 @@ export default function MenuPage() {
         return (
           <div className="bg-white rounded-lg p-4 shadow-2xl border border-white/30 hover:shadow-3xl transition-shadow duration-300 w-full max-w-5xl">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{t.categories.lightMeals.title}</h2>
-            <div className="flex">
+            <div className="flex flex-col md:flex-row">
               {(() => {
                 const items = t.categories.lightMeals.items;
                 const mid = Math.ceil(items.length / 2);
