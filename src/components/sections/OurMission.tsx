@@ -31,7 +31,7 @@ export default function OurMission({ locale }: OurMissionProps) {
           {/* Left Container - Image (Top on mobile, Left on desktop) */}
           <div className="flex-1 w-full lg:w-auto">
             <Image 
-              src="/images/coffee/Banana_EcoCamp-46.jpg" 
+              src="/images/coffeecabana/Banana_EcoCamp-46.jpg" 
               alt="Coffee plantation at Banana EcoCamp" 
               width={400} 
               height={320}

@@ -58,44 +58,10 @@ export default async function StoryPage({ params }: Props) {
   const { locale } = await params
 
   const content = {
-    pt: {
-      hero: {
-        title: 'DA QUINTA À CHÁVENA',
-        subtitle: 'Uma história de agricultura sustentável, café artesanal e tradição familiar'
-      },
-      story: {
-        title: 'A Nossa História Começa Com',
-        name: 'José Bernardo',
-        paragraphs: [
-          'José é quem começou tudo. Nascido na Ilha Terceira, mudou-se para Angola, África, com a família em 1958 aos oito anos. Desde o final dos anos 1950 até o início dos anos 1970, geriram uma quinta, onde José adquiriu conhecimentos e experiência extensos na agricultura africana.',
-          'Quando a guerra eclodiu em Angola, como muitas outras famílias portuguesas, foram forçados a fugir—regressando a Portugal de mãos vazias.',
-          'Pouco depois, emigraram para a Califórnia, EUA. No entanto, não demorou muito até José decidir regressar às suas raízes na Terceira. Em casa, trabalhou para o governo regional como CEO do Departamento de Agricultura.',
-          'Após a reforma, comprou um terreno que acreditava ter potencial para cultivar frutas tropicais. Foi então que começou a plantar bananas e café.',
-          'Em 2016, como projeto pessoal e hobby, construiu a sua primeira cabana de madeira. Hoje, essa visão expandiu-se para um belo retiro ecológico com seis cabanas simples, três cabanas de luxo e várias comodidades por toda a propriedade.',
-          'Em 2019, criou o Coffee Cabana. Originalmente destinado a servir hóspedes, rapidamente se tornou um lugar para partilhar o seu café único e caseiro com o público.'
-        ]
-      },
-      coffeeCraft: {
-        title: 'A Nossa História Continua Com',
-        subtitle: 'Marcel e Marta',
-        paragraphs: [
-          'Marcel, filho de um agricultor e de uma veterinária, cresceu com uma ligação profunda à natureza e aos animais. Após terminar o liceu, decidiu prosseguir os estudos na Holanda, de onde a mãe é originária. Lá, completou um curso em Operações Marítimas e começou a trabalhar a bordo de navios com bandeira holandesa como Oficial Marítimo.',
-          'Durante uma das suas licenças, Marcel conheceu Marta, com quem teve a primeira filha. Percebendo que a vida marítima significava longos períodos longe de casa—e não querendo perder a filha a crescer—Marcel tomou a decisão de regressar aos Açores.',
-          'Instalou-se na Ilha Terceira, onde Marta vivia. Em 2023, Bernardo estava à procura de alguém novo para gerir o Banana Eco Camp e o Coffee Cabana. Após uma busca extensa, reconheceu que o passado agrícola de Marcel e as competências versáteis que adquiriu no mar o tornavam o candidato ideal.',
-          'Hoje, Marcel e Marta vivem na quinta com as duas filhas pequenas. Juntos, estão sempre disponíveis para receber hóspedes com calor e cuidado.'
-        ]
-      },
-      footer: {
-        title: 'Venha Fazer Parte Da Nossa História',
-        subtitle: 'Uma Chávena De Cada Vez',
-        description: 'Visite-nos para provar a diferença que a paixão, qualidade e tradição familiar fazem.',
-        button: 'Venha Visitar-nos'
-      }
-    },
     en: {
+      logo: '/images/logos/story/english/ourstoryen.png',
       hero: {
         title: 'FROM FARM TO CUP',
-        subtitle: 'A story of sustainable agriculture, artisan coffee, and family tradition'
       },
       story: {
         title: 'Our Story Begins With',
@@ -139,11 +105,9 @@ export default async function StoryPage({ params }: Props) {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/images/coffee/farm.jpeg')`
+              backgroundImage: `url('/images/coffeecabana/farm.jpeg')`
             }}
           />
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/15"></div>
         </div>
 
         {/* Hero Content */}
@@ -152,7 +116,7 @@ export default async function StoryPage({ params }: Props) {
           <div className="mb-8">
             <div className="flex justify-center">
               <Image
-                src="/images/coffee/ourstorylogo.png"
+                src={t.logo}
                 alt="Coffee Cabana"
                 width={600}
                 height={200}
@@ -188,7 +152,7 @@ export default async function StoryPage({ params }: Props) {
               </h2>
               <div className="relative mb-8">
                 <Image
-                  src="/images/coffee/bernardo.jpeg"
+                  src="/images/coffeecabana/bernardo.jpeg"
                   alt="Bernardo working in the banana plantation"
                   width={600}
                   height={600}
@@ -217,7 +181,7 @@ export default async function StoryPage({ params }: Props) {
             </div>
             <div className="hidden lg:block relative">
               <Image
-                src="/images/coffee/bernardo.jpeg"
+                src="/images/coffeecabana/bernardo.jpeg"
                 alt="Bernardo working in the banana plantation"
                 width={600}
                 height={600}
@@ -235,13 +199,13 @@ export default async function StoryPage({ params }: Props) {
             {/* Mobile: Title + Image + Text */}
             <div className="lg:hidden">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.coffeeCraft.title}
+                <span className="whitespace-nowrap">{t.coffeeCraft.title}</span>
                 <br />
-                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600 whitespace-nowrap">{t.coffeeCraft.subtitle}</span>
               </h2>
               <div className="relative mb-8">
                 <Image
-                  src="/images/coffee/family.png"
+                  src="/images/coffeecabana/family.png"
                   alt="Marcel and Marta family"
                   width={600}
                   height={600}
@@ -258,7 +222,7 @@ export default async function StoryPage({ params }: Props) {
             {/* Desktop: Image + Text (original layout) */}
             <div className="hidden lg:block order-2 lg:order-1 relative">
               <Image
-                src="/images/coffee/family.png"
+                src="/images/coffeecabana/family.png"
                 alt="Marcel and Marta family"
                 width={600}
                 height={600}
@@ -267,9 +231,9 @@ export default async function StoryPage({ params }: Props) {
             </div>
             <div className="hidden lg:block order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.coffeeCraft.title}
+                <span className="whitespace-nowrap">{t.coffeeCraft.title}</span>
                 <br />
-                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600 whitespace-nowrap">{t.coffeeCraft.subtitle}</span>
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (

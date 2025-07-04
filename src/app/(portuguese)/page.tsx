@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/coffee/coffee-cabana-instagram.png',
+        url: '/images/coffeecabana/Banana_EcoCamp-49.jpg',
         width: 1200,
         height: 630,
         alt: 'Coffee Cabana - Café Orgânico Terceira | Açores',

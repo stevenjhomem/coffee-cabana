@@ -29,7 +29,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
     pt: [
       { name: 'Início', href: `/` },
       { name: 'A Nossa História', href: `/story` },
-      { name: 'Menu', href: `/menu` },
+      { name: 'A Ementa', href: `/menu` },
     ],
     en: [
       { name: 'Home', href: `/en` },
@@ -50,7 +50,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
                 {/* Logo placeholder - you can replace with your SVG logo */}
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
                     <Image 
-                      src="/images/coffee/logo.svg" 
+                      src="/images/coffeecabana/logo.svg" 
                       alt="Coffee Cabana Logo" 
                       width={56} 
                       height={56}

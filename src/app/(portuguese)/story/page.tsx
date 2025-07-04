@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/coffee/coffee-cabana-instagram.png',
+        url: '/images/coffeecabana/Banana_EcoCamp-49.jpg',
         width: 1200,
         height: 630,
         alt: 'Sobre Nós - Coffee Cabana | Açores',
@@ -42,11 +42,10 @@ export const metadata: Metadata = {
 export default function StoryPage() {
   const content = {
     hero: {
-      title: 'FROM FARM TO CUP',
-      subtitle: 'A story of sustainable agriculture, artisan coffee, and family tradition'
+      title: 'Da Quinta ao Copo',
     },
     story: {
-      title: 'Our Story Begins With',
+      title: 'A Nossa História Começa Com',
       name: 'José Bernardo',
       paragraphs: [
         'O José foi quem começou tudo. Nascido na Ilha Terceira, mudou-se para Angola, em África, com a família em 1958, com apenas oito anos de idade. Desde o final dos anos 50 até ao início dos anos 70, geriram uma quinta, onde o José adquiriu vastos conhecimentos e experiência em agricultura africana.',
@@ -58,8 +57,8 @@ export default function StoryPage() {
       ]
     },
     coffeeCraft: {
-      title: 'Our Story Continues With',
-      subtitle: 'Marcel and Marta',
+      title: 'A Nossa História Continua Com',
+      subtitle: 'Marcel e Marta',
       paragraphs: [
         'Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.',
         'During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.',
@@ -68,10 +67,10 @@ export default function StoryPage() {
       ]
     },
     footer: {
-      title: 'Come Be Part Of Our Story',
-      subtitle: 'One Cup At A Time',
-      description: 'Visit us to taste the difference that passion, quality, and family tradition make.',
-      button: 'Come Visit Us'
+      title: 'Vem Fazer Parte da Nossa História',
+      subtitle: 'Um Copo de Cada Vez',
+      description: 'Visitem-nos para provar a diferença que a paixão, a qualidade e a tradição familiar fazem.',
+      button: 'Vem Visitar-nos'
     }
   }
 
@@ -86,11 +85,9 @@ export default function StoryPage() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/images/coffee/farm.jpeg')`
+              backgroundImage: `url('/images/coffeecabana/farm.jpeg')`
             }}
           />
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/15"></div>
         </div>
 
         {/* Hero Content */}
@@ -99,7 +96,7 @@ export default function StoryPage() {
           <div className="mb-8">
             <div className="flex justify-center">
               <Image
-                src="/images/coffee/ourstorylogo.png"
+                src="/images/logos/story/portuguese/ourstorypt.png"
                 alt="Coffee Cabana"
                 width={600}
                 height={200}
@@ -135,7 +132,7 @@ export default function StoryPage() {
               </h2>
               <div className="relative mb-8">
                 <Image
-                  src="/images/coffee/bernardo.jpeg"
+                  src="/images/coffeecabana/bernardo.jpeg"
                   alt="Bernardo working in the banana plantation"
                   width={600}
                   height={600}
@@ -164,7 +161,7 @@ export default function StoryPage() {
             </div>
             <div className="hidden lg:block relative">
               <Image
-                src="/images/coffee/bernardo.jpeg"
+                src="/images/coffeecabana/bernardo.jpeg"
                 alt="Bernardo working in the banana plantation"
                 width={600}
                 height={600}
@@ -182,13 +179,13 @@ export default function StoryPage() {
             {/* Mobile: Title + Image + Text */}
             <div className="lg:hidden">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.coffeeCraft.title}
+                <span className="whitespace-nowrap">{t.coffeeCraft.title}</span>
                 <br />
-                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600 whitespace-nowrap">{t.coffeeCraft.subtitle}</span>
               </h2>
               <div className="relative mb-8">
                 <Image
-                  src="/images/coffee/family.png"
+                  src="/images/coffeecabana/family.png"
                   alt="Marcel and Marta family"
                   width={600}
                   height={600}
@@ -205,7 +202,7 @@ export default function StoryPage() {
             {/* Desktop: Image + Text (original layout) */}
             <div className="hidden lg:block order-2 lg:order-1 relative">
               <Image
-                src="/images/coffee/family.png"
+                src="/images/coffeecabana/family.png"
                 alt="Marcel and Marta family"
                 width={600}
                 height={600}
@@ -214,9 +211,9 @@ export default function StoryPage() {
             </div>
             <div className="hidden lg:block order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.coffeeCraft.title}
+                <span className="whitespace-nowrap">{t.coffeeCraft.title}</span>
                 <br />
-                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600 whitespace-nowrap">{t.coffeeCraft.subtitle}</span>
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (
