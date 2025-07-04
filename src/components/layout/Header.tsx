@@ -28,7 +28,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
   const navigation = {
     pt: [
       { name: 'Início', href: `/` },
-      { name: 'Nossa História', href: `/story` },
+      { name: 'A Nossa História', href: `/story` },
       { name: 'Menu', href: `/menu` },
     ],
     en: [

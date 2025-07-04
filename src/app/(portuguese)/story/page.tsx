@@ -49,12 +49,12 @@ export default function StoryPage() {
       title: 'Our Story Begins With',
       name: 'José Bernardo',
       paragraphs: [
-        'José is the one who started it all. Born on Terceira Island, he moved to Angola, Africa, with his family in 1958 at the age of eight. From the late 1950s through the early 1970s, they managed a farm, where José gained extensive knowledge and experience in African agriculture.',
-        'When the war broke out in Angola, like many other Portuguese families, they were forced to flee—returning to Portugal empty-handed.',
-        'Soon after, they emigrated to California, USA. However, it wasn&apos;t long before José decided to return to his roots on Terceira. Back home, he worked for the regional government as the CEO of the Agriculture Department.',
-        'After retiring, he purchased a piece of land he believed had the potential to grow tropical fruits. That&apos;s when he began planting bananas and coffee.',
-        'In 2016, as a personal project and hobby, he built his first wooden cabin. Today, that vision has expanded into a beautiful eco retreat with six simple cabins, three luxury cabins, and various amenities throughout the property.',
-        'In 2019, he created Coffee Cabana. Originally intended to serve guests, it quickly became a place to share their unique, homegrown coffee with the public.'
+        'O José foi quem começou tudo. Nascido na Ilha Terceira, mudou-se para Angola, em África, com a família em 1958, com apenas oito anos de idade. Desde o final dos anos 50 até ao início dos anos 70, geriram uma quinta, onde o José adquiriu vastos conhecimentos e experiência em agricultura africana.',
+        'Quando rebentou a guerra em Angola, tal como muitas outras famílias portuguesas, foram forçados a fugir — regressando a Portugal de mãos vazias.',
+        'Pouco tempo depois, emigraram para a Califórnia, nos Estados Unidos. No entanto, não demorou muito até que o José decidisse voltar às suas raízes na Terceira. Já em casa, trabalhou para o governo regional como diretor do Departamento de Agricultura.',
+        'Após a reforma, comprou um terreno em que acreditava ter potencial para cultivar frutas tropicais. Foi então que começou a plantar bananas e café.',
+        'Em 2016, como projeto pessoal e passatempo, construiu a sua primeira cabana de madeira. Hoje, essa visão cresceu e transformou-se num bonito retiro ecológico com seis cabanas simples, três cabanas de luxo e várias comodidades espalhadas pela propriedade.',
+        'Em 2019, criou a Coffee Cabana. Inicialmente pensada para servir os hóspedes, rapidamente se tornou um espaço para partilhar o seu café único e cultivado localmente com o público.'
       ]
     },
     coffeeCraft: {
