@@ -60,10 +60,10 @@ export default function StoryPage() {
       title: 'A Nossa História Continua Com',
       subtitle: 'Marcel e Marta',
       paragraphs: [
-        'Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.',
-        'During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.',
-        'He settled on Terceira Island, where Marta was living. In 2023, Bernardo was searching for someone new to manage Banana Eco Camp and Coffee Cabana. After an extensive search, he recognized that Marcel&apos;s farming background and the versatile skills he had acquired at sea made him the ideal candidate.',
-        'Today, Marcel and Marta live on the farm with their two young daughters. Together, they are always on hand to welcome guests with warmth and care.'
+        'Marcel, filho de um agricultor e de uma veterinária, cresceu com uma forte ligação à natureza e aos animais. Após terminar o ensino secundário, decidiu prosseguir os estudos nos Países Baixos, de onde a sua mãe é natural. Lá, concluiu uma licenciatura em Operações Marítimas e começou a trabalhar a bordo de navios com bandeira holandesa como Oficial da Marinha Mercante.',
+        'Durante uma das suas licenças, Marcel conheceu a Marta, com quem teve a sua primeira filha. Ao perceber que a vida no mar implicava longos períodos longe de casa — e sem querer perder o crescimento da filha — Marcel tomou a decisão de regressar aos Açores.',
+        'Fixou-se na Ilha Terceira, onde vivia a Marta. Em 2023, o Bernardo procurava alguém para assumir a gestão do Banana Eco Camp e da Coffee Cabana. Após uma pesquisa alargada, reconheceu que o percurso agrícola do Marcel e as competências versáteis adquiridas no mar faziam dele o candidato ideal.',
+        'Hoje, o Marcel e a Marta vivem na quinta com as suas duas filhas pequenas. Juntos, estão sempre prontos para receber os hóspedes com carinho e hospitalidade.'
       ]
     },
     footer: {
