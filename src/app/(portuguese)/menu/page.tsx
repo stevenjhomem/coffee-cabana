@@ -213,7 +213,7 @@ export default function MenuPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
+      <section className="relative flex items-start justify-center overflow-hidden">
         {/* Photo Background */}
         <div className="absolute inset-0 z-0">
           <div 
