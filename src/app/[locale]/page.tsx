@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     ...currentMeta,
-    keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
+    keywords: 'Terceira coffee, Azores brunch, tropical bananas, Angra do Heroísmo restaurant, agritourism farm, breakfast Terceira, organic coffee, banana plantation Azores, farm to table, coffee shop Azores',
     authors: [{ name: 'Coffee Cabana' }],
     creator: 'Coffee Cabana',
     publisher: 'Coffee Cabana',

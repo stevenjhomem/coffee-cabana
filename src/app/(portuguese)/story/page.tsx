@@ -8,13 +8,13 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 export const metadata: Metadata = {
   title: 'Sobre Nós - Coffee Cabana | Açores',
   description: 'Descubra a história por detrás do Coffee Cabana, a única quinta de café na Ilha Terceira, e o nosso compromisso com o café orgânico e a agricultura sustentável.',
-  keywords: 'sobre Coffee Cabana, quinta de café Terceira, café orgânico Açores, agricultura sustentável',
+  keywords: 'café Terceira, brunch Açores, bananas tropicais, restaurante Angra do Heroísmo, quinta agriturismo, pequeno-almoço Terceira, café orgânico, plantation bananas Açores, farm to table Terceira, café da manhã Azores',
   authors: [{ name: 'Coffee Cabana' }],
   creator: 'Coffee Cabana',
   publisher: 'Coffee Cabana',
   robots: 'index, follow',
   openGraph: {
-    title: 'Sobre Nós - Coffee Cabana | Açores',
+    title: 'A Nossa História - Coffee Cabana | Açores',
     description: 'Descubra a história por detrás do Coffee Cabana, a única quinta de café na Ilha Terceira, e o nosso compromisso com o café orgânico e a agricultura sustentável.',
     url: 'https://coffeecabana.pt/story',
     siteName: 'Coffee Cabana',
