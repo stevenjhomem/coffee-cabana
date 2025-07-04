@@ -199,9 +199,9 @@ export default async function StoryPage({ params }: Props) {
             {/* Mobile: Title + Image + Text */}
             <div className="lg:hidden">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                <span className="whitespace-nowrap">{t.coffeeCraft.title}</span>
+                {t.coffeeCraft.title}
                 <br />
-                <span className="text-amber-600 whitespace-nowrap">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
               </h2>
               <div className="relative mb-8">
                 <Image
@@ -231,9 +231,9 @@ export default async function StoryPage({ params }: Props) {
             </div>
             <div className="hidden lg:block order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                <span className="whitespace-nowrap">{t.coffeeCraft.title}</span>
+                {t.coffeeCraft.title}
                 <br />
-                <span className="text-amber-600 whitespace-nowrap">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (
