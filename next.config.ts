@@ -39,23 +39,6 @@ const nextConfig = {
     ];
   },
 
-  // Redirect www to non-www for SEO
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.coffeecabana.pt',
-          },
-        ],
-        destination: 'https://coffeecabana.pt/:path*',
-        permanent: true,
-      },
-    ];
-  },
-
   // Optimize bundle for performance
   webpack: (config: any, options: any) => {
     if (!options.isServer) {
