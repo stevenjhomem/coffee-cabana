@@ -17,22 +17,22 @@ interface FooterProps {
     const content = {
       pt: {
         visit: "Visite-nos",
-        hours: "Horário",
-        stayConnected: "Mantenha-se Ligado",
-        newsletter: "Novidades da quinta",
-        emailPlaceholder: "O seu email",
+        hours: "Horários",
+        stayConnected: "Mantenha-se Conectado",
+        newsletter: "Atualizações frescas da quinta",
+        emailPlaceholder: "Seu email",
         subscribe: "Subscrever",
         rights: "Todos os direitos reservados",
         privacy: "Política de Privacidade",
         terms: "Termos de Uso",
         openingHours: "Segunda, Quarta a Domingo: 7:00 - 18:00",
-        closedDay: "Terça-feira: Fechado"
+        closedDay: "Terça: Fechado"
       },
       en: {
         visit: "Visit Us",
         hours: "Hours",
-        stayConnected: "Stay Connected", 
-        newsletter: "Fresh updates from the farm",
+        stayConnected: "Stay Connected",
+        newsletter: "Fresh farm updates",
         emailPlaceholder: "Your email",
         subscribe: "Subscribe",
         rights: "All rights reserved",
@@ -40,45 +40,6 @@ interface FooterProps {
         terms: "Terms of Use",
         openingHours: "Monday, Wednesday to Sunday: 7:00 - 18:00",
         closedDay: "Tuesday: Closed"
-      },
-      de: {
-        visit: "Besuchen Sie uns",
-        hours: "Öffnungszeiten",
-        stayConnected: "Bleiben Sie verbunden",
-        newsletter: "Frische Updates vom Hof",
-        emailPlaceholder: "Ihre E-Mail",
-        subscribe: "Abonnieren",
-        rights: "Alle Rechte vorbehalten",
-        privacy: "Datenschutzrichtlinie",
-        terms: "Nutzungsbedingungen",
-        openingHours: "Montag, Mittwoch bis Sonntag: 7:00 - 18:00",
-        closedDay: "Dienstag: Geschlossen"
-      },
-      es: {
-        visit: "Visítanos",
-        hours: "Horarios",
-        stayConnected: "Mantente Conectado",
-        newsletter: "Actualizaciones frescas de la granja",
-        emailPlaceholder: "Tu email",
-        subscribe: "Suscribirse",
-        rights: "Todos los derechos reservados",
-        privacy: "Política de Privacidad",
-        terms: "Términos de Uso",
-        openingHours: "Lunes, Miércoles a Domingo: 7:00 - 18:00",
-        closedDay: "Martes: Cerrado"
-      },
-      fr: {
-        visit: "Visitez-nous",
-        hours: "Horaires",
-        stayConnected: "Restez Connecté",
-        newsletter: "Actualités fraîches de la ferme",
-        emailPlaceholder: "Votre email",
-        subscribe: "S'abonner",
-        rights: "Tous droits réservés",
-        privacy: "Politique de Confidentialité",
-        terms: "Conditions d'Utilisation",
-        openingHours: "Lundi, Mercredi à Dimanche: 7:00 - 18:00",
-        closedDay: "Mardi: Fermé"
       }
     }
   

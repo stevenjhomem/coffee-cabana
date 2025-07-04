@@ -36,21 +36,6 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
       { name: 'Our Story', href: `/en/story` },
       { name: 'Menu', href: `/en/menu` },
     ],
-    de: [
-      { name: 'Startseite', href: `/de` },
-      { name: 'Unsere Geschichte', href: `/de/story` },
-      { name: 'Menü', href: `/de/menu` },
-    ],
-    es: [
-      { name: 'Inicio', href: `/es` },
-      { name: 'Nuestra Historia', href: `/es/story` },
-      { name: 'Menú', href: `/es/menu` },
-    ],
-    fr: [
-      { name: 'Accueil', href: `/fr` },
-      { name: 'Notre Histoire', href: `/fr/story` },
-      { name: 'Menu', href: `/fr/menu` },
-    ],
   }
 
   const navItems = navigation[locale as keyof typeof navigation] || navigation.pt

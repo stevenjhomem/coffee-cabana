@@ -20,18 +20,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: 'Coffee Cabana - Organic Coffee Terceira | Azores',
       description: 'The only coffee grown and roasted on Terceira Island. Experience our farm-to-cup journey in the heart of the Azores.',
     },
-    de: {
-      title: 'Coffee Cabana - Bio-Kaffee Terceira | Azoren',
-      description: 'Der einzige Kaffee, der auf der Insel Terceira angebaut und geröstet wird. Erleben Sie unsere Reise von der Farm zur Tasse.',
-    },
-    es: {
-      title: 'Coffee Cabana - Café Orgánico Terceira | Azores',
-      description: 'El único café cultivado y tostado en la Isla Terceira. Experimenta nuestro viaje de la granja a la taza.',
-    },
-    fr: {
-      title: 'Coffee Cabana - Café Bio Terceira | Açores',
-      description: 'Le seul café cultivé et torréfié sur l\'île de Terceira. Découvrez notre voyage de la ferme à la tasse.',
-    },
   }
 
   const currentMeta = metaData[locale as keyof typeof metaData] || metaData.pt
@@ -56,9 +44,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         'pt': 'https://coffeecabana.pt',
         'en': 'https://coffeecabana.pt/en',
-        'de': 'https://coffeecabana.pt/de',
-        'es': 'https://coffeecabana.pt/es',
-        'fr': 'https://coffeecabana.pt/fr',
       },
     },
   }

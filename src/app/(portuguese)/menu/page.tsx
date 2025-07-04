@@ -86,7 +86,14 @@ export default function MenuPage() {
           { name: 'Copo de Gelados', price: '€5.00' }
         ]
       }
-    }
+    },
+    alternates: {
+      canonical: 'https://coffeecabana.pt/menu',
+      languages: {
+        'pt': 'https://coffeecabana.pt/menu',
+        'en': 'https://coffeecabana.pt/en/menu',
+      },
+    },
   }
 
   const renderMenuContent = () => {

@@ -25,7 +25,7 @@ export function generateCanonicalUrl(pathname: string, locale?: string): string 
 
 export function generateAlternateUrls(pathname: string): Record<string, string> {
   const baseUrl = 'https://coffeecabana.pt' // Update this to your actual domain
-  const locales = ['pt', 'en', 'de', 'es', 'fr']
+  const locales = ['pt', 'en']
   
   // Remove any existing locale prefix
   let cleanPath = pathname

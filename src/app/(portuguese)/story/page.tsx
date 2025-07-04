@@ -35,9 +35,6 @@ export const metadata: Metadata = {
     languages: {
       'pt': 'https://coffeecabana.pt/story',
       'en': 'https://coffeecabana.pt/en/story',
-      'de': 'https://coffeecabana.pt/de/story',
-      'es': 'https://coffeecabana.pt/es/story',
-      'fr': 'https://coffeecabana.pt/fr/story',
     },
   },
 }

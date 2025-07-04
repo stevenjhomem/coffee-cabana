@@ -11,63 +11,27 @@ interface HeroSectionProps {
 export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const content = {
     pt: {
-      subtitle: "Café Orgânico da Terceira",
+      subtitle: "Café Orgânico de Terceira",
       description: "O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.",
       ctaPrimary: "Prove Nosso Café",
-      ctaSecondary: "Visite a Quinta",
+      ctaSecondary: "Visite Nossa Quinta",
       scroll: "rolar",
       features: {
         organic: { title: "100% Orgânico", desc: "Cultivado sem químicos" },
-        unique: { title: "Único na Terceira", desc: "Exclusivo da nossa quinta" },
+        unique: { title: "Único em Terceira", desc: "Exclusivo da nossa quinta" },
         handRoasted: { title: "Torrado à Mão", desc: "Métodos tradicionais" }
       }
     },
     en: {
       subtitle: "Organic Coffee from Terceira",
       description: "The only coffee grown and roasted on Terceira Island. Experience our farm-to-cup journey in the heart of the Azores.",
-      ctaPrimary: "Taste Our Coffee",
+      ctaPrimary: "Try Our Coffee",
       ctaSecondary: "Visit Our Farm",
       scroll: "scroll",
       features: {
         organic: { title: "100% Organic", desc: "Grown without chemicals" },
         unique: { title: "Unique to Terceira", desc: "Exclusive to our farm" },
         handRoasted: { title: "Hand Roasted", desc: "Traditional methods" }
-      }
-    },
-    de: {
-      subtitle: "Bio-Kaffee aus Terceira",
-      description: "Der einzige Kaffee, der auf der Insel Terceira angebaut und geröstet wird. Erleben Sie unsere Reise von der Farm zur Tasse im Herzen der Azoren.",
-      ctaPrimary: "Probieren Sie unseren Kaffee",
-      ctaSecondary: "Besuchen Sie unsere Farm",
-      scroll: "scrollen",
-      features: {
-        organic: { title: "100% Bio", desc: "Ohne Chemikalien angebaut" },
-        unique: { title: "Einzigartig auf Terceira", desc: "Exklusiv von unserer Farm" },
-        handRoasted: { title: "Handgeröstet", desc: "Traditionelle Methoden" }
-      }
-    },
-    es: {
-      subtitle: "Café Orgánico de Terceira",
-      description: "El único café cultivado y tostado en la Isla Terceira. Experimenta nuestro viaje de la granja a la taza en el corazón de las Azores.",
-      ctaPrimary: "Prueba Nuestro Café",
-      ctaSecondary: "Visita Nuestra Granja",
-      scroll: "desplazar",
-      features: {
-        organic: { title: "100% Orgánico", desc: "Cultivado sin químicos" },
-        unique: { title: "Único en Terceira", desc: "Exclusivo de nuestra granja" },
-        handRoasted: { title: "Tostado a Mano", desc: "Métodos tradicionales" }
-      }
-    },
-    fr: {
-      subtitle: "Café Bio de Terceira",
-      description: "Le seul café cultivé et torréfié sur l'île de Terceira. Découvrez notre voyage de la ferme à la tasse au cœur des Açores.",
-      ctaPrimary: "Goûtez Notre Café",
-      ctaSecondary: "Visitez Notre Ferme",
-      scroll: "défiler",
-      features: {
-        organic: { title: "100% Bio", desc: "Cultivé sans produits chimiques" },
-        unique: { title: "Unique à Terceira", desc: "Exclusif à notre ferme" },
-        handRoasted: { title: "Torréfié à la Main", desc: "Méthodes traditionnelles" }
       }
     }
   }

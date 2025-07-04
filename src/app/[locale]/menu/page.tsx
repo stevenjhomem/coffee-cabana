@@ -24,19 +24,18 @@ export default function MenuPage() {
             { name: 'Americano', price: '€2.00' },
             { name: 'Latte', price: '€2.50' },
             { name: 'Café com Leite', price: '€2.50' },
-            { name: 'Café Filtrado', price: '€2.50' },
+            { name: 'Café Filtro', price: '€2.50' },
             { name: 'Cappuccino', price: '€3.00' },
             { name: 'Café Gelado', price: '€3.00' },
-            { name: 'Café Irlandês', price: '€4.00' }
+            { name: 'Irish Coffee', price: '€4.00' }
           ]
         },
         tea: {
           title: 'Chá',
           items: [
-            { name: 'Chá Preto', price: '€2.00' },
-            { name: 'Chá Verde', price: '€2.00' },
-            { name: 'Chá de Ervas', price: '€2.50' },
-            { name: 'Chá de Frutos', price: '€2.50' }
+            { name: 'Coffee Bark Tea', price: '€2.00' },
+            { name: 'Chá Gorreana', price: '€2.00' },
+            { name: 'Chá do Dia', price: '€2.00' }
           ]
         },
         lightMeals: {
@@ -84,17 +83,17 @@ export default function MenuPage() {
             { name: 'Gelado de Baunilha', price: '€3.50' },
             { name: 'Gelado de Chocolate', price: '€3.50' },
             { name: 'Gelado de Frutos Silvestres', price: '€4.00' },
-            { name: 'Copo de Gelados', price: '€5.00' }
+            { name: 'Gelado de Baunilha', price: '€5.00' }
           ]
         }
       }
     },
     en: {
       title: 'Menu',
-      subtitle: 'Artisanal Coffee & Fresh Products',
-      intro: 'Discover our special coffees and fresh farm products, all prepared with local ingredients and traditional methods.',
+      subtitle: 'Artisan Coffee & Fresh Products',
+      intro: 'Discover our specialty coffees and fresh farm products, all prepared with local ingredients and traditional methods.',
       tabs: {
-        specialtyCoffeeAndTea: 'Specialty Coffee and Tea',
+        specialtyCoffeeAndTea: 'Specialty Coffee & Tea',
         beverages: 'Beverages',
         lightMeals: 'Light Meals',
         iceCream: 'Quinta dos Açores Ice Cream'
@@ -106,8 +105,8 @@ export default function MenuPage() {
             { name: 'Espresso', price: '€2.00' },
             { name: 'Americano', price: '€2.00' },
             { name: 'Latte', price: '€2.50' },
-            { name: 'Coffee w/ Milk', price: '€2.50' },
-            { name: 'Drip Coffee', price: '€2.50' },
+            { name: 'Coffee with Milk', price: '€2.50' },
+            { name: 'Filter Coffee', price: '€2.50' },
             { name: 'Cappuccino', price: '€3.00' },
             { name: 'Iced Coffee', price: '€3.00' },
             { name: 'Irish Coffee', price: '€4.00' }
@@ -155,7 +154,7 @@ export default function MenuPage() {
             { name: 'Caipirinha', price: '€4.50' },
             { name: 'Sugar Cane Juice', price: '€3.50' },
             { name: 'Gin', price: '€6.00' },
-            { name: 'Digestive | Shot | Liquor', price: '€3.00' },
+            { name: 'Digestif | Shot | Liqueur', price: '€3.00' },
             { name: 'Beer', price: '€1.50' },
             { name: 'Bananika', price: '€4.00' }
           ]
@@ -165,254 +164,8 @@ export default function MenuPage() {
           items: [
             { name: 'Vanilla Ice Cream', price: '€3.50' },
             { name: 'Chocolate Ice Cream', price: '€3.50' },
-            { name: 'Wild Fruit Ice Cream', price: '€4.00' },
-            { name: 'Ice Cream Scoop', price: '€5.00' }
-          ]
-        }
-      }
-    },
-    de: {
-      title: 'Menü',
-      subtitle: 'Handwerklicher Kaffee & Frische Produkte',
-      intro: 'Entdecken Sie unsere Spezialkaffees und frischen Hofprodukte, alle zubereitet mit lokalen Zutaten und traditionellen Methoden.',
-      tabs: {
-        specialtyCoffeeAndTea: 'Spezialkaffee und Tee',
-        beverages: 'Getränke',
-        lightMeals: 'Lichtes Essen',
-        iceCream: 'Gelato Quinta dos Açores'
-      },
-      categories: {
-        specialtyCoffee: {
-          title: 'Spezialkaffee',
-          items: [
-            { name: 'Espresso', price: '€2.00' },
-            { name: 'Americano', price: '€2.00' },
-            { name: 'Latte', price: '€2.50' },
-            { name: 'Kaffee mit Milch', price: '€2.50' },
-            { name: 'Filterkaffee', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.00' },
-            { name: 'Eiskaffee', price: '€3.00' },
-            { name: 'Irish Coffee', price: '€4.00' }
-          ]
-        },
-        tea: {
-          title: 'Tee',
-          items: [
-            { name: 'Coffee Bark Tea', price: '€2.00' },
-            { name: 'Gorreana Tea', price: '€2.00' },
-            { name: 'Tee des Tages', price: '€2.00' }
-          ]
-        },
-        lightMeals: {
-          title: 'Lichtes Essen',
-          items: [
-            { name: 'Gesundes Frühstück', price: '€6.50', description: 'Avocado und Ei Toast, mit Tee und Orangensaft' },
-            { name: 'Leichtes Frühstück', price: '€6.50', description: 'Griechischer Joghurt mit Granola, Obst und Honig, Tee und Orangensaft' },
-            { name: 'Traditionelles Frühstück', price: '€6.50', description: 'Bolo levedo Toast mit Schinken und Käse, Tee und Orangensaft' },
-            { name: 'Saisonales Obst', price: '€2.50' },
-            { name: 'Bananenbrot', price: '€3.00' },
-            { name: 'Kuchen des Tages', price: '€3.00' },
-            { name: 'Gebäck', price: '€2.50' },
-            { name: 'Kleines Gebäck', price: '€1.50' },
-            { name: 'Waffeln mit Obst | Honig | Schokolade', price: '€4.00' },
-            { name: 'Pfannkuchen mit Obst | Honig | Schokolade', price: '€4.00' },
-            { name: 'Griechischer Joghurt mit Granola und Obst', price: '€4.00' },
-            { name: 'Avocado und Ei Toast', price: '€4.00' },
-            { name: 'Bolo Levedo Toast', price: '€4.00' },
-            { name: 'Toast', price: '€3.00' },
-            { name: 'Schinken und Käse Toast', price: '€3.50' },
-            { name: 'Brot Toast', price: '€2.00' }
-          ]
-        },
-        beverages: {
-          title: 'Getränke',
-          items: [
-            { name: 'Wasser 33cl', price: '€1.00' },
-            { name: 'Wasser 1.5L', price: '€2.00' },
-            { name: 'Orangensaft', price: '€1.50' },
-            { name: 'Soda', price: '€1.50' },
-            { name: 'Schokoladenmilch', price: '€2.50' },
-            { name: 'Milchshake', price: '€3.50' },
-            { name: 'Smoothie', price: '€4.00' },
-            { name: 'Caipirinha', price: '€4.50' },
-            { name: 'Zuckerrohrsaft', price: '€3.50' },
-            { name: 'Gin', price: '€6.00' },
-            { name: 'Digestif | Shot | Likör', price: '€3.00' },
-            { name: 'Bier', price: '€1.50' },
-            { name: 'Bananika', price: '€4.00' }
-          ]
-        },
-        iceCream: {
-          title: 'Gelato Quinta dos Açores',
-          items: [
-            { name: 'Vanillegelato', price: '€3.50' },
-            { name: 'Schokogelato', price: '€3.50' },
-            { name: 'Wildfrüchtegelato', price: '€4.00' },
-            { name: 'Gelatobüchlein', price: '€5.00' }
-          ]
-        }
-      }
-    },
-    es: {
-      title: 'Menú',
-      subtitle: 'Café Artesanal y Productos Frescos',
-      intro: 'Descubre nuestros cafés especiales y productos frescos de la granja, todos preparados con ingredientes locales y métodos tradicionales.',
-      tabs: {
-        specialtyCoffeeAndTea: 'Café Especial y Té',
-        beverages: 'Bebidas',
-        lightMeals: 'Comidas Ligeras',
-        iceCream: 'Gelado Quinta dos Açores'
-      },
-      categories: {
-        specialtyCoffee: {
-          title: 'Café Especial',
-          items: [
-            { name: 'Espresso', price: '€2.00' },
-            { name: 'Americano', price: '€2.00' },
-            { name: 'Latte', price: '€2.50' },
-            { name: 'Café con Leche', price: '€2.50' },
-            { name: 'Café de Filtro', price: '€2.50' },
-            { name: 'Capuchino', price: '€3.00' },
-            { name: 'Café Helado', price: '€3.00' },
-            { name: 'Café Irlandés', price: '€4.00' }
-          ]
-        },
-        tea: {
-          title: 'Té',
-          items: [
-            { name: 'Coffee Bark Tea', price: '€2.00' },
-            { name: 'Gorreana Tea', price: '€2.00' },
-            { name: 'Té del Día', price: '€2.00' }
-          ]
-        },
-        lightMeals: {
-          title: 'Comidas Ligeras',
-          items: [
-            { name: 'Desayuno Saludable', price: '€6.50', description: 'Tostada de aguacate y huevo, con té y zumo de naranja' },
-            { name: 'Desayuno Ligero', price: '€6.50', description: 'Yogur griego con granola, fruta y miel, té y zumo de naranja' },
-            { name: 'Desayuno Tradicional', price: '€6.50', description: 'Tostada de bolo levedo con jamón y queso, té y zumo de naranja' },
-            { name: 'Fruta de Temporada', price: '€2.50' },
-            { name: 'Pan de Plátano', price: '€3.00' },
-            { name: 'Pastel del Día', price: '€3.00' },
-            { name: 'Pastelería', price: '€2.50' },
-            { name: 'Pastelería Pequeña', price: '€1.50' },
-            { name: 'Gofres con fruta | miel | chocolate', price: '€4.00' },
-            { name: 'Tortitas con fruta | miel | chocolate', price: '€4.00' },
-            { name: 'Yogur Griego con Granola y Fruta', price: '€4.00' },
-            { name: 'Tostada de Aguacate y Huevo', price: '€4.00' },
-            { name: 'Tostada de Bolo Levedo', price: '€4.00' },
-            { name: 'Tostada', price: '€3.00' },
-            { name: 'Tostada de Jamón y Queso', price: '€3.50' },
-            { name: 'Tostada de Pan', price: '€2.00' }
-          ]
-        },
-        beverages: {
-          title: 'Bebidas',
-          items: [
-            { name: 'Agua 33cl', price: '€1.00' },
-            { name: 'Agua 1.5L', price: '€2.00' },
-            { name: 'Zumo de Naranja', price: '€1.50' },
-            { name: 'Refresco', price: '€1.50' },
-            { name: 'Leche con Chocolate', price: '€2.50' },
-            { name: 'Batido', price: '€3.50' },
-            { name: 'Smoothie', price: '€4.00' },
-            { name: 'Caipirinha', price: '€4.50' },
-            { name: 'Zumo de Caña', price: '€3.50' },
-            { name: 'Ginebra', price: '€6.00' },
-            { name: 'Digestivo | Shot | Licor', price: '€3.00' },
-            { name: 'Cerveza', price: '€1.50' },
-            { name: 'Bananika', price: '€4.00' }
-          ]
-        },
-        iceCream: {
-          title: 'Gelado Quinta dos Açores',
-          items: [
-            { name: 'Gelado de Baunilha', price: '€3.50' },
-            { name: 'Gelado de Chocolate', price: '€3.50' },
-            { name: 'Gelado de Frutos Silvestres', price: '€4.00' },
-            { name: 'Copo de Gelados', price: '€5.00' }
-          ]
-        }
-      }
-    },
-    fr: {
-      title: 'Menu',
-      subtitle: 'Café Artisanal et Produits Frais',
-      intro: 'Découvrez nos cafés spéciaux et nos produits frais de la ferme, tous préparés avec des ingrédients locaux et des méthodes traditionnelles.',
-      tabs: {
-        specialtyCoffeeAndTea: 'Café Spécial et Thé',
-        beverages: 'Boissons',
-        lightMeals: 'Petits Repas',
-        iceCream: 'Gelato Quinta dos Açores'
-      },
-      categories: {
-        specialtyCoffee: {
-          title: 'Café Spécial',
-          items: [
-            { name: 'Espresso', price: '€2.00' },
-            { name: 'Américain', price: '€2.00' },
-            { name: 'Latte', price: '€2.50' },
-            { name: 'Café au Lait', price: '€2.50' },
-            { name: 'Café Filtré', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.00' },
-            { name: 'Café Glacé', price: '€3.00' },
-            { name: 'Irish Coffee', price: '€4.00' }
-          ]
-        },
-        tea: {
-          title: 'Thé',
-          items: [
-            { name: 'Coffee Bark Tea', price: '€2.00' },
-            { name: 'Gorreana Tea', price: '€2.00' },
-            { name: 'Thé du Jour', price: '€2.00' }
-          ]
-        },
-        lightMeals: {
-          title: 'Petits Repas',
-          items: [
-            { name: 'Petit Déjeuner Sain', price: '€6.50', description: 'Toast à l\'avocat et aux œufs, avec thé et jus d\'orange' },
-            { name: 'Petit Déjeuner Léger', price: '€6.50', description: 'Yaourt grec avec granola, fruits et miel, thé et jus d\'orange' },
-            { name: 'Petit Déjeuner Traditionnel', price: '€6.50', description: 'Toast de bolo levedo avec jambon et fromage, thé et jus d\'orange' },
-            { name: 'Fruits de Saison', price: '€2.50' },
-            { name: 'Pain aux Bananes', price: '€3.00' },
-            { name: 'Gâteau du Jour', price: '€3.00' },
-            { name: 'Pâtisserie', price: '€2.50' },
-            { name: 'Petite Pâtisserie', price: '€1.50' },
-            { name: 'Gaufres avec fruits | miel | chocolat', price: '€4.00' },
-            { name: 'Crêpes avec fruits | miel | chocolat', price: '€4.00' },
-            { name: 'Yaourt Grec avec Granola et Fruits', price: '€4.00' },
-            { name: 'Toast à l\'Avocat et aux Œufs', price: '€4.00' },
-            { name: 'Toast de Bolo Levedo', price: '€4.00' },
-            { name: 'Toast', price: '€3.00' },
-            { name: 'Toast Jambon et Fromage', price: '€3.50' },
-            { name: 'Toast de Pain', price: '€2.00' }
-          ]
-        },
-        beverages: {
-          title: 'Boissons',
-          items: [
-            { name: 'Eau 33cl', price: '€1.00' },
-            { name: 'Eau 1.5L', price: '€2.00' },
-            { name: 'Jus d\'Orange', price: '€1.50' },
-            { name: 'Soda', price: '€1.50' },
-            { name: 'Lait au Chocolat', price: '€2.50' },
-            { name: 'Milkshake', price: '€3.50' },
-            { name: 'Smoothie', price: '€4.00' },
-            { name: 'Caipirinha', price: '€4.50' },
-            { name: 'Jus de Canne', price: '€3.50' },
-            { name: 'Gin', price: '€6.00' },
-            { name: 'Digestif | Shot | Liqueur', price: '€3.00' },
-            { name: 'Bière', price: '€1.50' },
-            { name: 'Bananika', price: '€4.00' }
-          ]
-        },
-        iceCream: {
-          title: 'Gelato Quinta dos Açores',
-          items: [
-            { name: 'Gelato alla Vaniglia', price: '€3.50' },
-            { name: 'Gelato al Cioccolato', price: '€3.50' },
-            { name: 'Gelato ai Frutti Silvestri', price: '€4.00' },
-            { name: 'Cono di Gelato', price: '€5.00' }
+            { name: 'Wild Berries Ice Cream', price: '€4.00' },
+            { name: 'Ice Cream Cone', price: '€5.00' }
           ]
         }
       }
