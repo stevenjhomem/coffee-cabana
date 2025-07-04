@@ -100,7 +100,7 @@ export default function StoryPage() {
                 alt="Coffee Cabana"
                 width={600}
                 height={200}
-                className="w-auto h-32 md:h-40 lg:h-48 brightness-0 invert"
+                className="w-auto h-24 md:h-40 lg:h-48 brightness-0 invert"
                 priority
               />
             </div>
