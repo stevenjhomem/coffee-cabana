@@ -2,12 +2,17 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://coffee-cabana.com/sitemap.xml
+Sitemap: https://coffeecabana.pt/sitemap.xml
+
+# Allow Next.js static assets (required for proper rendering)
+Allow: /_next/static/
+Allow: /_next/image
 
 # Disallow admin or private areas (if any)
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/
+Disallow: /_next/webpack-hmr
+Disallow: /_next/on-demand-entries-ping
 Disallow: /private/
 
 # Allow all other content
