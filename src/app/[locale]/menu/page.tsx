@@ -25,7 +25,7 @@ export default function MenuPage() {
             { name: 'Americano', price: '€2.00' },
             { name: 'Latte', price: '€2.50' },
             { name: 'Coffee with Milk', price: '€2.50' },
-            { name: 'Filter Coffee', price: '€2.50' },
+            { name: 'Drip Coffee', price: '€2.50' },
             { name: 'Cappuccino', price: '€3.00' },
             { name: 'Iced Coffee', price: '€3.00' },
             { name: 'Irish Coffee', price: '€4.00' }
