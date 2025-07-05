@@ -81,8 +81,8 @@ export default function MenuPage() {
         title: 'Gelado Quinta dos Açores',
         items: [
           { name: '1 Bola', price: '€2.00' },
-          { name: '2 Bola', price: '€3.00' },
-          { name: '3 Bola', price: '€4.00' },
+          { name: '2 Bolas', price: '€3.00' },
+          { name: '3 Bolas', price: '€4.00' },
         ]
       }
     },
