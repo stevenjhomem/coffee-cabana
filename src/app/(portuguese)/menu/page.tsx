@@ -61,7 +61,7 @@ export default function MenuPage() {
         items: [
           { name: 'Pequeno-Almoço Saudável', price: '€6.50', description: 'Torrados com ovo e abacate, com chá e sumo de laranja' },
           { name: 'Pequeno-Almoço Leve', price: '€6.50', description: 'Iogurte grego com granola, fruta e mel, chá e sumo de laranja' },
-          { name: 'Pequeno-Almoço Tradicional', price: '€6.50', description: 'Tosta de bolo levedo com presunto e queijo, chá e sumo de laranja' },
+          { name: 'Pequeno-Almoço Tradicional', price: '€6.50', description: 'Tosta de bolo lêvedo com queijo e fiambre, chá e sumo de laranja' },
           { name: 'Fruta da Época', price: '€2.50' },
           { name: 'Pão de Banana', price: '€3.00' },
           { name: 'Bolo do Dia', price: '€3.00' },
