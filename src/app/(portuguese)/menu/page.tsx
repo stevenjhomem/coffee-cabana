@@ -91,6 +91,7 @@ export default function MenuPage() {
       languages: {
         'pt': 'https://coffeecabana.pt/menu',
         'en': 'https://coffeecabana.pt/en/menu',
+        'x-default': 'https://coffeecabana.pt/menu',
       },
     },
   }

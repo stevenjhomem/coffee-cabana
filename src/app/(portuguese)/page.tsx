@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     languages: {
       'pt': 'https://coffeecabana.pt',
       'en': 'https://coffeecabana.pt/en',
+      'x-default': 'https://coffeecabana.pt',
     },
   },
 }

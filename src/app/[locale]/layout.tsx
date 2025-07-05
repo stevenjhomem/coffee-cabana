@@ -44,6 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         'pt': 'https://coffeecabana.pt',
         'en': 'https://coffeecabana.pt/en',
+        'x-default': 'https://coffeecabana.pt',
       },
     },
   }

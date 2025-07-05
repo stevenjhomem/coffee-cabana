@@ -47,6 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: {
         'pt': 'https://coffeecabana.pt',
         'en': 'https://coffeecabana.pt/en',
+        'x-default': 'https://coffeecabana.pt',
       },
     },
   }
