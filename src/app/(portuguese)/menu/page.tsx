@@ -20,7 +20,7 @@ export default function MenuPage() {
       specialtyCoffee: {
         title: 'Café Especial',
         items: [
-          { name: 'Espresso', price: '€2.00' },
+          { name: 'Exspresso', price: '€2.00' },
           { name: 'Americano', price: '€2.00' },
           { name: 'Latte', price: '€2.50' },
           { name: 'Café com Leite', price: '€2.50' },
@@ -33,10 +33,9 @@ export default function MenuPage() {
       tea: {
         title: 'Chá',
         items: [
-          { name: 'Chá Preto', price: '€2.00' },
-          { name: 'Chá Verde', price: '€2.00' },
-          { name: 'Chá de Ervas', price: '€2.50' },
-          { name: 'Chá de Frutos', price: '€2.50' }
+          { name: 'Chá de Cascara', price: '€2.00' },
+          { name: 'Chá Gorreana', price: '€2.00' },
+          { name: 'Chá do Dia', price: '€2.00' },
         ]
       },
       beverages: {
@@ -81,10 +80,9 @@ export default function MenuPage() {
       iceCream: {
         title: 'Gelado Quinta dos Açores',
         items: [
-          { name: 'Gelado de Baunilha', price: '€3.50' },
-          { name: 'Gelado de Chocolate', price: '€3.50' },
-          { name: 'Gelado de Frutos Silvestres', price: '€4.00' },
-          { name: 'Copo de Gelados', price: '€5.00' }
+          { name: '1 Bola', price: '€2.00' },
+          { name: '2 Bola', price: '€3.00' },
+          { name: '3 Bola', price: '€4.00' },
         ]
       }
     },

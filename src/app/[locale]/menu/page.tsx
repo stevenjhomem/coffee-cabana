@@ -7,88 +7,6 @@ export default function MenuPage() {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
 
   const content = {
-    pt: {
-      title: 'Menu',
-      subtitle: 'Café Artesanal & Produtos Frescos',
-      intro: 'Descubra os nossos cafés especiais e produtos frescos da quinta, todos preparados com ingredientes locais e métodos tradicionais.',
-      tabs: {
-        specialtyCoffeeAndTea: 'Café Especial e Chá',
-        beverages: 'Bebidas',
-        lightMeals: 'Refeições Ligeiras',
-        iceCream: 'Gelado Quinta dos Açores'
-      },
-      categories: {
-        specialtyCoffee: {
-          title: 'Café Especial',
-          items: [
-            { name: 'Espresso', price: '€2.00' },
-            { name: 'Americano', price: '€2.00' },
-            { name: 'Latte', price: '€2.50' },
-            { name: 'Café com Leite', price: '€2.50' },
-            { name: 'Café Filtro', price: '€2.50' },
-            { name: 'Cappuccino', price: '€3.00' },
-            { name: 'Café Gelado', price: '€3.00' },
-            { name: 'Irish Coffee', price: '€4.00' }
-          ]
-        },
-        tea: {
-          title: 'Chá',
-          items: [
-            { name: 'Coffee Bark Tea', price: '€2.00' },
-            { name: 'Chá Gorreana', price: '€2.00' },
-            { name: 'Chá do Dia', price: '€2.00' }
-          ]
-        },
-        lightMeals: {
-          title: 'Refeições Ligeiras',
-          items: [
-            { name: 'Pequeno-Almoço Saudável', price: '€6.50', description: 'Tosta de abacate e ovo, com chá e sumo de laranja' },
-            { name: 'Pequeno-Almoço Leve', price: '€6.50', description: 'Iogurte grego com granola, fruta e mel, chá e sumo de laranja' },
-            { name: 'Pequeno-Almoço Tradicional', price: '€6.50', description: 'Tosta de bolo levedo com presunto e queijo, chá e sumo de laranja' },
-            { name: 'Fruta da Época', price: '€2.50' },
-            { name: 'Pão de Banana', price: '€3.00' },
-            { name: 'Bolo do Dia', price: '€3.00' },
-            { name: 'Pastelaria', price: '€2.50' },
-            { name: 'Pastelaria Pequena', price: '€1.50' },
-            { name: 'Waffles com fruta | mel | chocolate', price: '€4.00' },
-            { name: 'Panquecas com fruta | mel | chocolate', price: '€4.00' },
-            { name: 'Iogurte Grego com Granola e Fruta', price: '€4.00' },
-            { name: 'Tosta de Abacate e Ovo', price: '€4.00' },
-            { name: 'Tosta de Bolo Levedo', price: '€4.00' },
-            { name: 'Tosta', price: '€3.00' },
-            { name: 'Tosta de Presunto e Queijo', price: '€3.50' },
-            { name: 'Tosta de Pão', price: '€2.00' }
-          ]
-        },
-        beverages: {
-          title: 'Bebidas',
-          items: [
-            { name: 'Água 33cl', price: '€1.00' },
-            { name: 'Água 1.5L', price: '€2.00' },
-            { name: 'Sumo de Laranja', price: '€1.50' },
-            { name: 'Refrigerante', price: '€1.50' },
-            { name: 'Leite com Chocolate', price: '€2.50' },
-            { name: 'Batido', price: '€3.50' },
-            { name: 'Smoothie', price: '€4.00' },
-            { name: 'Caipirinha', price: '€4.50' },
-            { name: 'Sumo de Cana', price: '€3.50' },
-            { name: 'Gin', price: '€6.00' },
-            { name: 'Digestivo | Shot | Licor', price: '€3.00' },
-            { name: 'Cerveja', price: '€1.50' },
-            { name: 'Bananika', price: '€4.00' }
-          ]
-        },
-        iceCream: {
-          title: 'Gelado Quinta dos Açores',
-          items: [
-            { name: 'Gelado de Baunilha', price: '€3.50' },
-            { name: 'Gelado de Chocolate', price: '€3.50' },
-            { name: 'Gelado de Frutos Silvestres', price: '€4.00' },
-            { name: 'Gelado de Baunilha', price: '€5.00' }
-          ]
-        }
-      }
-    },
     en: {
       title: 'Menu',
       subtitle: 'Artisan Coffee & Fresh Products',
@@ -116,7 +34,7 @@ export default function MenuPage() {
         tea: {
           title: 'Tea',
           items: [
-            { name: 'Coffee Bark Tea', price: '€2.00' },
+            { name: 'Cascara Tea', price: '€2.00' },
             { name: 'Gorreana Tea', price: '€2.00' },
             { name: 'Tea of the Day', price: '€2.00' }
           ]
@@ -155,7 +73,7 @@ export default function MenuPage() {
             { name: 'Caipirinha', price: '€4.50' },
             { name: 'Sugar Cane Juice', price: '€3.50' },
             { name: 'Gin', price: '€6.00' },
-            { name: 'Digestif | Shot | Liqueur', price: '€3.00' },
+            { name: 'Digestive | Shot | Liqueur', price: '€3.00' },
             { name: 'Beer', price: '€1.50' },
             { name: 'Bananika', price: '€4.00' }
           ]
@@ -163,10 +81,9 @@ export default function MenuPage() {
         iceCream: {
           title: 'Quinta dos Açores Ice Cream',
           items: [
-            { name: 'Vanilla Ice Cream', price: '€3.50' },
-            { name: 'Chocolate Ice Cream', price: '€3.50' },
-            { name: 'Wild Berries Ice Cream', price: '€4.00' },
-            { name: 'Ice Cream Cone', price: '€5.00' }
+            { name: '1 Scoop', price: '€2.00' },
+            { name: '2 Scoops', price: '€3.00' },
+            { name: '3 Scoops', price: '€4.00' },
           ]
         }
       }
