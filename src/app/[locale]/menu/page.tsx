@@ -42,9 +42,9 @@ export default function MenuPage() {
         lightMeals: {
           title: 'Light Meals',
           items: [
-            { name: 'Healthy Breakfast', price: '€6.50', description: 'Avocado and egg toast, with tea and orange juice' },
-            { name: 'Light Breakfast', price: '€6.50', description: 'Greek yogurt with granola, fruit and honey, tea and orange juice' },
-            { name: 'Traditional Breakfast', price: '€6.50', description: 'Bolo levedo toast with ham and cheese, tea and orange juice' },
+            { name: 'Healthy Breakfast', price: '€6.50', description: 'Avocado and egg toast, with tea and orange juice.' },
+            { name: 'Light Breakfast', price: '€6.50', description: 'Greek yogurt with granola, fruit and honey, tea and orange juice.' },
+            { name: 'Traditional Breakfast', price: '€6.50', description: 'Bolo levedo toast with ham and cheese, tea and orange juice.' },
             { name: 'Seasonal Fruit', price: '€2.50' },
             { name: 'Banana Bread', price: '€3.00' },
             { name: 'Cake of the Day', price: '€3.00' },
@@ -54,7 +54,7 @@ export default function MenuPage() {
             { name: 'Pancakes with fruit | honey | chocolate', price: '€4.00' },
             { name: 'Greek Yogurt with Granola and Fruit', price: '€4.00' },
             { name: 'Avocado and Egg Toast', price: '€4.00' },
-            { name: 'Bolo Levedo Toast', price: '€4.00' },
+            { name: 'Bolo Lêvedo Toast', price: '€4.00' },
             { name: 'Toast', price: '€3.00' },
             { name: 'Ham and Cheese Toast', price: '€3.50' },
             { name: 'Bread Toast', price: '€2.00' }
