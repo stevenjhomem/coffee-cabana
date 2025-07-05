@@ -207,14 +207,14 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="h-screen relative">
+    <div className="min-h-screen relative">
       {/* Background Image */}
-      <div className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
            style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)' }}>
       </div>
       
       {/* Content */}
-      <div className="relative z-10 h-full overflow-y-auto">
+      <div className="relative z-10">
         {/* Content Section */}
         <section className="pt-48 pb-20">
           <div className="max-w-6xl mx-auto px-6">
