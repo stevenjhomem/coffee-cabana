@@ -34,17 +34,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: currentMeta.title,
       description: currentMeta.description,
-      url: `https://coffeecabana.pt/${locale}`,
+      url: `https://www.coffeecabana.pt/${locale}`,
       siteName: 'Coffee Cabana',
       locale: locale === 'pt' ? 'pt_PT' : `${locale}_${locale.toUpperCase()}`,
       type: 'website',
     },
     alternates: {
-      canonical: `https://coffeecabana.pt/${locale}`,
+      canonical: `https://www.coffeecabana.pt/${locale}`,
       languages: {
-        'pt': 'https://coffeecabana.pt',
-        'en': 'https://coffeecabana.pt/en',
-        'x-default': 'https://coffeecabana.pt',
+        'pt': 'https://www.coffeecabana.pt',
+        'en': 'https://www.coffeecabana.pt/en',
+        'x-default': 'https://www.coffeecabana.pt',
       },
     },
   }

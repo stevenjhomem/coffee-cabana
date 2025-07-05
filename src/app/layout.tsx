@@ -7,7 +7,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://coffeecabana.pt'),
+  metadataBase: new URL('https://www.coffeecabana.pt'),
   title: 'Coffee Cabana - Café Orgânico Terceira | Açores',
   description: 'O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.',
   keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Coffee Cabana - Authentic Azores Coffee',
     description: 'The only coffee grown and roasted on Terceira Island',
-    url: 'https://coffeecabana.pt',
+    url: 'https://www.coffeecabana.pt',
     siteName: 'Coffee Cabana',
     locale: 'pt_PT',
     type: 'website',

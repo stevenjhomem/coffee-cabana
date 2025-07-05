@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Coffee Cabana - Café Orgânico Terceira | Açores',
     description: 'O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.',
-    url: 'https://coffeecabana.pt',
+    url: 'https://www.coffeecabana.pt',
     siteName: 'Coffee Cabana',
     locale: 'pt_PT',
     type: 'website',
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://coffeecabana.pt',
+    canonical: 'https://www.coffeecabana.pt',
     languages: {
-      'pt': 'https://coffeecabana.pt',
-      'en': 'https://coffeecabana.pt/en',
-      'x-default': 'https://coffeecabana.pt',
+      'pt': 'https://www.coffeecabana.pt',
+      'en': 'https://www.coffeecabana.pt/en',
+      'x-default': 'https://www.coffeecabana.pt',
     },
   },
 }

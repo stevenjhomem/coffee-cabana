@@ -45,11 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
     },
     alternates: {
-      canonical: `https://coffeecabana.pt/${locale}/story`,
+      canonical: `https://www.coffeecabana.pt/${locale}/story`,
       languages: {
-        'pt': 'https://coffeecabana.pt/story',
-        'en': 'https://coffeecabana.pt/en/story',
-        'x-default': 'https://coffeecabana.pt/story',
+        'pt': 'https://www.coffeecabana.pt/story',
+        'en': 'https://www.coffeecabana.pt/en/story',
+        'x-default': 'https://www.coffeecabana.pt/story',
       },
     },
   }

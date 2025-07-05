@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://coffeecabana.pt/story',
+    canonical: 'https://www.coffeecabana.pt/story',
     languages: {
-      'pt': 'https://coffeecabana.pt/story',
-      'en': 'https://coffeecabana.pt/en/story',
-      'x-default': 'https://coffeecabana.pt/story',
+      'pt': 'https://www.coffeecabana.pt/story',
+      'en': 'https://www.coffeecabana.pt/en/story',
+      'x-default': 'https://www.coffeecabana.pt/story',
     },
   },
 }

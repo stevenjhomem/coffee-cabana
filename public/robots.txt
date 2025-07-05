@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://coffeecabana.pt/sitemap.xml
+Sitemap: https://www.coffeecabana.pt/sitemap.xml
 
 # Allow Next.js static assets (required for proper rendering)
 Allow: /_next/static/

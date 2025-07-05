@@ -87,11 +87,11 @@ export default function MenuPage() {
       }
     },
     alternates: {
-      canonical: 'https://coffeecabana.pt/menu',
+      canonical: 'https://www.coffeecabana.pt/menu',
       languages: {
-        'pt': 'https://coffeecabana.pt/menu',
-        'en': 'https://coffeecabana.pt/en/menu',
-        'x-default': 'https://coffeecabana.pt/menu',
+        'pt': 'https://www.coffeecabana.pt/menu',
+        'en': 'https://www.coffeecabana.pt/en/menu',
+        'x-default': 'https://www.coffeecabana.pt/menu',
       },
     },
   }
