@@ -64,7 +64,7 @@ export default function MenuPage() {
           { name: 'Pequeno-Almoço Tradicional', price: '€6.50', description: 'Tosta de bolo lêvedo com queijo e fiambre, chá e sumo de laranja' },
           { name: 'Fruta da Época', price: '€2.50' },
           { name: 'Pão de Banana', price: '€3.00' },
-          { name: 'Bolo do Dia', price: '€3.00' },
+          { name: 'Bolo Caseiro do Dia', price: '€3.00' },
           { name: 'Pastelaria', price: '€2.50' },
           { name: 'Pastelaria Pequena', price: '€1.50' },
           { name: 'Waffles com fruta | mel | chocolate', price: '€4.00' },
