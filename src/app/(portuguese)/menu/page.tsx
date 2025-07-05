@@ -23,8 +23,8 @@ export default function MenuPage() {
           { name: 'Expresso', price: '€2.00' },
           { name: 'Americano', price: '€2.00' },
           { name: 'Meia de Leite', price: '€2.50' },
-          { name: 'Café com Leite', price: '€2.50' },
-          { name: 'Café Filtrado', price: '€2.50' },
+          { name: 'Galão', price: '€2.50' },
+          { name: 'Café Pingado', price: '€2.50' },
           { name: 'Cappuccino', price: '€2.50' },
           { name: 'Café Gelado', price: '€3.00' },
           { name: 'Café Irlandês', price: '€4.00' }
@@ -33,9 +33,9 @@ export default function MenuPage() {
       tea: {
         title: 'Chá',
         items: [
-          { name: 'Chá de Cascara', price: '€2.00' },
+          { name: 'Chá de casca de café', price: '€2.00' },
           { name: 'Chá Gorreana', price: '€2.00' },
-          { name: 'Chá do Dia', price: '€2.00' },
+          { name: 'Chá fresco do dia', price: '€2.00' },
         ]
       },
       beverages: {
