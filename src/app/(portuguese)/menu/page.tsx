@@ -59,7 +59,7 @@ export default function MenuPage() {
       lightMeals: {
         title: 'Refeições Ligeiras',
         items: [
-          { name: 'Pequeno-Almoço Saudável', price: '€6.50', description: 'Tosta de abacate e ovo, com chá e sumo de laranja' },
+          { name: 'Pequeno-Almoço Saudável', price: '€6.50', description: 'Torrados com ovo e abacate, com chá e sumo de laranja' },
           { name: 'Pequeno-Almoço Leve', price: '€6.50', description: 'Iogurte grego com granola, fruta e mel, chá e sumo de laranja' },
           { name: 'Pequeno-Almoço Tradicional', price: '€6.50', description: 'Tosta de bolo levedo com presunto e queijo, chá e sumo de laranja' },
           { name: 'Fruta da Época', price: '€2.50' },
@@ -71,10 +71,10 @@ export default function MenuPage() {
           { name: 'Panquecas com fruta | mel | chocolate', price: '€4.00' },
           { name: 'Iogurte Grego com Granola e Fruta', price: '€4.00' },
           { name: 'Tosta de Abacate e Ovo', price: '€4.00' },
-          { name: 'Tosta de Bolo Levedo', price: '€4.00' },
-          { name: 'Tosta', price: '€3.00' },
-          { name: 'Tosta de Presunto e Queijo', price: '€3.50' },
-          { name: 'Tosta de Pão', price: '€2.00' }
+          { name: 'Tosta em Bolo Lêvedo', price: '€4.00' },
+          { name: 'Tosta simples', price: '€3.00' },
+          { name: 'Tosta mista', price: '€3.50' },
+          { name: 'Torrado', price: '€2.00' }
         ]
       },
       iceCream: {
