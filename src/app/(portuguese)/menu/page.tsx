@@ -74,7 +74,7 @@ export default function MenuPage() {
           { name: 'Tosta em Bolo Lêvedo', price: '€4.00' },
           { name: 'Tosta simples', price: '€3.00' },
           { name: 'Tosta mista', price: '€3.50' },
-          { name: 'Torrado', price: '€2.00' }
+          { name: 'Torrada', price: '€2.00' }
         ]
       },
       iceCream: {
