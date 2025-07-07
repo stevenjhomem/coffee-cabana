@@ -1,7 +1,6 @@
 'use client'
 
 import React, { Fragment, useState } from 'react'
-import Image from 'next/image'
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
@@ -224,12 +223,18 @@ export default function MenuPage() {
             {/* Title and Intro */}
             <div className="text-center mb-16">
               <div className="flex justify-center">
-                <Image 
-                  src="/images/logos/menu/portuguese/menulogopt.png" 
-                  alt="Nosso Menu" 
-                  width={600}
-                  height={200}
-                  className="h-32 md:h-40 lg:h-48 object-contain invert"
+                <div
+                  className="h-32 md:h-40 lg:h-48 w-96 md:w-[500px] lg:w-[600px] bg-contain bg-center bg-no-repeat invert relative z-20 select-none"
+                  style={{
+                    backgroundImage: `url('/images/logos/menu/portuguese/menulogopt.png')`,
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none',
+                    MozUserSelect: 'none',
+                    msUserSelect: 'none',
+                    WebkitTouchCallout: 'none'
+                  } as React.CSSProperties}
+                  draggable="false"
+                  onDragStart={(e) => e.preventDefault()}
                 />
               </div>
             </div>

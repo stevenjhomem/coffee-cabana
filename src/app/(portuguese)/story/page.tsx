@@ -96,13 +96,16 @@ export default function StoryPage() {
           {/* Main title - Brand name stays consistent */}
           <div className="mb-8">
             <div className="flex justify-center">
-              <Image
-                src="/images/logos/story/portuguese/ourstorypt.png"
-                alt="Coffee Cabana"
-                width={600}
-                height={200}
-                className="w-auto h-24 md:h-40 lg:h-48 brightness-0 invert"
-                priority
+              <div
+                className="w-96 md:w-[500px] lg:w-[600px] h-24 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
+                style={{
+                  backgroundImage: `url('/images/logos/story/portuguese/ourstorypt.png')`,
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                  msUserSelect: 'none'
+                }}
+                draggable="false"
               />
             </div>
           </div>
