@@ -1,17 +1,20 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 import { defaultLocale } from '@/lib/i18n/config'
+import Link from 'next/link'
 
 interface HeaderProps {
   locale?: string
 }
 
 export default function Header({ locale = 'pt' }: HeaderProps) {
+  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
 
@@ -23,6 +26,14 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
   const handleLanguageToggle = () => {
     setIsLanguageOpen(!isLanguageOpen)
     setIsMenuOpen(false) // Close menu when language switcher opens
+  }
+
+  const handleNavigation = (href: string) => {
+    setIsMenuOpen(false)
+    // Use setTimeout to ensure the menu closes before navigation
+    setTimeout(() => {
+      router.push(href)
+    }, 100)
   }
 
   const navigation = {
@@ -85,14 +96,13 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
                 <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
                   <div className="px-4 py-2 space-y-2">
                     {navItems.map((item) => (
-                      <a
+                      <button
                         key={item.name}
-                        href={item.href}
-                        className="block text-white hover:text-gray-300 transition-colors duration-200 font-medium py-2 text-right"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => handleNavigation(item.href)}
+                        className="block w-full text-left text-white hover:text-gray-300 transition-colors duration-200 font-medium py-2 text-right"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -124,14 +134,13 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
                 <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
                   <div className="px-4 py-2 space-y-2">
                     {navItems.map((item) => (
-                      <a
+                      <button
                         key={item.name}
-                        href={item.href}
-                        className="block text-white hover:text-gray-300 transition-colors duration-200 font-medium py-2 text-right"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => handleNavigation(item.href)}
+                        className="block w-full text-left text-white hover:text-gray-300 transition-colors duration-200 font-medium py-2 text-right"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 </div>

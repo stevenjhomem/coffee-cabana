@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,10 +10,20 @@ interface HeroSectionProps {
 
 export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const [mounted, setMounted] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const logoRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (videoLoaded && logoRef.current && scrollRef.current) {
+      logoRef.current.style.opacity = '1'
+      scrollRef.current.style.opacity = '1'
+    }
+  }, [videoLoaded])
 
   const content = {
     pt: {
@@ -57,6 +67,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
               loop
               playsInline
               className="w-full h-full object-cover"
+              onLoadedData={() => setVideoLoaded(true)}
             >
               <source src="/images/coffeecabana/videobackground.mp4" type="video/mp4" />
               <source src="/images/coffeecabana/videobackground.webm" type="video/webm" />
@@ -68,7 +79,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto flex flex-col items-center justify-center h-full">
         {/* Main title - Brand name stays consistent */}
-        <div className="mb-8">
+        <div ref={logoRef} className="mb-8 transition-opacity duration-800" style={{ opacity: 0 }}>
           <div className="flex justify-center">
             <div
               className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
@@ -88,7 +99,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       </div>
 
       {/* Scroll indicator - positioned within the section */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+      <div ref={scrollRef} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-800" style={{ opacity: 0 }}>
         <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer text-center">
           <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">{t.scroll}</div>
           <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4 mx-auto stroke-2" />
