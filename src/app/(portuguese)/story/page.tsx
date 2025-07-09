@@ -1,44 +1,11 @@
+'use client'
+
 import type { Metadata } from 'next'
 import React from 'react'
 import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-
-export const metadata: Metadata = {
-  title: 'Sobre Nós - Coffee Cabana | Açores',
-  description: 'Descubra a história por detrás do Coffee Cabana, a única quinta de café na Ilha Terceira, e o nosso compromisso com o café orgânico e a agricultura sustentável.',
-  keywords: 'café Terceira, brunch Açores, bananas tropicais, restaurante Angra do Heroísmo, quinta agriturismo, pequeno-almoço Terceira, café orgânico, plantation bananas Açores, farm to table Terceira, café da manhã Azores',
-  authors: [{ name: 'Coffee Cabana' }],
-  creator: 'Coffee Cabana',
-  publisher: 'Coffee Cabana',
-  robots: 'index, follow',
-  openGraph: {
-    title: 'A Nossa História - Coffee Cabana | Açores',
-    description: 'Descubra a história por detrás do Coffee Cabana, a única quinta de café na Ilha Terceira, e o nosso compromisso com o café orgânico e a agricultura sustentável.',
-    url: 'https://coffeecabana.pt/story',
-    siteName: 'Coffee Cabana',
-    locale: 'pt_PT',
-    type: 'website',
-    images: [
-      {
-        url: '/images/coffeecabana/Banana_EcoCamp-49.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Sobre Nós - Coffee Cabana | Açores',
-        type: 'image/png',
-      },
-    ],
-  },
-  alternates: {
-    canonical: 'https://www.coffeecabana.pt/story',
-    languages: {
-      'pt': 'https://www.coffeecabana.pt/story',
-      'en': 'https://www.coffeecabana.pt/en/story',
-      'x-default': 'https://www.coffeecabana.pt/story',
-    },
-  },
-}
 
 export default function StoryPage() {
   const content = {
@@ -92,26 +59,24 @@ export default function StoryPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-41">
+        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto flex flex-col items-center justify-center h-full">
           {/* Main title - Brand name stays consistent */}
           <div className="mb-8">
             <div className="flex justify-center">
               <div
                 className="w-96 md:w-[500px] lg:w-[600px] h-24 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
                 style={{
-                  backgroundImage: `url('/images/logos/story/portuguese/ourstorypt.png')`,
+                  backgroundImage: `url('/images/logos/story/portuguese/ourstorypt3.png')`,
                   userSelect: 'none',
                   WebkitUserSelect: 'none',
                   MozUserSelect: 'none',
-                  msUserSelect: 'none'
+                  msUserSelect: 'none',
+                  WebkitTouchCallout: 'none'
                 }}
                 draggable="false"
               />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-light tracking-wide mb-6">
-            {t.hero.title}
-          </h1>
         </div>
 
         {/* Scroll indicator - positioned within the section */}

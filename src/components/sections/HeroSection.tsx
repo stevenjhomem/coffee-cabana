@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,6 +9,12 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const content = {
     pt: {
       subtitle: "Café Orgânico de Terceira",
@@ -39,18 +46,27 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
 
   return (
     <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
-      {/* Photo Background */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/images/coffeecabana/Banana_EcoCamp-02.jpg')`
-          }}
-        />
+        {/* Video container - always present */}
+        <div className="absolute inset-0 w-full h-full">
+          {mounted && (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/images/coffeecabana/videobackground.mp4" type="video/mp4" />
+              <source src="/images/coffeecabana/videobackground.webm" type="video/webm" />
+            </video>
+          )}
+        </div>
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-41">
+      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto flex flex-col items-center justify-center h-full">
         {/* Main title - Brand name stays consistent */}
         <div className="mb-8">
           <div className="flex justify-center">

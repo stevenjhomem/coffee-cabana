@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import type { Metadata } from 'next'
 import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
@@ -8,55 +11,16 @@ interface Props {
   params: Promise<{ locale: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params
+export default function StoryPage({ params }: Props) {
+  const [locale, setLocale] = useState<string>('en')
 
-  const metaData = {
-    en: {
-      title: 'Our Story - Coffee Cabana | Azores',
-      description: 'Discover the story of Coffee Cabana, from plantation to cup, in the heart of Terceira Island.',
-    },
-  }
-
-  const currentMeta = metaData[locale as keyof typeof metaData] || metaData.en
-
-  return {
-    ...currentMeta,
-    keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
-    authors: [{ name: 'Coffee Cabana' }],
-    creator: 'Coffee Cabana',
-    publisher: 'Coffee Cabana',
-    robots: 'index, follow',
-    openGraph: {
-      title: currentMeta.title,
-      description: currentMeta.description,
-      url: `https://coffeecabana.pt/${locale}`,
-      siteName: 'Coffee Cabana',
-      locale: locale === 'pt' ? 'pt_PT' : `${locale}_${locale.toUpperCase()}`,
-      type: 'website',
-      images: [
-        {
-          url: '/images/coffee/coffee-cabana-instagram.png',
-          width: 1200,
-          height: 630,
-          alt: currentMeta.title,
-          type: 'image/png',
-        },
-      ],
-    },
-    alternates: {
-      canonical: `https://www.coffeecabana.pt/${locale}/story`,
-      languages: {
-        'pt': 'https://www.coffeecabana.pt/story',
-        'en': 'https://www.coffeecabana.pt/en/story',
-        'x-default': 'https://www.coffeecabana.pt/story',
-      },
-    },
-  }
-}
-
-export default async function StoryPage({ params }: Props) {
-  const { locale } = await params
+  useEffect(() => {
+    const getLocale = async () => {
+      const { locale: resolvedLocale } = await params
+      setLocale(resolvedLocale)
+    }
+    getLocale()
+  }, [params])
 
   const content = {
     en: {
@@ -112,26 +76,26 @@ export default async function StoryPage({ params }: Props) {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto pt-41">
+        <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto flex flex-col items-center justify-center h-full">
           {/* Main title - Brand name stays consistent */}
           <div className="mb-8">
             <div className="flex justify-center">
               <div
                 className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
                 style={{
-                  backgroundImage: `url('${t.logo}')`,
+                  backgroundImage: locale === 'pt' 
+                    ? `url('/images/logos/story/portuguese/ourstorypt3.png')`
+                    : `url('/images/logos/story/english/ourstoryen.png')`,
                   userSelect: 'none',
                   WebkitUserSelect: 'none',
                   MozUserSelect: 'none',
-                  msUserSelect: 'none'
+                  msUserSelect: 'none',
+                  WebkitTouchCallout: 'none'
                 }}
                 draggable="false"
               />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-light tracking-wide mb-6 drop-shadow-lg">
-            {t.hero.title}
-          </h1>
         </div>
 
         {/* Scroll indicator - positioned within the section */}
