@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'website',
       images: [
         {
-          url: '/images/coffee/coffee-cabana-instagram.png',
+          url: '/images/coffeecabana/coffee-cabana-instagram.png',
           width: 1200,
           height: 630,
           alt: currentMeta.title,

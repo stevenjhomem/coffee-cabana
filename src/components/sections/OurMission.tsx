@@ -32,7 +32,7 @@ export default function OurMission({ locale }: OurMissionProps) {
           <div className="flex-1 w-full lg:w-auto">
             <Image 
               src="/images/coffeecabana/Banana_EcoCamp-46.jpg" 
-              alt="Coffee plantation at Banana EcoCamp" 
+              alt="Plantação de café orgânico na quinta Coffee Cabana com vista para as montanhas da Terceira" 
               width={400} 
               height={320}
               className="rounded-lg object-cover w-full h-80"

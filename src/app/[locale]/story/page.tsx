@@ -120,7 +120,7 @@ export default function StoryPage({ params }: Props) {
               <div className="relative mb-8">
                 <Image
                   src="/images/coffeecabana/bernardo.jpeg"
-                  alt="Bernardo working in the banana plantation"
+                  alt="José Bernardo working in the banana plantation at Coffee Cabana farm"
                   width={600}
                   height={600}
                   className="rounded-lg"
@@ -128,7 +128,7 @@ export default function StoryPage({ params }: Props) {
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.story.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>
@@ -142,14 +142,14 @@ export default function StoryPage({ params }: Props) {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.story.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>
             <div className="hidden lg:block relative">
               <Image
                 src="/images/coffeecabana/bernardo.jpeg"
-                alt="Bernardo working in the banana plantation"
+                alt="José Bernardo working in the banana plantation at Coffee Cabana farm"
                 width={600}
                 height={600}
                 className="rounded-lg"
@@ -173,7 +173,7 @@ export default function StoryPage({ params }: Props) {
               <div className="relative mb-8">
                 <Image
                   src="/images/coffeecabana/family.png"
-                  alt="Marcel and Marta family"
+                  alt="Marcel, Marta and their two daughters at Coffee Cabana farm"
                   width={600}
                   height={600}
                   className="rounded-lg"
@@ -181,7 +181,7 @@ export default function StoryPage({ params }: Props) {
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function StoryPage({ params }: Props) {
             <div className="hidden lg:block order-2 lg:order-1 relative">
               <Image
                 src="/images/coffeecabana/family.png"
-                alt="Marcel and Marta family"
+                alt="Marcel, Marta and their two daughters at Coffee Cabana farm"
                 width={600}
                 height={600}
                 className="rounded-lg"
@@ -204,7 +204,7 @@ export default function StoryPage({ params }: Props) {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>

@@ -81,7 +81,7 @@ export default function StoryPage() {
         {/* Scroll indicator - positioned within the section */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
           <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer text-center">
-            <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">scroll</div>
+            <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">rolar</div>
             <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4 mx-auto stroke-2" />
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function StoryPage() {
               <div className="relative mb-8">
                 <Image
                   src="/images/coffeecabana/bernardo.jpeg"
-                  alt="Bernardo working in the banana plantation"
+                  alt="José Bernardo trabalhando na plantação de bananas na quinta Coffee Cabana"
                   width={600}
                   height={600}
                   className="rounded-lg"
@@ -109,7 +109,7 @@ export default function StoryPage() {
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.story.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>
@@ -123,14 +123,14 @@ export default function StoryPage() {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.story.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>
             <div className="hidden lg:block relative">
               <Image
                 src="/images/coffeecabana/bernardo.jpeg"
-                alt="Bernardo working in the banana plantation"
+                alt="José Bernardo trabalhando na plantação de bananas na quinta Coffee Cabana"
                 width={600}
                 height={600}
                 className="rounded-lg"
@@ -154,7 +154,7 @@ export default function StoryPage() {
               <div className="relative mb-8">
                 <Image
                   src="/images/coffeecabana/family.png"
-                  alt="Marcel and Marta family"
+                  alt="Marcel, Marta e suas duas filhas na quinta Coffee Cabana"
                   width={600}
                   height={600}
                   className="rounded-lg"
@@ -162,7 +162,7 @@ export default function StoryPage() {
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function StoryPage() {
             <div className="hidden lg:block order-2 lg:order-1 relative">
               <Image
                 src="/images/coffeecabana/family.png"
-                alt="Marcel and Marta family"
+                alt="Marcel, Marta e suas duas filhas na quinta Coffee Cabana"
                 width={600}
                 height={600}
                 className="rounded-lg"
@@ -185,7 +185,7 @@ export default function StoryPage() {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
                 {t.coffeeCraft.paragraphs.map((paragraph, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>

@@ -13,6 +13,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const [videoLoaded, setVideoLoaded] = useState(false)
   const logoRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setMounted(true)
@@ -24,6 +25,16 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       scrollRef.current.style.opacity = '1'
     }
   }, [videoLoaded])
+
+  useEffect(() => {
+    return () => {
+      const video = videoRef.current
+      if (video) {
+        video.pause()
+        video.currentTime = 0
+      }
+    }
+  }, [])
 
   const content = {
     pt: {
@@ -62,6 +73,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         <div className="absolute inset-0 w-full h-full">
           {mounted && (
             <video
+              ref={videoRef}
               autoPlay
               muted
               loop
