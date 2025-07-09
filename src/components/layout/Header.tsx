@@ -7,7 +7,6 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 import { defaultLocale } from '@/lib/i18n/config'
-import Link from 'next/link'
 
 interface HeaderProps {
   locale?: string
