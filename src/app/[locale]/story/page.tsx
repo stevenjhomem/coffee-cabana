@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { Metadata } from 'next'
 import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
