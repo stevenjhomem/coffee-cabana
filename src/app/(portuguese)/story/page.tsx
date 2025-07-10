@@ -15,12 +15,13 @@ export default function StoryPage() {
       title: "A Nossa História Começa Com",
       name: "José Bernardo",
       paragraphs: [
-        "O José foi quem começou tudo. Nascido na Ilha Terceira, mudou-se para Angola, em África, com a família em 1958, com apenas oito anos de idade. Desde o final dos anos 50 até ao início dos anos 70, geriram uma quinta, onde o José adquiriu vastos conhecimentos e experiência em agricultura africana.",
-        "Quando rebentou a guerra em Angola, tal como muitas outras famílias portuguesas, foram forçados a fugir — regressando a Portugal de mãos vazias.",
-        "Pouco tempo depois, emigraram para a Califórnia, nos Estados Unidos. No entanto, não demorou muito até que o José decidisse voltar às suas raízes na Terceira. Já em casa, trabalhou para o governo regional como diretor do Departamento de Agricultura.",
-        "Após a reforma, comprou um terreno em que acreditava ter potencial para cultivar frutas tropicais. Foi então que começou a plantar bananas e café.",
-        "Em 2016, como projeto pessoal e passatempo, construiu a sua primeira cabana de madeira. Hoje, essa visão cresceu e transformou-se num bonito retiro ecológico com seis cabanas simples, três cabanas de luxo e várias comodidades espalhadas pela propriedade.",
-        "Em 2019, criou a Coffee Cabana. Inicialmente pensada para servir os hóspedes, rapidamente se tornou um espaço para partilhar o seu café único e cultivado localmente com o público."
+        "José Bernardo foi quem deu início a tudo isto.Nascido na ilha Terceira, partiu para Angola aos oito anos de idade, acompanhado da família. Foi nesse ambiente tropical que cresceu, estudou e participou com grande entusiasmo na gestão de uma fazenda com 1500 hectares.",
+        "Em 1976, tal como muitos outros portugueses perante a guerra civil instalada naquele país, viu-se obrigado a abandonar todo o património económico e partir para a Califórnia.",
+        "Alguns anos depois, regressou à ilha Terceira e, como funcionário público, participou na criação dos Serviços de Classificação de Leite dos Açores – “SERCLA”, onde exerceu o cargo de diretor.",
+        "Tendo em conta que aquela África onde cresceu e foi feliz já não existia, aproveitou as condições edafoclimáticas deste pedaço de terreno para trazer um pouco de África para cá. Hoje, cultiva com grande orgulho mais de cinquenta variedades de plantas tropicais, transformando este espaço num verdadeiro parque temático.",
+        "Lembrando-se de um aviso do avô, que dizia:“A agricultura é uma forma de empobrecer alegremente”, decidiu construir algumas cabanas num ambiente de glamping, de forma a contribuir para a rentabilidade da exploração.",
+        "Atualmente, o Tropical Lodge integra duas vertentes: o Banana Eco Camp e a Coffee Cabana.",
+        "Enquanto não for proibido sonhar, o céu é o limite."
       ]
     },
     coffeeCraft: {

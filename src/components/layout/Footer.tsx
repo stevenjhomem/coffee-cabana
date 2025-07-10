@@ -25,8 +25,8 @@ interface FooterProps {
         rights: "Todos os direitos reservados",
         privacy: "Política de Privacidade",
         terms: "Termos de Uso",
-        weekdayHours: "Segunda - Quinta: 8:00 - 17:00",
-        weekendHours: "Sexta - Domingo: 8:00 - 19:00",
+        weekdayHours: "Segunda-Quinta: 8:00 - 17:00",
+        weekendHours: "Sexta-Domingo: 8:00 - 19:00",
       },
       en: {
         visit: "Visit Us",
