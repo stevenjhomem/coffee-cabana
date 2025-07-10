@@ -25,7 +25,7 @@ export default function OurMission({ locale }: OurMissionProps) {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-15 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-5 lg:px-0">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Container - Image (Top on mobile, Left on desktop) */}

@@ -48,7 +48,7 @@ export default function ImageCarousel() {
   }, [])
 
   return (
-    <div className="bg-[#eee8df] py-20 px-[10px]">
+    <div className="bg-[#eee8df] py-15 md:py-20 px-[10px]">
       <div className="overflow-hidden">
         <div className="flex justify-center items-center">
           <div 
