@@ -15,6 +15,12 @@ const imageList = [
   "/images/coffeecabana/Banana_EcoCamp-46.jpg",
   "/images/coffeecabana/Banana_EcoCamp-02.jpg",
   
+  // Carousel images
+  "/images/coffeecabana/Banana_EcoCamp-08.jpg",
+  "/images/coffeecabana/Banana_EcoCamp-23.jpg",
+  "/images/coffeecabana/blackandwhitepour.png",
+  "/images/coffeecabana/cooltea.png",
+  
   // Logo variations
   "/images/logos/home/coffeecabana.png",
   "/images/logos/story/english/ourstoryen.png",
