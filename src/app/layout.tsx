@@ -37,8 +37,6 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
-        {/* Only preload critical first-page assets */}
-        <link rel="preload" as="video" href="/images/coffeecabana/backgroundvideo2.mp4" />
 
         <style dangerouslySetInnerHTML={{
           __html: `

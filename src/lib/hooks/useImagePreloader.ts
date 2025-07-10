@@ -28,18 +28,21 @@ const imageList = [
 
 export const useImagePreloader = () => {
   useEffect(() => {
-    const preloadImages = () => {
+    const preloadAssets = () => {
+      // Preload images
       imageList.forEach((src) => {
         const img = new Image()
         img.src = src
-        // Optional: add error handling
-        img.onerror = () => console.warn(`Failed to preload image: ${src}`)
       })
+
+      // Preload video
+      const video = document.createElement("video")
+      video.preload = "metadata"
+      video.src = "/images/coffeecabana/backgroundvideo2.mp4"
     }
 
     // Preload after a delay to not interfere with initial page load
-    // This gives the initial page time to fully load first
-    const timer = setTimeout(preloadImages, 2000)
+    const timer = setTimeout(preloadAssets, 2000)
     
     return () => clearTimeout(timer)
   }, [])

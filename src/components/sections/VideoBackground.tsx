@@ -9,7 +9,7 @@ export default function VideoBackground() {
     if (videoRef.current) {
       // Try to play the video
       videoRef.current.play().catch(() => {
-        console.log('Video autoplay not supported on this device')
+        // Video autoplay not supported on this device
       })
     }
   }, [])

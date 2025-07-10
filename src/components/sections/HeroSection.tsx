@@ -107,11 +107,10 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
               playsInline
               className="w-full h-full object-cover pointer-events-none"
               onLoadedData={() => setVideoLoaded(true)}
-              onError={(e) => {
-                console.error('Video loading error:', e)
+              onError={() => {
                 setVideoFailed(true)
               }}
-              onCanPlay={() => console.log('Video can play')}
+              onCanPlay={() => {}}
               style={{ touchAction: 'none' }}
             >
               <source src="/images/coffeecabana/backgroundvideo2.mp4" type="video/mp4" />
