@@ -36,6 +36,20 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
+        {/* Preload critical images for better navigation experience */}
+        <link rel="preload" as="image" href="/images/coffeecabana/farm.jpeg" />
+        <link rel="preload" as="image" href="/images/coffeecabana/bernardo.jpeg" />
+        <link rel="preload" as="image" href="/images/coffeecabana/family.png" />
+        <link rel="preload" as="image" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" />
+        <link rel="preload" as="image" href="/images/coffeecabana/Banana_EcoCamp-30.jpg" />
+        <link rel="preload" as="image" href="/images/coffeecabana/Banana_EcoCamp-46.jpg" />
+        <link rel="preload" as="image" href="/images/logos/home/coffeecabana.png" />
+        <link rel="preload" as="image" href="/images/logos/story/english/ourstoryen.png" />
+        <link rel="preload" as="image" href="/images/logos/story/portuguese/ourstorypt3.png" />
+        <link rel="preload" as="image" href="/images/logos/menu/english/menulogoen.png" />
+        <link rel="preload" as="image" href="/images/logos/menu/portuguese/menulogopt.png" />
+        <link rel="preload" as="video" href="/images/coffeecabana/videobackground.mp4" />
+
         <style dangerouslySetInnerHTML={{
           __html: `
             .no-translate {
