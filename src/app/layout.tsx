@@ -34,8 +34,8 @@ export default function RootLayout({
     <html lang="pt">
       <head>
         <meta name="google" content="notranslate" />
-        <link rel="icon" href="/images/coffee/logo.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/images/coffee/logo.svg" type="image/svg+xml" />
+        <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <style dangerouslySetInnerHTML={{
           __html: `
             .no-translate {

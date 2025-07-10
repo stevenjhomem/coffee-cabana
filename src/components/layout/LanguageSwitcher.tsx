@@ -65,7 +65,7 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+        <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-[110]">
           {languages.map((language) => {
             const href = getLanguageUrl(language.code)
             return (

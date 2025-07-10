@@ -11,6 +11,7 @@ interface HeroSectionProps {
 export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const [mounted, setMounted] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
+  const [videoFailed, setVideoFailed] = useState(false)
   const logoRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -18,6 +19,25 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (mounted && videoRef.current) {
+      const video = videoRef.current
+      // Try to play the video manually if autoplay fails
+      const playPromise = video.play()
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log('Video autoplay failed, trying manual play:', error)
+          // For iOS and other browsers that might block autoplay
+          video.muted = true
+          video.play().catch(e => {
+            console.log('Manual video play also failed:', e)
+            setVideoFailed(true)
+          })
+        })
+      }
+    }
+  }, [mounted])
 
   useEffect(() => {
     if (videoLoaded && logoRef.current && scrollRef.current) {
@@ -69,6 +89,13 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
     <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
+        {/* Fallback background image - only show if video fails */}
+        {videoFailed && (
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-30.jpg)' }}
+          />
+        )}
         {/* Video container - always present */}
         <div className="absolute inset-0 w-full h-full">
           {mounted && (
@@ -78,11 +105,16 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
               muted
               loop
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover pointer-events-none"
               onLoadedData={() => setVideoLoaded(true)}
+              onError={(e) => {
+                console.error('Video loading error:', e)
+                setVideoFailed(true)
+              }}
+              onCanPlay={() => console.log('Video can play')}
+              style={{ touchAction: 'none' }}
             >
               <source src="/images/coffeecabana/videobackground.mp4" type="video/mp4" />
-              <source src="/images/coffeecabana/videobackground.webm" type="video/webm" />
             </video>
           )}
         </div>
@@ -94,7 +126,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         <div ref={logoRef} className="mb-8 transition-opacity duration-800" style={{ opacity: 0 }}>
           <div className="flex justify-center">
             <div
-              className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
+              className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-10 select-none"
               style={{
                 backgroundImage: `url('/images/logos/home/coffeecabana.png')`,
                 userSelect: 'none',
@@ -111,7 +143,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       </div>
 
       {/* Scroll indicator - positioned within the section */}
-      <div ref={scrollRef} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-800" style={{ opacity: 0 }}>
+      <div ref={scrollRef} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 transition-opacity duration-800" style={{ opacity: 0 }}>
         <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer text-center">
           <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">{t.scroll}</div>
           <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4 mx-auto stroke-2" />

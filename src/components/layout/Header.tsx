@@ -51,7 +51,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
   const navItems = navigation[locale as keyof typeof navigation] || navigation.pt
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/20 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-[100] bg-black/90 backdrop-blur-sm border-b border-white/20 shadow-lg">
       <nav className="px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -92,7 +92,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
               
               {/* Desktop Navigation Menu */}
               {isMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-[110]">
                   <div className="px-4 py-2 space-y-2">
                     {navItems.map((item) => (
                       <button
@@ -130,7 +130,7 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
               
               {/* Mobile Navigation Menu */}
               {isMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-[110]">
                   <div className="px-4 py-2 space-y-2">
                     {navItems.map((item) => (
                       <button

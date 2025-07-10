@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 
 interface MenuItem {
   name: string
@@ -36,6 +36,12 @@ interface MenuSectionProps {
 
 export default function MenuSection({ content, logoPath }: MenuSectionProps) {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
+
+  // Preload the background image for better performance
+  useEffect(() => {
+    const img = document.createElement('img')
+    img.src = '/images/coffeecabana/Banana_EcoCamp-52.jpg'
+  }, [])
 
   const renderMenuContent = () => {
     switch (activeTab) {
@@ -152,12 +158,18 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-           style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)' }}>
+      {/* Background Image - Normal positioning with consistent height */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <div 
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)',
+            minHeight: '100vh'
+          }}
+        />
       </div>
       
-      {/* Content */}
+      {/* Content - Always visible, no loading delay */}
       <div className="relative z-10">
         {/* Content Section */}
         <section className="pt-48 pb-20">
@@ -198,9 +210,11 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
               ))}
             </div>
 
-            {/* Menu Content */}
+            {/* Menu Content - Height set to accommodate longest section (light meals on mobile) */}
             <div className="flex justify-center">
-              {renderMenuContent()}
+              <div className="min-h-[1000px] md:min-h-[600px] flex items-start justify-center w-full">
+                {renderMenuContent()}
+              </div>
             </div>
           </div>
         </section>

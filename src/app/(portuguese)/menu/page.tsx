@@ -2,6 +2,16 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/data/menu'
 
+// Preload the background image
+const BackgroundPreload = () => (
+  <link 
+    rel="preload" 
+    as="image" 
+    href="/images/coffeecabana/Banana_EcoCamp-52.jpg"
+    fetchPriority="high"
+  />
+)
+
 export const metadata: Metadata = {
   title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
   description: 'Descubra a nossa ementa com café especial, chás, bebidas e refeições ligeiras. Todos os produtos são frescos e locais.',
@@ -39,9 +49,12 @@ export const metadata: Metadata = {
 
 export default function MenuPage() {
   return (
-    <MenuSection 
-      content={menuContent.pt} 
-      logoPath="/images/logos/menu/portuguese/menulogopt.png"
-    />
+    <>
+      <BackgroundPreload />
+      <MenuSection 
+        content={menuContent.pt} 
+        logoPath="/images/logos/menu/portuguese/menulogopt.png"
+      />
+    </>
   )
 }

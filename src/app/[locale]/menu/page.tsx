@@ -2,6 +2,16 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/data/menu'
 
+// Preload the background image
+const BackgroundPreload = () => (
+  <link 
+    rel="preload" 
+    as="image" 
+    href="/images/coffeecabana/Banana_EcoCamp-52.jpg"
+    fetchPriority="high"
+  />
+)
+
 interface PageProps {
   params: Promise<{ locale: string }>
 }
@@ -62,9 +72,12 @@ export default async function MenuPage({ params }: PageProps) {
     : '/images/logos/menu/portuguese/menulogopt.png'
   
   return (
-    <MenuSection 
-      content={content} 
-      logoPath={logoPath}
-    />
+    <>
+      <BackgroundPreload />
+      <MenuSection 
+        content={content} 
+        logoPath={logoPath}
+      />
+    </>
   )
 }
