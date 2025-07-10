@@ -93,7 +93,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         {videoFailed && (
           <div 
             className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-30.jpg)' }}
+            style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-02.jpg)' }}
           />
         )}
         {/* Video container - always present */}
