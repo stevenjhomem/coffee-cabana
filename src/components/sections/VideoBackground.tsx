@@ -33,7 +33,7 @@ export default function VideoBackground() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/images/coffeecabana/backgroundvideo2.mp4" type="video/mp4" />
+        <source src="/images/coffeecabana/1080pvid.mp4" type="video/mp4" />
         <source src="/images/coffeecabana/videobackground.webm" type="video/webm" />
       </video>
     </div>
