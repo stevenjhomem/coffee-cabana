@@ -114,7 +114,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
               onCanPlay={() => console.log('Video can play')}
               style={{ touchAction: 'none' }}
             >
-              <source src="/images/coffeecabana/videobackground.mp4" type="video/mp4" />
+              <source src="/images/coffeecabana/backgroundvideo2.mp4" type="video/mp4" />
             </video>
           )}
         </div>

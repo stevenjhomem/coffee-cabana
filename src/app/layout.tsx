@@ -48,7 +48,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/images/logos/story/portuguese/ourstorypt3.png" />
         <link rel="preload" as="image" href="/images/logos/menu/english/menulogoen.png" />
         <link rel="preload" as="image" href="/images/logos/menu/portuguese/menulogopt.png" />
-        <link rel="preload" as="video" href="/images/coffeecabana/videobackground.mp4" />
+        <link rel="preload" as="video" href="/images/coffeecabana/backgroundvideo2.mp4" />
 
         <style dangerouslySetInnerHTML={{
           __html: `
