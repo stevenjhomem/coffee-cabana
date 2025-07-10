@@ -31,22 +31,22 @@ export default function StoryPage({ params }: Props) {
         title: 'Our Story Begins With',
         name: 'José Bernardo',
         paragraphs: [
-          'José is the one who started it all. Born on Terceira Island, he moved to Angola, Africa, with his family in 1958 at the age of eight. From the late 1950s through the early 1970s, they managed a farm, where José gained extensive knowledge and experience in African agriculture.',
-          'When the war broke out in Angola, like many other Portuguese families, they were forced to flee—returning to Portugal empty-handed.',
-          'Soon after, they emigrated to California, USA. However, it wasn&apos;t long before José decided to return to his roots on Terceira. Back home, he worked for the regional government as the CEO of the Agriculture Department.',
-          'After retiring, he purchased a piece of land he believed had the potential to grow tropical fruits. That&apos;s when he began planting bananas and coffee.',
-          'In 2016, as a personal project and hobby, he built his first wooden cabin. Today, that vision has expanded into a beautiful eco retreat with six simple cabins, three luxury cabins, and various amenities throughout the property.',
-          'In 2019, he created Coffee Cabana. Originally intended to serve guests, it quickly became a place to share their unique, homegrown coffee with the public.'
+          "José is the one who started it all. Born on Terceira Island, he moved to Angola, Africa, with his family in 1958 at the age of eight. From the late 1950s through the early 1970s, they managed a farm, where José gained extensive knowledge and experience in African agriculture.",
+          "When the war broke out in Angola, like many other Portuguese families, they were forced to flee—returning to Portugal empty-handed.",
+          "Soon after, they emigrated to California, USA. However, it wasn't long before José decided to return to his roots on Terceira. Back home, he worked for the regional government as the CEO of the Agriculture Department.",
+          "After retiring, he purchased a piece of land he believed had the potential to grow tropical fruits. That's when he began planting bananas and coffee.",
+          "In 2016, as a personal project and hobby, he built his first wooden cabin. Today, that vision has expanded into a beautiful eco retreat with six simple cabins, three luxury cabins, and various amenities throughout the property.",
+          "In 2019, he created Coffee Cabana. Originally intended to serve guests, it quickly became a place to share their unique, homegrown coffee with the public."
         ]
       },
       coffeeCraft: {
         title: 'Our Story Continues With',
         subtitle: 'Marcel and Marta',
         paragraphs: [
-          'Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.',
-          'During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.',
-          'He settled on Terceira Island, where Marta was living. In 2023, Bernardo was searching for someone new to manage Banana Eco Camp and Coffee Cabana. After an extensive search, he recognized that Marcel&apos;s farming background and the versatile skills he had acquired at sea made him the ideal candidate.',
-          'Today, Marcel and Marta live on the farm with their two young daughters. Together, they are always on hand to welcome guests with warmth and care.'
+          "Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.",
+          "During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.",
+          "He settled on Terceira Island, where Marta was living. In 2023, Bernardo was searching for someone new to manage Banana Eco Camp and Coffee Cabana. After an extensive search, he recognized that Marcel's farming background and the versatile skills he had acquired at sea made him the ideal candidate.",
+          "Today, Marcel and Marta live on the farm with their two young daughters. Together, they are always on hand to welcome guests with warmth and care."
         ]
       },
       footer: {
