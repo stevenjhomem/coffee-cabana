@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/sections/HeroSection'
+import ImageCarousel from '@/components/sections/ImageCarousel'
 import OurMission from '@/components/sections/OurMission'
 
 interface PageProps {
@@ -59,6 +60,7 @@ export default async function HomePage({ params }: PageProps) {
   return (
     <main>
       <HeroSection locale={locale} />
+      <ImageCarousel />
       <OurMission locale={locale} />
     </main>
   )
