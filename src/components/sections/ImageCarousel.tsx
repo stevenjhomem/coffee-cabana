@@ -61,7 +61,7 @@ export default function ImageCarousel() {
             {images.map((image, index) => (
               <div
                 key={`first-${index}`}
-                className="relative w-[50vw] h-[300px] md:h-[400px] flex-shrink-0"
+                className="relative w-[50vw] h-[300px] md:h-[500px] flex-shrink-0"
               >
                 <Image
                   src={image}
@@ -76,7 +76,7 @@ export default function ImageCarousel() {
             {images.map((image, index) => (
               <div
                 key={`second-${index}`}
-                className="relative w-[50vw] h-[300px] md:h-[400px] flex-shrink-0"
+                className="relative w-[50vw] h-[300px] md:h-[500px] flex-shrink-0"
               >
                 <Image
                   src={image}
@@ -91,7 +91,7 @@ export default function ImageCarousel() {
             {images.map((image, index) => (
               <div
                 key={`third-${index}`}
-                className="relative w-[50vw] h-[300px] md:h-[400px] flex-shrink-0"
+                className="relative w-[50vw] h-[300px] md:h-[500px] flex-shrink-0"
               >
                 <Image
                   src={image}

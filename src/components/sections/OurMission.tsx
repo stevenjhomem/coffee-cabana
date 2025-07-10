@@ -36,6 +36,7 @@ export default function OurMission({ locale }: OurMissionProps) {
               width={400} 
               height={320}
               className="rounded-lg object-cover w-full h-80"
+              style={{ height: "auto" }}
             />
           </div>
 

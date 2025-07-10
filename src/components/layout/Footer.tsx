@@ -25,8 +25,8 @@ interface FooterProps {
         rights: "Todos os direitos reservados",
         privacy: "Política de Privacidade",
         terms: "Termos de Uso",
-        openingHours: "Segunda, Quarta a Domingo: 7:00 - 18:00",
-        closedDay: "Terça: Fechado"
+        weekdayHours: "Segunda - Quinta: 8:00 - 17:00",
+        weekendHours: "Sexta - Domingo: 8:00 - 19:00",
       },
       en: {
         visit: "Visit Us",
@@ -38,8 +38,8 @@ interface FooterProps {
         rights: "All rights reserved",
         privacy: "Privacy Policy",
         terms: "Terms of Use",
-        openingHours: "Monday, Wednesday to Sunday: 7:00 - 18:00",
-        closedDay: "Tuesday: Closed"
+        weekdayHours: "Monday - Thursday: 8:00 - 17:00",
+        weekendHours: "Friday - Sunday: 8:00 - 19:00",
       }
     }
   
@@ -92,8 +92,8 @@ interface FooterProps {
                 {t.hours}
               </h3>
               <div className="space-y-2 text-sm text-gray-300">
-                <p>{t.openingHours}</p>
-                <p>{t.closedDay}</p>
+                <p>{t.weekdayHours}</p>
+                <p>{t.weekendHours}</p>
               </div>
             </div>
 
