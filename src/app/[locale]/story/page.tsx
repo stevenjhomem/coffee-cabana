@@ -1,17 +1,17 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
 interface Props {
   params: Promise<{ locale: string }>
 }
 
 export default function StoryPage({ params }: Props) {
-  const [locale, setLocale] = useState<string>('en')
+  const [locale, setLocale] = useState<string>("en")
 
   useEffect(() => {
     const getLocale = async () => {
@@ -23,13 +23,13 @@ export default function StoryPage({ params }: Props) {
 
   const content = {
     en: {
-      logo: '/images/logos/story/english/ourstoryen.png',
+      logo: "/images/logos/story/english/ourstoryen.png",
       hero: {
-        title: 'FROM FARM TO CUP',
+        title: "FROM FARM TO CUP",
       },
       story: {
-        title: 'Our Story Begins With',
-        name: 'José Bernardo',
+        title: "Our Story Begins With",
+        name: "José Bernardo",
         paragraphs: [
           "José is the one who started it all. Born on Terceira Island, he moved to Angola, Africa, with his family in 1958 at the age of eight. From the late 1950s through the early 1970s, they managed a farm, where José gained extensive knowledge and experience in African agriculture.",
           "When the war broke out in Angola, like many other Portuguese families, they were forced to flee—returning to Portugal empty-handed.",
@@ -40,8 +40,8 @@ export default function StoryPage({ params }: Props) {
         ]
       },
       coffeeCraft: {
-        title: 'Our Story Continues With',
-        subtitle: 'Marcel and Marta',
+        title: "Our Story Continues With",
+        subtitle: "Marcel and Marta",
         paragraphs: [
           "Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.",
           "During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.",
@@ -50,10 +50,10 @@ export default function StoryPage({ params }: Props) {
         ]
       },
       footer: {
-        title: 'Come Be Part Of Our Story',
-        subtitle: 'One Cup At A Time',
-        description: 'Visit us to taste the difference that passion, quality, and family tradition make.',
-        button: 'Come Visit Us'
+        title: "Come Be Part Of Our Story",
+        subtitle: "One Cup At A Time",
+        description: "Visit us to taste the difference that passion, quality, and family tradition make.",
+        button: "Come Visit Us"
       }
     }
   }
@@ -69,7 +69,7 @@ export default function StoryPage({ params }: Props) {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/images/coffeecabana/farm.jpeg')`
+              backgroundImage: `url("/images/coffeecabana/farm.jpeg")`
             }}
           />
         </div>
@@ -82,14 +82,14 @@ export default function StoryPage({ params }: Props) {
               <div
                 className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
                 style={{
-                  backgroundImage: locale === 'pt' 
-                    ? `url('/images/logos/story/portuguese/ourstorypt3.png')`
-                    : `url('/images/logos/story/english/ourstoryen.png')`,
-                  userSelect: 'none',
-                  WebkitUserSelect: 'none',
-                  MozUserSelect: 'none',
-                  msUserSelect: 'none',
-                  WebkitTouchCallout: 'none'
+                  backgroundImage: locale === "pt" 
+                    ? `url("/images/logos/story/portuguese/ourstorypt3.png")`
+                    : `url("/images/logos/story/english/ourstoryen.png")`,
+                  userSelect: "none",
+                  WebkitUserSelect: "none",
+                  MozUserSelect: "none",
+                  msUserSelect: "none",
+                  WebkitTouchCallout: "none"
                 }}
                 draggable="false"
               />

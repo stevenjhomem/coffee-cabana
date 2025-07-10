@@ -1,43 +1,43 @@
-'use client'
+"use client"
 
-import React from 'react'
+import React from "react"
 import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
 export default function StoryPage() {
   const content = {
     hero: {
-      title: 'Da Quinta ao Copo',
+      title: "Da Quinta ao Copo",
     },
     story: {
-      title: 'A Nossa História Começa Com',
-      name: 'José Bernardo',
+      title: "A Nossa História Começa Com",
+      name: "José Bernardo",
       paragraphs: [
-        'O José foi quem começou tudo. Nascido na Ilha Terceira, mudou-se para Angola, em África, com a família em 1958, com apenas oito anos de idade. Desde o final dos anos 50 até ao início dos anos 70, geriram uma quinta, onde o José adquiriu vastos conhecimentos e experiência em agricultura africana.',
-        'Quando rebentou a guerra em Angola, tal como muitas outras famílias portuguesas, foram forçados a fugir — regressando a Portugal de mãos vazias.',
-        'Pouco tempo depois, emigraram para a Califórnia, nos Estados Unidos. No entanto, não demorou muito até que o José decidisse voltar às suas raízes na Terceira. Já em casa, trabalhou para o governo regional como diretor do Departamento de Agricultura.',
-        'Após a reforma, comprou um terreno em que acreditava ter potencial para cultivar frutas tropicais. Foi então que começou a plantar bananas e café.',
-        'Em 2016, como projeto pessoal e passatempo, construiu a sua primeira cabana de madeira. Hoje, essa visão cresceu e transformou-se num bonito retiro ecológico com seis cabanas simples, três cabanas de luxo e várias comodidades espalhadas pela propriedade.',
-        'Em 2019, criou a Coffee Cabana. Inicialmente pensada para servir os hóspedes, rapidamente se tornou um espaço para partilhar o seu café único e cultivado localmente com o público.'
+        "O José foi quem começou tudo. Nascido na Ilha Terceira, mudou-se para Angola, em África, com a família em 1958, com apenas oito anos de idade. Desde o final dos anos 50 até ao início dos anos 70, geriram uma quinta, onde o José adquiriu vastos conhecimentos e experiência em agricultura africana.",
+        "Quando rebentou a guerra em Angola, tal como muitas outras famílias portuguesas, foram forçados a fugir — regressando a Portugal de mãos vazias.",
+        "Pouco tempo depois, emigraram para a Califórnia, nos Estados Unidos. No entanto, não demorou muito até que o José decidisse voltar às suas raízes na Terceira. Já em casa, trabalhou para o governo regional como diretor do Departamento de Agricultura.",
+        "Após a reforma, comprou um terreno em que acreditava ter potencial para cultivar frutas tropicais. Foi então que começou a plantar bananas e café.",
+        "Em 2016, como projeto pessoal e passatempo, construiu a sua primeira cabana de madeira. Hoje, essa visão cresceu e transformou-se num bonito retiro ecológico com seis cabanas simples, três cabanas de luxo e várias comodidades espalhadas pela propriedade.",
+        "Em 2019, criou a Coffee Cabana. Inicialmente pensada para servir os hóspedes, rapidamente se tornou um espaço para partilhar o seu café único e cultivado localmente com o público."
       ]
     },
     coffeeCraft: {
-      title: 'A Nossa História Continua Com',
-      subtitle: 'Marcel e Marta',
+      title: "A Nossa História Continua Com",
+      subtitle: "Marcel e Marta",
       paragraphs: [
-        'Marcel, filho de um agricultor e de uma veterinária, cresceu com uma forte ligação à natureza e aos animais. Após terminar o ensino secundário, decidiu prosseguir os estudos nos Países Baixos, de onde a sua mãe é natural. Lá, concluiu uma licenciatura em Operações Marítimas e começou a trabalhar a bordo de navios com bandeira holandesa como Oficial da Marinha Mercante.',
-        'Durante uma das suas licenças, Marcel conheceu a Marta, com quem teve a sua primeira filha. Ao perceber que a vida no mar implicava longos períodos longe de casa — e sem querer perder o crescimento da filha — Marcel tomou a decisão de regressar aos Açores.',
-        'Fixou-se na Ilha Terceira, onde vivia a Marta. Em 2023, o Bernardo procurava alguém para assumir a gestão do Banana Eco Camp e da Coffee Cabana. Após uma pesquisa alargada, reconheceu que o percurso agrícola do Marcel e as competências versáteis adquiridas no mar faziam dele o candidato ideal.',
-        'Hoje, o Marcel e a Marta vivem na quinta com as suas duas filhas pequenas. Juntos, estão sempre prontos para receber os hóspedes com carinho e hospitalidade.'
+        "Marcel, filho de um agricultor e de uma veterinária, cresceu com uma forte ligação à natureza e aos animais. Após terminar o ensino secundário, decidiu prosseguir os estudos nos Países Baixos, de onde a sua mãe é natural. Lá, concluiu uma licenciatura em Operações Marítimas e começou a trabalhar a bordo de navios com bandeira holandesa como Oficial da Marinha Mercante.",
+        "Durante uma das suas licenças, Marcel conheceu a Marta, com quem teve a sua primeira filha. Ao perceber que a vida no mar implicava longos períodos longe de casa — e sem querer perder o crescimento da filha — Marcel tomou a decisão de regressar aos Açores.",
+        "Fixou-se na Ilha Terceira, onde vivia a Marta. Em 2023, o Bernardo procurava alguém para assumir a gestão do Banana Eco Camp e da Coffee Cabana. Após uma pesquisa alargada, reconheceu que o percurso agrícola do Marcel e as competências versáteis adquiridas no mar faziam dele o candidato ideal.",
+        "Hoje, o Marcel e a Marta vivem na quinta com as suas duas filhas pequenas. Juntos, estão sempre prontos para receber os hóspedes com carinho e hospitalidade."
       ]
     },
     footer: {
-      title: 'Vem Fazer Parte da Nossa História',
-      subtitle: 'Um Copo de Cada Vez',
-      description: 'Visitem-nos para provar a diferença que a paixão, a qualidade e a tradição familiar fazem.',
-      button: 'Vem Visitar-nos'
+      title: "Vem Fazer Parte da Nossa História",
+      subtitle: "Um Copo de Cada Vez",
+      description: "Visitem-nos para provar a diferença que a paixão, a qualidade e a tradição familiar fazem.",
+      button: "Vem Visitar-nos"
     }
   }
 
@@ -52,7 +52,7 @@ export default function StoryPage() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/images/coffeecabana/farm.jpeg')`
+              backgroundImage: `url("/images/coffeecabana/farm.jpeg")`
             }}
           />
         </div>
@@ -65,12 +65,12 @@ export default function StoryPage() {
               <div
                 className="w-96 md:w-[500px] lg:w-[600px] h-24 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
                 style={{
-                  backgroundImage: `url('/images/logos/story/portuguese/ourstorypt3.png')`,
-                  userSelect: 'none',
-                  WebkitUserSelect: 'none',
-                  MozUserSelect: 'none',
-                  msUserSelect: 'none',
-                  WebkitTouchCallout: 'none'
+                  backgroundImage: `url("/images/logos/story/portuguese/ourstorypt3.png")`,
+                  userSelect: "none",
+                  WebkitUserSelect: "none",
+                  MozUserSelect: "none",
+                  msUserSelect: "none",
+                  WebkitTouchCallout: "none"
                 }}
                 draggable="false"
               />
