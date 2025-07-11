@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const metaData = {
     pt: {
-      title: 'Coffee Cabana - Experiência de Café Orgânico | Terceira, Açores',
+      title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
       description: 'Coffee Cabana - Quinta de café orgânico em São Mateus da Calheta, Terceira. Cultivo sustentável, torrefacção artesanal e experiências gastronómicas nos Açores.',
     },
     en: {
-      title: 'Coffee Cabana - Agritourism & Organic Coffee | Terceira, Azores',
+      title: 'Coffee Cabana - Organic Coffee | Terceira, Azores',
       description: 'Coffee Cabana - Organic coffee farm in São Mateus da Calheta, Terceira. Sustainable cultivation, artisan roasting and gastronomic experiences in the Azores.',
     },
   }

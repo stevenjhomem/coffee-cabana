@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.coffeecabana.pt'),
-  title: 'Coffee Cabana - Plantação de Café Orgânico | Terceira, Açores',
+  title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
   description: 'Coffee Cabana - A única quinta de café orgânico da Terceira, Açores. Da plantação à chávena, uma experiência autêntica de agriturismo familiar.',
   keywords: coffeeCabanaKeywords,
   authors: [{ name: 'Coffee Cabana' }],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   publisher: 'Coffee Cabana',
   robots: 'index, follow',
   openGraph: {
-    title: 'Coffee Cabana - Plantação de Café Orgânico | Terceira, Açores',
+    title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
     description: 'The only coffee grown and roasted on Terceira Island',
     url: 'https://www.coffeecabana.pt',
     siteName: 'Coffee Cabana',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Coffee Cabana - Plantação de Café Orgânico | Terceira, Açores',
+    title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
     description: 'The only coffee grown and roasted on Terceira Island',
     images: ['https://www.coffeecabana.pt/images/coffeecabana/Banana_EcoCamp-49.jpg'],
   },

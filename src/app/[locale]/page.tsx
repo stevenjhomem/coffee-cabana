@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const metaData = {
     en: {
-      title: 'Coffee Cabana | Organic Coffee Farm São Mateus da Calheta, Terceira', 
+      title: 'Coffee Cabana | Organic Coffee Terceira, Azores', 
       description: 'Welcome to Coffee Cabana! Discover our unique organic coffee plantation in São Mateus da Calheta, Terceira. Visit our family farm in the Azores.',
     },
   }

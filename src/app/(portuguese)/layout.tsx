@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // This will be handled by individual pages that can pass their pathname
   
   return {
-    title: 'Coffee Cabana - Agriturismo e Café Orgânico | Terceira, Açores',
+    title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
     description: 'Coffee Cabana - Quinta de café orgânico em São Mateus da Calheta, Terceira. Cultivo sustentável, torrefação artesanal e experiências gastronómicas nos Açores.',
     keywords: coffeeCabanaKeywords,
     authors: [{ name: 'Coffee Cabana' }],
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     publisher: 'Coffee Cabana',
     robots: 'index, follow',
     openGraph: {
-      title: 'Coffee Cabana - Agriturismo e Café Orgânico | Terceira, Açores',
+      title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
       description: 'The only coffee grown and roasted on Terceira Island',
       url: 'https://coffeecabana.pt',
       siteName: 'Coffee Cabana',
