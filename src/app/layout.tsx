@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import ImagePreloader from '@/components/ImagePreloader'
+import VersionIndicator from '@/components/VersionIndicator'
 import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 import { localBusinessSchema, organizationSchema } from '@/lib/constants/schema'
 import './globals.css'
@@ -52,6 +53,9 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="theme-color" content="#000000" />
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
         <meta name="geo.region" content="PT-20" />
         <meta name="geo.placename" content="Terceira, Azores" />
         <meta name="geo.position" content="38.7333;-27.2167" />
@@ -99,10 +103,36 @@ export default function RootLayout({
           }}
         />
 
+        {/* Service Worker Registration */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(function(registration) {
+                    // Check for updates silently
+                    registration.addEventListener('updatefound', () => {
+                      const newWorker = registration.installing;
+                      newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                          // New version available, will activate on next navigation
+                        }
+                      });
+                    });
+                  })
+                  .catch(function(registrationError) {
+                    // Silent failure
+                  });
+              });
+            }
+          `
+        }} />
+
       </head>
       <body className={inter.className}>
         {children}
         <ImagePreloader />
+        <VersionIndicator />
         <Analytics />
         <SpeedInsights />
       </body>
