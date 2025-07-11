@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 
 type Props = {
   children: React.ReactNode
@@ -13,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Coffee Cabana - Café Orgânico Terceira | Açores',
     description: 'O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.',
-    keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
+    keywords: coffeeCabanaKeywords,
     authors: [{ name: 'Coffee Cabana' }],
     creator: 'Coffee Cabana',
     publisher: 'Coffee Cabana',

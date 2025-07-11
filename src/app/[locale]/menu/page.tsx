@@ -30,7 +30,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     ...currentMeta,
-    keywords: 'Coffee Cabana menu, specialty coffee Terceira, light meals Azores, beverages Angra do Heroísmo',
     authors: [{ name: 'Coffee Cabana' }],
     creator: 'Coffee Cabana',
     publisher: 'Coffee Cabana',

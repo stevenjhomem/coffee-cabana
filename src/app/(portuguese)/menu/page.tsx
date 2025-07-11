@@ -15,7 +15,6 @@ const BackgroundPreload = () => (
 export const metadata: Metadata = {
   title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
   description: 'Descubra a nossa ementa com café especial, chás, bebidas e refeições ligeiras. Todos os produtos são frescos e locais.',
-  keywords: 'menu Coffee Cabana, café especial Terceira, refeições ligeiras Açores, bebidas Angra do Heroísmo',
   authors: [{ name: 'Coffee Cabana' }],
   creator: 'Coffee Cabana',
   publisher: 'Coffee Cabana',

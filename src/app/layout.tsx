@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import ImagePreloader from '@/components/ImagePreloader'
+import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.coffeecabana.pt'),
   title: 'Coffee Cabana - Café Orgânico Terceira | Açores',
   description: 'O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.',
-  keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
+  keywords: coffeeCabanaKeywords,
   authors: [{ name: 'Coffee Cabana' }],
   creator: 'Coffee Cabana',
   publisher: 'Coffee Cabana',

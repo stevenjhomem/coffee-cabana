@@ -6,7 +6,6 @@ import OurMission from '@/components/sections/OurMission'
 export const metadata: Metadata = {
   title: 'Coffee Cabana - Café Orgânico Terceira | Açores',
   description: 'O único café cultivado e torrado na Ilha Terceira. Experimente nossa jornada da plantação à chávena no coração dos Açores.',
-  keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
   authors: [{ name: 'Coffee Cabana' }],
   creator: 'Coffee Cabana',
   publisher: 'Coffee Cabana',

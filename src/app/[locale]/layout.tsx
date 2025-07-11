@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '../globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 
 type Props = {
   children: React.ReactNode
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     ...currentMeta,
-    keywords: 'café Terceira, café orgânico Azores, coffee shop Angra do Heroísmo, plantation café Açores',
+    keywords: coffeeCabanaKeywords,
     authors: [{ name: 'Coffee Cabana' }],
     creator: 'Coffee Cabana',
     publisher: 'Coffee Cabana',
