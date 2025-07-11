@@ -124,7 +124,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         {/* Main title - Brand name stays consistent */}
         <div ref={logoRef} className="mb-8 transition-opacity duration-800" style={{ opacity: 0 }}>
           <div className="flex justify-center">
-            <div
+            <h1
               className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-10 select-none"
               style={{
                 backgroundImage: `url('/images/logos/home/coffeecabana.png')`,
@@ -136,7 +136,9 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
               } as React.CSSProperties}
               draggable="false"
               onDragStart={(e) => e.preventDefault()}
-            />
+            >
+              <span className="sr-only">Coffee Cabana - Organic Coffee from Terceira, Azores</span>
+            </h1>
           </div>
         </div>
       </div>

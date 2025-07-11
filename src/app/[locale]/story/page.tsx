@@ -79,7 +79,7 @@ export default function StoryPage({ params }: Props) {
           {/* Main title - Brand name stays consistent */}
           <div className="mb-8">
             <div className="flex justify-center">
-              <div
+              <h1
                 className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-20 select-none"
                 style={{
                   backgroundImage: locale === "pt" 
@@ -92,7 +92,9 @@ export default function StoryPage({ params }: Props) {
                   WebkitTouchCallout: "none"
                 }}
                 draggable="false"
-              />
+              >
+                <span className="sr-only">{locale === "pt" ? "A Nossa História - Coffee Cabana" : "Our Story - Coffee Cabana"}</span>
+              </h1>
             </div>
           </div>
         </div>
@@ -213,15 +215,14 @@ export default function StoryPage({ params }: Props) {
       </section>
 
       {/* Footer CTA Section */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-stone-100">
         <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-4xl md:text-5xl font-light mb-6">
+          <h2 className="text-3xl md:text-4xl font-light mb-8 text-black">
             {t.footer.title}
+            <br />
+            <span className="text-amber-600">{t.footer.subtitle}</span>
           </h2>
-          <p className="text-xl md:text-2xl text-amber-400 mb-8">
-            {t.footer.subtitle}
-          </p>
-          <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 mb-12 leading-relaxed">
             {t.footer.description}
           </p>
           <GoogleMapsButton 

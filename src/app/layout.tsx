@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="theme-color" content="#000000" />
         <meta name="geo.region" content="PT-20" />
         <meta name="geo.placename" content="Terceira, Azores" />

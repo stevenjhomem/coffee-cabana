@@ -177,7 +177,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
             {/* Title and Intro */}
             <div className="text-center mb-16">
               <div className="flex justify-center">
-                <div
+                <h1
                   className="h-32 md:h-40 lg:h-48 w-96 md:w-[500px] lg:w-[600px] bg-contain bg-center bg-no-repeat invert relative z-20 select-none"
                   style={{
                     backgroundImage: `url('${logoPath}')`,
@@ -189,7 +189,9 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
                   } as React.CSSProperties}
                   draggable="false"
                   onDragStart={(e) => e.preventDefault()}
-                />
+                >
+                  <span className="sr-only">Coffee Cabana Menu - Organic Coffee & Fresh Products</span>
+                </h1>
               </div>
             </div>
 
