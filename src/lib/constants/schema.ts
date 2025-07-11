@@ -2,7 +2,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
   "name": "Coffee Cabana",
-  "description": "The only coffee grown and roasted on Terceira Island. Experience our farm-to-cup journey in the heart of the Azores.",
+  "description": "Coffee Cabana is an organic coffee farm located in São Mateus da Calheta, Terceira Island, Azores. We offer farm tours, coffee tastings, and authentic agritourism experiences.",
   "url": "https://www.coffeecabana.pt",
   "telephone": "+351919116145",
   "email": "bananaecocamp@gmail.com",

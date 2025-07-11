@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const metaData = {
     en: {
-      title: 'Coffee Cabana - Organic Coffee Terceira | Azores',
-      description: 'The only coffee grown and roasted on Terceira Island. Experience our farm-to-cup journey in the heart of the Azores.',
+      title: 'Coffee Cabana | Organic Coffee Farm São Mateus da Calheta, Terceira', 
+      description: 'Welcome to Coffee Cabana! Discover our unique organic coffee plantation in São Mateus da Calheta, Terceira. Visit our family farm in the Azores.',
     },
   }
 
