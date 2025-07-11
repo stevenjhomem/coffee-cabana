@@ -34,6 +34,17 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2RPXY9L0L"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-H2RPXY9L0L');
+          `
+        }} />
+        <meta name="google-site-verification" content="CDrB5Y8OZEbOw2klQTldA2Ig7x7anReYqXgam6fCEws" />
         <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
