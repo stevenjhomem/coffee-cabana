@@ -102,6 +102,26 @@ export default function RootLayout({
           }}
         />
 
+        {/* Unregister old service worker */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                  registration.unregister();
+                }
+              });
+              // Clear all caches
+              if ('caches' in window) {
+                caches.keys().then(function(names) {
+                  names.forEach(function(name) {
+                    caches.delete(name);
+                  });
+                });
+              }
+            }
+          `
+        }} />
 
       </head>
       <body className={inter.className}>
