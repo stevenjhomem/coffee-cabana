@@ -30,6 +30,17 @@ html {
   padding: 0;
 }
 
+/* Ensure proper viewport behavior for hero video */
+* {
+  box-sizing: border-box;
+}
+
+/* Fix for video centering with viewport meta tag */
+video {
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Custom animations */
 @keyframes fadeIn {
   from {
