@@ -56,18 +56,20 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <a href={locale === defaultLocale ? '/' : `/${locale}`} className="flex items-center group">
-                {/* Logo placeholder - you can replace with your SVG logo */}
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
-                    <Image 
-                      src="/images/coffeecabana/logo.svg" 
-                      alt="Coffee Cabana Logo" 
-                      width={56} 
-                      height={56}
-                      className="object-contain"
-                    />
-                </div>
-            </a>
+            <h1 className="flex items-center group">
+                <a href={locale === defaultLocale ? '/' : `/${locale}`} className="flex items-center">
+                    {/* Logo placeholder - you can replace with your SVG logo */}
+                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
+                        <Image 
+                          src="/images/coffeecabana/logo.svg" 
+                          alt="Coffee Cabana Logo" 
+                          width={56} 
+                          height={56}
+                          className="object-contain"
+                        />
+                    </div>
+                </a>
+            </h1>
           </div>
 
           {/* Desktop Navigation - Far Right */}
