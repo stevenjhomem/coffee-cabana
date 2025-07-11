@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import ImagePreloader from '@/components/ImagePreloader'
-import VersionIndicator from '@/components/VersionIndicator'
 import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 import { localBusinessSchema, organizationSchema } from '@/lib/constants/schema'
 import './globals.css'
@@ -103,36 +102,11 @@ export default function RootLayout({
           }}
         />
 
-        {/* Service Worker Registration */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                  .then(function(registration) {
-                    // Check for updates silently
-                    registration.addEventListener('updatefound', () => {
-                      const newWorker = registration.installing;
-                      newWorker.addEventListener('statechange', () => {
-                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                          // New version available, will activate on next navigation
-                        }
-                      });
-                    });
-                  })
-                  .catch(function(registrationError) {
-                    // Silent failure
-                  });
-              });
-            }
-          `
-        }} />
 
       </head>
       <body className={inter.className}>
         {children}
         <ImagePreloader />
-        <VersionIndicator />
         <Analytics />
         <SpeedInsights />
       </body>

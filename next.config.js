@@ -52,22 +52,15 @@ const nextConfig = {
           }
         ]
       },
-      // Service worker
-      {
-        source: '/sw.js',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate'
-          }
-        ]
-      }
     ]
   },
 
-  // Generate build ID for cache busting
+  // Generate build ID for cache busting only on actual deployments
   generateBuildId: async () => {
-    return `build-${Date.now()}`
+    // Use package.json version + git commit or timestamp
+    const pkg = require('./package.json')
+    const timestamp = process.env.VERCEL_GIT_COMMIT_SHA || Date.now()
+    return `v${pkg.version}-${timestamp.toString().slice(-8)}`
   }
 }
 
