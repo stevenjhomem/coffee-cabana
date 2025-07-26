@@ -20,8 +20,12 @@ export default function ImageCarousel() {
 
     let animationId: number
     let startTime: number
-    const isMobile = window.innerWidth < 768
-    const scrollSpeed = isMobile ? 0.0325 : 0.0635 // pixels per millisecond
+    
+    const updateScrollSpeed = () => {
+      return window.innerWidth < 768 ? 0.0325 : 0.0635 // pixels per millisecond
+    }
+    
+    const scrollSpeed = updateScrollSpeed()
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime
@@ -65,10 +69,12 @@ export default function ImageCarousel() {
               >
                 <Image
                   src={image}
-                  alt={`Carousel image ${index + 1}`}
+                  alt={`Coffee Cabana - Organic coffee farm ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="50vw"
+                  loading={index < 2 ? "eager" : "lazy"}
+                  priority={index === 0}
                 />
               </div>
             ))}
@@ -80,10 +86,11 @@ export default function ImageCarousel() {
               >
                 <Image
                   src={image}
-                  alt={`Carousel image ${index + 1}`}
+                  alt={`Coffee Cabana - Organic coffee farm ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="50vw"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -95,10 +102,11 @@ export default function ImageCarousel() {
               >
                 <Image
                   src={image}
-                  alt={`Carousel image ${index + 1}`}
+                  alt={`Coffee Cabana - Organic coffee farm ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="50vw"
+                  loading="lazy"
                 />
               </div>
             ))}

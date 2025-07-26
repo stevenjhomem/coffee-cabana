@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import Image from 'next/image'
 
 interface HeroSectionProps {
   locale?: string
@@ -11,7 +12,6 @@ interface HeroSectionProps {
 export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const [mounted, setMounted] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
-  const [videoFailed, setVideoFailed] = useState(false)
   const logoRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -32,7 +32,6 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
           video.muted = true
           video.play().catch(e => {
             console.log('Manual video play also failed:', e)
-            setVideoFailed(true)
           })
         })
       }
@@ -47,8 +46,8 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   }, [videoLoaded])
 
   useEffect(() => {
+    const video = videoRef.current
     return () => {
-      const video = videoRef.current
       if (video) {
         video.pause()
         video.currentTime = 0
@@ -86,17 +85,10 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const t = content[locale as keyof typeof content] || content.pt
 
   return (
-    <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
+    <section className="relative h-[100vh] flex items-start justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Fallback background image - only show if video fails */}
-        {videoFailed && (
-          <div 
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-02.jpg)' }}
-          />
-        )}
-        {/* Video container - always present */}
+        {/* Video container - optimized for performance */}
         <div className="absolute inset-0 w-full h-full">
           {mounted && (
             <video
@@ -105,10 +97,12 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
               muted
               loop
               playsInline
+              preload="metadata"
+              poster="/images/coffeecabana/initialpic.jpg"
               className="w-full h-full object-cover pointer-events-none"
               onLoadedData={() => setVideoLoaded(true)}
               onError={() => {
-                setVideoFailed(true)
+                console.log('Video failed to load')
               }}
               onCanPlay={() => {}}
               style={{ touchAction: 'none' }}
@@ -122,22 +116,26 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto flex flex-col items-center justify-center h-full">
         {/* Main title - Brand name stays consistent */}
-        <div ref={logoRef} className="mb-8 transition-opacity duration-800" style={{ opacity: 0 }}>
+        <div ref={logoRef} className="mb-8 transition-opacity duration-800" style={{ opacity: mounted ? 1 : 0 }}>
           <div className="flex justify-center">
-            <h1
-              className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 bg-contain bg-center bg-no-repeat brightness-0 invert relative z-10 select-none"
-              style={{
-                backgroundImage: `url('/images/logos/home/coffeecabana.png')`,
-                userSelect: 'none',
-                WebkitUserSelect: 'none',
-                MozUserSelect: 'none',
-                msUserSelect: 'none',
-                WebkitTouchCallout: 'none'
-              } as React.CSSProperties}
-              draggable="false"
-              onDragStart={(e) => e.preventDefault()}
-            >
-              <span className="sr-only">Coffee Cabana - Organic Coffee from Terceira, Azores</span>
+            <h1 className="relative z-10 select-none">
+              <Image
+                src="/images/logos/home/coffeecabana.png"
+                alt="Coffee Cabana - Organic Coffee from Terceira, Azores"
+                width={600}
+                height={192}
+                priority
+                className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 object-contain brightness-0 invert"
+                style={{
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                  msUserSelect: 'none',
+                  WebkitTouchCallout: 'none'
+                } as React.CSSProperties}
+                draggable="false"
+                onDragStart={(e) => e.preventDefault()}
+              />
             </h1>
           </div>
         </div>

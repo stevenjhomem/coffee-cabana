@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Performance optimizations
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
+  },
+  
+  // Experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+  },
   
   // Cache control headers
   async headers() {

@@ -7,7 +7,11 @@ import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 import { localBusinessSchema, organizationSchema } from '@/lib/constants/schema'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.coffeecabana.pt'),
@@ -74,6 +78,12 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
+        
+        {/* Critical resource preloading */}
+        <link rel="preload" href="/images/logos/home/coffeecabana.png" as="image" />
+        <link rel="preload" href="/images/coffeecabana/initialpic.jpg" as="image" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         <style dangerouslySetInnerHTML={{
           __html: `
