@@ -119,15 +119,16 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       <div className="absolute inset-0 z-0">
         {/* Video container - optimized for fastest loading globally */}
         <div className="absolute inset-0 w-full h-full">
-          {/* Poster image - only shows if video fails or before video loads */}
-          {(!videoLoaded || videoError) && (
-            <div 
-              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-10"
-              style={{ backgroundImage: 'url(/images/coffeecabana/initialpic.jpg)' }}
-            />
-          )}
+          {/* Poster image - always shows first */}
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ 
+              backgroundImage: 'url(/images/coffeecabana/initialpic.jpg)',
+              zIndex: videoLoaded && !videoError ? 0 : 10
+            }}
+          />
           
-          {/* Video element - aggressive loading strategy */}
+          {/* Video element - starts hidden, appears when loaded */}
           <video
             ref={videoRef}
             autoPlay
@@ -152,8 +153,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             }}
             style={{ 
               touchAction: 'none',
-              opacity: videoLoaded && !videoError ? 1 : 0,
-              transition: 'opacity 0.3s ease-in-out'
+              zIndex: videoLoaded && !videoError ? 10 : 0
             }}
           >
             <source src="/images/coffeecabana/1080pvid.webm" type="video/webm" />
