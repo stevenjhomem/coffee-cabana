@@ -79,9 +79,10 @@ export default function RootLayout({
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         
-        {/* Critical resource preloading */}
+        {/* Critical resource preloading - aggressive video preloading */}
         <link rel="preload" href="/images/logos/home/coffeecabana.png" as="image" />
         <link rel="preload" href="/images/coffeecabana/initialpic.jpg" as="image" />
+        <link rel="preload" href="/images/coffeecabana/1080pvid.webm" as="video" type="video/webm" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 

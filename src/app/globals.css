@@ -52,6 +52,21 @@ video {
   object-position: center;
 }
 
+/* Ensure poster image matches video styling */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* Fix poster image scaling to match video */
+video[poster] {
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Custom animations */
 @keyframes fadeIn {
   from {

@@ -44,7 +44,7 @@ export const useImagePreloader = () => {
       // Preload video
       const video = document.createElement("video")
       video.preload = "metadata"
-      video.src = "/images/coffeecabana/backgroundvideo2.mp4"
+      video.src = "/images/coffeecabana/1080pvid.webm"
     }
 
     // Preload after a delay to not interfere with initial page load

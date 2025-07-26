@@ -12,6 +12,7 @@ interface HeroSectionProps {
 export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   const [mounted, setMounted] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
+  const [videoError, setVideoError] = useState(false)
   const logoRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -20,21 +21,49 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
     setMounted(true)
   }, [])
 
+  // Aggressive video loading strategy
   useEffect(() => {
     if (mounted && videoRef.current) {
       const video = videoRef.current
-      // Try to play the video manually if autoplay fails
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.log('Video autoplay failed, trying manual play:', error)
-          // For iOS and other browsers that might block autoplay
+      
+      // Start loading immediately with aggressive settings
+      video.preload = 'auto' // Load entire video
+      video.load()
+      
+      // Multiple attempts for maximum compatibility
+      const attemptPlay = async () => {
+        try {
+          // Ensure video is muted for autoplay policies
           video.muted = true
-          video.play().catch(e => {
-            console.log('Manual video play also failed:', e)
-          })
-        })
+          video.playsInline = true
+          
+          // First attempt
+          await video.play()
+        } catch (error1) {
+          console.log('First play attempt failed:', error1)
+          
+          try {
+            // Second attempt with a small delay
+            await new Promise(resolve => setTimeout(resolve, 100))
+            await video.play()
+          } catch (error2) {
+            console.log('Second play attempt failed:', error2)
+            
+            // Third attempt - force reload and try again
+            try {
+              video.load()
+              await new Promise(resolve => setTimeout(resolve, 200))
+              await video.play()
+            } catch (error3) {
+              console.log('All play attempts failed:', error3)
+              setVideoError(true)
+            }
+          }
+        }
       }
+      
+      // Start attempting to play as soon as possible
+      attemptPlay()
     }
   }, [mounted])
 
@@ -88,28 +117,47 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
     <section className="relative h-[100vh] flex items-start justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Video container - optimized for performance */}
+        {/* Video container - optimized for fastest loading globally */}
         <div className="absolute inset-0 w-full h-full">
-          {mounted && (
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/images/coffeecabana/initialpic.jpg"
-              className="w-full h-full object-cover pointer-events-none"
-              onLoadedData={() => setVideoLoaded(true)}
-              onError={() => {
-                console.log('Video failed to load')
-              }}
-              onCanPlay={() => {}}
-              style={{ touchAction: 'none' }}
-            >
-              <source src="/images/coffeecabana/backgroundvideo2.mp4" type="video/mp4" />
-            </video>
+          {/* Poster image - only shows if video fails or before video loads */}
+          {(!videoLoaded || videoError) && (
+            <div 
+              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-10"
+              style={{ backgroundImage: 'url(/images/coffeecabana/initialpic.jpg)' }}
+            />
           )}
+          
+          {/* Video element - aggressive loading strategy */}
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+            onLoadedData={() => setVideoLoaded(true)}
+            onCanPlay={() => setVideoLoaded(true)}
+            onLoadedMetadata={() => {
+              // Try to play as soon as metadata is available
+              if (videoRef.current) {
+                videoRef.current.play().catch(() => {
+                  // Ignore errors here, main retry logic is in useEffect
+                })
+              }
+            }}
+            onError={() => {
+              console.log('Video failed to load')
+              setVideoError(true)
+            }}
+            style={{ 
+              touchAction: 'none',
+              opacity: videoLoaded && !videoError ? 1 : 0,
+              transition: 'opacity 0.3s ease-in-out'
+            }}
+          >
+            <source src="/images/coffeecabana/1080pvid.webm" type="video/webm" />
+          </video>
         </div>
       </div>
 
