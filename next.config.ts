@@ -52,6 +52,10 @@ const nextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, s-maxage=31536000, immutable',
           },
+          {
+            key: 'Vary',
+            value: 'Accept-Encoding',
+          },
         ],
       },
       // Cache Next.js optimized images for 1 year
@@ -108,7 +112,7 @@ const nextConfig = {
           },
         ],
       },
-      // Default cache for HTML pages (shorter for dynamic content)
+      // Optimized cache for HTML pages
       {
         source: '/(.*)',
         headers: [
@@ -126,7 +130,7 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=0, s-maxage=86400, stale-while-revalidate=86400',
+            value: 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400',
           },
         ],
       },

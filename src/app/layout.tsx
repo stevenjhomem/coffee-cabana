@@ -79,16 +79,19 @@ export default function RootLayout({
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         
-        {/* Critical resource preloading - aggressive video preloading */}
-        <link rel="preload" href="/images/logos/home/coffeecabana.png" as="image" />
-        <link rel="preload" href="/images/coffeecabana/initialpic.jpg" as="image" />
-        <link rel="preload" href="/images/coffeecabana/1080pvid.webm" as="video" type="video/webm" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        {/* Critical resource preloading - optimized for LCP */}
+        <link rel="preload" href="/images/logos/home/coffeecabana.png" as="image" fetchPriority="high" />
+        <link rel="preload" href="/images/coffeecabana/initialpic.jpg" as="image" fetchPriority="high" />
+        
+        {/* Defer heavy video until after LCP */}
+        <link rel="dns-prefetch" href="/images/coffeecabana/" />
+        
+        {/* Font optimization */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Optimize CSS loading with resource hints */}
-        <link rel="dns-prefetch" href="/_next/static/css/" />
-        <link rel="preconnect" href="/_next/static/css/" />
+        {/* Critical CSS preload */}
+        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" fetchPriority="high" />
         
         {/* Critical inline CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
@@ -160,23 +163,30 @@ export default function RootLayout({
           }}
         />
 
-        {/* Unregister old service worker */}
+        {/* Performance optimization: Lazy load heavy resources */}
         <script dangerouslySetInnerHTML={{
           __html: `
+            // Defer video loading until after LCP
+            document.addEventListener('DOMContentLoaded', function() {
+              setTimeout(function() {
+                var link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = '/images/coffeecabana/1080pvid.webm';
+                link.as = 'video';
+                link.type = 'video/webm';
+                document.head.appendChild(link);
+              }, 2000);
+            });
+            
+            // Service worker cleanup - only clear outdated caches
             if ('serviceWorker' in navigator) {
               navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for(let registration of registrations) {
-                  registration.unregister();
-                }
-              });
-              // Clear all caches
-              if ('caches' in window) {
-                caches.keys().then(function(names) {
-                  names.forEach(function(name) {
-                    caches.delete(name);
-                  });
+                registrations.forEach(function(registration) {
+                  if (registration.scope.includes('old-domain') || registration.scope.includes('sw.js')) {
+                    registration.unregister();
+                  }
                 });
-              }
+              });
             }
           `
         }} />
