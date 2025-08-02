@@ -85,9 +85,55 @@ export default function RootLayout({
         <link rel="preload" href="/images/coffeecabana/1080pvid.webm" as="video" type="video/webm" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
+        
+        {/* Optimize CSS loading with resource hints */}
+        <link rel="dns-prefetch" href="/_next/static/css/" />
+        <link rel="preconnect" href="/_next/static/css/" />
+        
+        {/* Critical inline CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
           __html: `
+            /* Critical base styles */
+            :root {
+              --background: #ffffff;
+              --foreground: #171717;
+            }
+            @media (prefers-color-scheme: dark) {
+              :root {
+                --background: #0a0a0a;
+                --foreground: #ededed;
+              }
+            }
+            body {
+              background: var(--background);
+              color: var(--foreground);
+              font-family: Arial, Helvetica, sans-serif;
+              margin: 0;
+              padding: 0;
+              border: none;
+              outline: none;
+            }
+            html {
+              margin: 0;
+              padding: 0;
+              border: none;
+              outline: none;
+            }
+            *, *::before, *::after {
+              box-sizing: border-box;
+            }
+            video {
+              object-fit: cover;
+              object-position: center;
+            }
+            video::-webkit-media-controls,
+            video::-webkit-media-controls-enclosure {
+              display: none !important;
+            }
+            video[poster] {
+              object-fit: cover;
+              object-position: center;
+            }
             .no-translate {
               -webkit-translate: no;
               translate: no;
@@ -98,6 +144,7 @@ export default function RootLayout({
             }
           `
         }} />
+
 
         {/* Schema.org JSON-LD */}
         <script
