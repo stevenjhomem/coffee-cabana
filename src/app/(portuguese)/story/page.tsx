@@ -28,10 +28,11 @@ export default function StoryPage() {
       title: "A Nossa História Continua Com",
       subtitle: "Marcel e Marta",
       paragraphs: [
-        "Marcel, filho de um agricultor e de uma veterinária, cresceu com uma forte ligação à natureza e aos animais. Após terminar o ensino secundário, decidiu prosseguir os estudos nos Países Baixos, de onde a sua mãe é natural. Lá, concluiu uma licenciatura em Operações Marítimas e começou a trabalhar a bordo de navios com bandeira holandesa como Oficial da Marinha Mercante.",
-        "Durante uma das suas licenças, Marcel conheceu a Marta, com quem teve a sua primeira filha. Ao perceber que a vida no mar implicava longos períodos longe de casa — e sem querer perder o crescimento da filha — Marcel tomou a decisão de regressar aos Açores.",
-        "Fixou-se na Ilha Terceira, onde vivia a Marta. Em 2023, o Bernardo procurava alguém para assumir a gestão do Banana Eco Camp e da Coffee Cabana. Após uma pesquisa alargada, reconheceu que o percurso agrícola do Marcel e as competências versáteis adquiridas no mar faziam dele o candidato ideal.",
-        "Hoje, o Marcel e a Marta vivem na quinta com as suas duas filhas pequenas. Juntos, estão sempre prontos para receber os hóspedes com carinho e hospitalidade."
+        "Marta e Marcel, açorianos orgulhosos, abraçaram este projeto com entusiasmo, acrescentando-lhe inovação e carisma.",
+        "Marta, filha de pais terceirenses, é profundamente ligada às suas raízes e ao espírito resiliente herdado da sua terra. Enfermeira de formação, dedicou vários anos da sua vida ao cuidado com o próximo, demonstrando empatia, dedicação e um profundo sentido de serviço.",
+        "Marcel, filho de pai micaelense e mãe holandesa, é o reflexo de um encontro de culturas que marcou a sua identidade. Cresceu em São Miguel, rodeado pela natureza açoriana e em contacto constante com o mundo animal — experiências que despertaram, desde cedo, um profundo respeito pelo ambiente. Mais tarde, seguiu a carreira de pilotagem, estudando nos Países Baixos.",
+        "Foi numa das suas missões que conheceu Marta, e desde então caminham juntos, partilhando valores, projetos e sonhos. Construíram a sua família e criaram as filhas Maria do Mar e Marion num ambiente onde se cultivam os valores da simplicidade, da sustentabilidade e da ligação às origens.",
+        "Hoje, reinventam-se neste novo caminho, atuando no turismo sustentável e na produção local, promovendo experiências autênticas e conscientes, ligadas à natureza e à cultura dos Açores."
       ]
     },
     footer: {

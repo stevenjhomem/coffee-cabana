@@ -43,10 +43,11 @@ export default function StoryPage({ params }: Props) {
         title: "Our Story Continues With",
         subtitle: "Marcel and Marta",
         paragraphs: [
-          "Marcel, the son of a farmer and a veterinarian, grew up with a deep connection to nature and animals. After finishing high school, he decided to pursue his studies in the Netherlands, where his mother is originally from. There, he completed a degree in Maritime Operations and began working aboard Dutch-flagged ships as a Maritime Officer.",
-          "During one of his leaves, Marcel met Marta, with whom he had his first daughter. Realizing that maritime life meant long periods away from home—and not wanting to miss his daughter growing up—Marcel made the decision to return to the Azores.",
-          "He settled on Terceira Island, where Marta was living. In 2023, Bernardo was searching for someone new to manage Banana Eco Camp and Coffee Cabana. After an extensive search, he recognized that Marcel's farming background and the versatile skills he had acquired at sea made him the ideal candidate.",
-          "Today, Marcel and Marta live on the farm with their two young daughters. Together, they are always on hand to welcome guests with warmth and care."
+          "Marta and Marcel, proud Azoreans, embraced this project with enthusiasm, adding innovation and charisma to it.",
+          "Marta, daughter of parents from Terceira, is deeply connected to her roots and to the resilient spirit inherited from her homeland. A nurse by training, she dedicated several years of her life to caring for others, demonstrating empathy, dedication, and a profound sense of service.",
+          "Marcel, son of a father from São Miguel and a Dutch mother, reflects a meeting of cultures that shaped his identity. He grew up in São Miguel, surrounded by Azorean nature and in constant contact with the animal world — experiences that awakened, from an early age, a deep respect for the environment. Later, he pursued a career in aviation, studying in the Netherlands.",
+          "It was during one of his missions that he met Marta, and since then they have walked together, sharing values, projects, and dreams. They built their family and raised their daughters Maria do Mar and Marion in an environment where the values of simplicity, sustainability, and connection to their origins are cultivated.",
+          "Today, they have reinvented themselves in this new path, acting in sustainable tourism and local production, promoting authentic and conscious experiences, linked to nature and the culture of the Azores."
         ]
       },
       footer: {
