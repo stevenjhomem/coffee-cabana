@@ -15,17 +15,10 @@ const BackgroundPreload = () => (
 export const metadata: Metadata = {
   title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
   description: 'Descubra a nossa ementa com café especial, chás, bebidas e refeições ligeiras. Todos os produtos são frescos e locais.',
-  authors: [{ name: 'Coffee Cabana' }],
-  creator: 'Coffee Cabana',
-  publisher: 'Coffee Cabana',
-  robots: 'index, follow',
   openGraph: {
     title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
     description: 'Descubra a nossa ementa com café especial, chás, bebidas e refeições ligeiras. Todos os produtos são frescos e locais.',
-    url: 'https://www.coffeecabana.pt/menu',
-    siteName: 'Coffee Cabana',
-    locale: 'pt_PT',
-    type: 'website',
+    url: '/menu',
     images: [
       {
         url: '/images/coffeecabana/Banana_EcoCamp-52.jpg',
@@ -37,11 +30,11 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://www.coffeecabana.pt/menu',
+    canonical: '/menu',
     languages: {
-      'pt': 'https://www.coffeecabana.pt/menu',
-      'en': 'https://www.coffeecabana.pt/en/menu',
-      'x-default': 'https://www.coffeecabana.pt/menu',
+      'pt': '/menu',
+      'en': '/en/menu',
+      'x-default': '/menu',
     },
   },
 }

@@ -30,17 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     ...currentMeta,
-    authors: [{ name: 'Coffee Cabana' }],
-    creator: 'Coffee Cabana',
-    publisher: 'Coffee Cabana',
-    robots: 'index, follow',
     openGraph: {
       title: currentMeta.title,
       description: currentMeta.description,
-      url: `https://www.coffeecabana.pt/${locale}/menu`,
-      siteName: 'Coffee Cabana',
+      url: `/${locale}/menu`,
       locale: `${locale}_${locale.toUpperCase()}`,
-      type: 'website',
       images: [
         {
           url: '/images/coffeecabana/Banana_EcoCamp-52.jpg',
@@ -52,11 +46,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ],
     },
     alternates: {
-      canonical: `https://www.coffeecabana.pt/${locale}/menu`,
+      canonical: `/${locale}/menu`,
       languages: {
-        'pt': 'https://www.coffeecabana.pt/menu',
-        'en': 'https://www.coffeecabana.pt/en/menu',
-        'x-default': 'https://www.coffeecabana.pt/menu',
+        'pt': '/menu',
+        'en': '/en/menu',
+        'x-default': '/menu',
       },
     },
   }

@@ -3,7 +3,7 @@ export const localBusinessSchema = {
   "@type": "CafeOrCoffeeShop",
   "name": "Coffee Cabana",
   "description": "Coffee Cabana is an organic coffee farm located in São Mateus da Calheta, Terceira Island, Azores. We offer farm tours, coffee tastings, and authentic agritourism experiences.",
-  "url": "https://www.coffeecabana.pt",
+  "url": "/",
   "telephone": "+351919116145",
   "email": "bananaecocamp@gmail.com",
   "address": {
@@ -29,8 +29,8 @@ export const localBusinessSchema = {
   ],
   "servesCuisine": ["Coffee", "Breakfast", "Brunch"],
   "priceRange": "$$",
-  "image": "https://www.coffeecabana.pt/images/coffeecabana/Banana_EcoCamp-49.jpg",
-  "hasMenu": "https://www.coffeecabana.pt/menu",
+  "image": "/images/coffeecabana/Banana_EcoCamp-49.jpg",
+  "hasMenu": "/menu",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
@@ -42,8 +42,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Coffee Cabana",
-  "url": "https://www.coffeecabana.pt",
-  "logo": "https://www.coffeecabana.pt/images/coffeecabana/logo.svg",
+  "url": "/",
+  "logo": "/images/coffeecabana/logo.svg",
   "sameAs": [
     "https://www.instagram.com/coffee_cabana_official/",
     "https://www.facebook.com/p/Coffee-Cabana-100076131101706/"

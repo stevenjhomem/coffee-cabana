@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
     description: 'The only coffee grown and roasted on Terceira Island',
-    url: 'https://www.coffeecabana.pt',
+    url: '/',
     siteName: 'Coffee Cabana',
     locale: 'pt_PT',
     type: 'website',
     images: [
       {
-        url: 'https://www.coffeecabana.pt/images/coffeecabana/Banana_EcoCamp-49.jpg',
+        url: '/images/coffeecabana/Banana_EcoCamp-49.jpg',
         width: 1200,
         height: 630,
         alt: 'Coffee Cabana - Organic coffee plantation in Terceira, Azores',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Coffee Cabana - Café Orgânico | Terceira, Açores',
     description: 'The only coffee grown and roasted on Terceira Island',
-    images: ['https://www.coffeecabana.pt/images/coffeecabana/Banana_EcoCamp-49.jpg'],
+    images: ['/images/coffeecabana/Banana_EcoCamp-49.jpg'],
   },
 }
 
