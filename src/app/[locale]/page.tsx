@@ -3,6 +3,15 @@ import HeroSection from '@/components/sections/HeroSection'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 import OurMission from '@/components/sections/OurMission'
 
+// Critical resource preloading for LCP optimization
+const CriticalResourcePreload = () => (
+  <>
+    <link rel="preload" href="/images/logos/home/coffeecabana.png" as="image" fetchPriority="high" />
+    <link rel="preload" href="/images/coffeecabana/initialpic.jpg" as="image" fetchPriority="high" />
+    <link rel="dns-prefetch" href="/images/coffeecabana/" />
+  </>
+)
+
 interface PageProps {
   params: Promise<{ locale: string }>
 }
@@ -51,10 +60,13 @@ export default async function HomePage({ params }: PageProps) {
   const { locale } = await params
   
   return (
-    <main>
-      <HeroSection locale={locale} />
-      <ImageCarousel />
-      <OurMission locale={locale} />
-    </main>
+    <>
+      <CriticalResourcePreload />
+      <main>
+        <HeroSection locale={locale} />
+        <ImageCarousel />
+        <OurMission locale={locale} />
+      </main>
+    </>
   )
 }

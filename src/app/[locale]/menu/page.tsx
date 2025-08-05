@@ -2,14 +2,18 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/data/menu'
 
-// Preload the background image
-const BackgroundPreload = () => (
-  <link 
-    rel="preload" 
-    as="image" 
-    href="/images/coffeecabana/Banana_EcoCamp-52.jpg"
-    fetchPriority="high"
-  />
+// Critical resource preloading for LCP optimization
+const CriticalResourcePreload = () => (
+  <>
+    <link 
+      rel="preload" 
+      as="image" 
+      href="/images/coffeecabana/Banana_EcoCamp-52.jpg"
+      fetchPriority="high"
+    />
+    <link rel="dns-prefetch" href="/images/coffeecabana/" />
+    <link rel="dns-prefetch" href="/images/logos/menu/" />
+  </>
 )
 
 interface PageProps {
@@ -64,9 +68,20 @@ export default async function MenuPage({ params }: PageProps) {
     ? '/images/logos/menu/english/menulogoen.png'
     : '/images/logos/menu/portuguese/menulogopt.png'
   
+  // Locale-specific logo preloading
+  const LogoPreload = () => (
+    <link 
+      rel="preload" 
+      href={logoPath} 
+      as="image" 
+      fetchPriority="high"
+    />
+  )
+  
   return (
     <>
-      <BackgroundPreload />
+      <CriticalResourcePreload />
+      <LogoPreload />
       <MenuSection 
         content={content} 
         logoPath={logoPath}

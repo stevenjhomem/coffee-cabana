@@ -13,11 +13,9 @@ const BackgroundPreload = () => (
 )
 
 export const metadata: Metadata = {
-  title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
-  description: 'Descubra a nossa ementa com café especial, chás, bebidas e refeições ligeiras. Todos os produtos são frescos e locais.',
+  title: 'Menu',
   openGraph: {
-    title: 'Menu - Coffee Cabana | Café Orgânico Terceira',
-    description: 'Descubra a nossa ementa com café especial, chás, bebidas e refeições ligeiras. Todos os produtos são frescos e locais.',
+    title: 'Menu',
     url: '/menu',
     images: [
       {

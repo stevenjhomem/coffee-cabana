@@ -5,9 +5,7 @@ type Props = {
   children: React.ReactNode
 }
 
-export default function PortugueseLayout({
-  children,
-}: Props) {
+export default function PortugueseLayout({ children }: Props) {
   return (
     <>
       <Header locale="pt" />
