@@ -2,15 +2,9 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/data/menu'
 
-// Critical resource preloading for LCP optimization
+// DNS prefetch for performance optimization
 const CriticalResourcePreload = () => (
   <>
-    <link 
-      rel="preload" 
-      as="image" 
-      href="/images/coffeecabana/Banana_EcoCamp-52.jpg"
-      fetchPriority="high"
-    />
     <link rel="dns-prefetch" href="/images/coffeecabana/" />
     <link rel="dns-prefetch" href="/images/logos/menu/" />
   </>
@@ -68,15 +62,8 @@ export default async function MenuPage({ params }: PageProps) {
     ? '/images/logos/menu/english/menulogoen.png'
     : '/images/logos/menu/portuguese/menulogopt.png'
   
-  // Locale-specific logo preloading
-  const LogoPreload = () => (
-    <link 
-      rel="preload" 
-      href={logoPath} 
-      as="image" 
-      fetchPriority="high"
-    />
-  )
+  // Locale-specific logo will load on demand
+  const LogoPreload = () => null
   
   return (
     <>
