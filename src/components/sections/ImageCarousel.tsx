@@ -4,11 +4,11 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const images = [
-  '/images/coffeecabana/Banana_EcoCamp-08.jpg',
-  '/images/coffeecabana/Banana_EcoCamp-30.jpg',
-  '/images/coffeecabana/Banana_EcoCamp-23.jpg',
-  '/images/coffeecabana/blackandwhitepour.png',
-  '/images/coffeecabana/cooltea.png',
+  '/images/coffeecabana/Banana_EcoCamp-08.webp',
+  '/images/coffeecabana/Banana_EcoCamp-30.webp',
+  '/images/coffeecabana/Banana_EcoCamp-23.webp',
+  '/images/coffeecabana/blackandwhitepour.webp',
+  '/images/coffeecabana/cooltea.webp',
 ]
 
 export default function ImageCarousel() {

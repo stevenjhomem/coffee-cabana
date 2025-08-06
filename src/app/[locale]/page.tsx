@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       locale: `${locale}_${locale.toUpperCase()}`,
       images: [
         {
-          url: '/images/coffeecabana/coffee-cabana-instagram.png',
+          url: '/images/coffeecabana/coffee-cabana-instagram.webp',
           width: 1200,
           height: 630,
           alt: currentMeta.title,

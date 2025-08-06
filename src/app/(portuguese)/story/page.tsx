@@ -9,7 +9,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 // Critical resource preloading for story page LCP
 const CriticalResourcePreload = () => (
   <>
-    <link rel="preload" href="/images/coffeecabana/farm.jpeg" as="image" fetchPriority="high" />
+    <link rel="preload" href="/images/coffeecabana/farm.webp" as="image" fetchPriority="high" />
     <link rel="dns-prefetch" href="/images/coffeecabana/" />
   </>
 )
@@ -62,7 +62,7 @@ export default function StoryPage() {
         {/* Photo Background - Optimized for LCP */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/coffeecabana/farm.jpeg"
+            src="/images/coffeecabana/farm.webp"
             alt="Quinta de café orgânico Coffee Cabana na Terceira, Açores"
             fill
             priority
@@ -117,7 +117,7 @@ export default function StoryPage() {
               </h2>
               <div className="relative mb-8">
                 <Image
-                  src="/images/coffeecabana/bernardo.jpeg"
+                  src="/images/coffeecabana/bernardo.webp"
                   alt="José Bernardo trabalhando na plantação de bananas na quinta Coffee Cabana"
                   width={600}
                   height={600}
@@ -146,7 +146,7 @@ export default function StoryPage() {
             </div>
             <div className="hidden lg:block relative">
               <Image
-                src="/images/coffeecabana/bernardo.jpeg"
+                src="/images/coffeecabana/bernardo.webp"
                 alt="José Bernardo trabalhando na plantação de bananas na quinta Coffee Cabana"
                 width={600}
                 height={600}

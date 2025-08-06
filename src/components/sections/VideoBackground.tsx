@@ -20,7 +20,7 @@ export default function VideoBackground() {
       <div 
         className="w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/images/coffeecabana/Banana_EcoCamp-02.jpg')`
+          backgroundImage: `url('/images/coffeecabana/Banana_EcoCamp-02.webp')`
         }}
       />
       

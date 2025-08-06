@@ -5,21 +5,21 @@ import { useEffect } from "react"
 // List of all images used throughout the site for preloading
 const imageList = [
   // Story page images
-  "/images/coffeecabana/farm.jpeg",
-  "/images/coffeecabana/bernardo.jpeg", 
+  "/images/coffeecabana/farm.webp",
+  "/images/coffeecabana/bernardo.webp", 
   "/images/coffeecabana/family.png",
   
   // Background images
   "/images/coffeecabana/Banana_EcoCamp-52.jpg",
-  "/images/coffeecabana/Banana_EcoCamp-30.jpg",
+  "/images/coffeecabana/Banana_EcoCamp-30.webp",
   "/images/coffeecabana/Banana_EcoCamp-46.jpg",
-  "/images/coffeecabana/Banana_EcoCamp-02.jpg",
+  "/images/coffeecabana/Banana_EcoCamp-02.webp",
   
   // Carousel images
-  "/images/coffeecabana/Banana_EcoCamp-08.jpg",
-  "/images/coffeecabana/Banana_EcoCamp-23.jpg",
-  "/images/coffeecabana/blackandwhitepour.png",
-  "/images/coffeecabana/cooltea.png",
+  "/images/coffeecabana/Banana_EcoCamp-08.webp",
+  "/images/coffeecabana/Banana_EcoCamp-23.webp",
+  "/images/coffeecabana/blackandwhitepour.webp",
+  "/images/coffeecabana/cooltea.webp",
   
   // Logo variations
   "/images/logos/home/coffeecabana.webp",
@@ -29,7 +29,7 @@ const imageList = [
   "/images/logos/menu/portuguese/menulogopt.png",
   
   // Other images
-  "/images/coffeecabana/coffee-cabana-instagram.png"
+  "/images/coffeecabana/coffee-cabana-instagram.webp"
 ]
 
 export const useImagePreloader = () => {
