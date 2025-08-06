@@ -6,7 +6,7 @@ import OurMission from '@/components/sections/OurMission'
 // Critical resource preloading for homepage LCP
 const CriticalResourcePreload = () => (
   <>
-    <link rel="preload" href="/images/logos/home/coffeecabana.webp" as="image" fetchPriority="high" />
+    {/* Removed preload - logo shows after video loads */}
     <link rel="dns-prefetch" href="/images/coffeecabana/" />
   </>
 )
