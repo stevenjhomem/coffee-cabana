@@ -8,16 +8,16 @@ const BackgroundPreload = () => (
 )
 
 export const metadata: Metadata = {
-  title: 'Menu',
+  title: 'A Ementa',
   openGraph: {
-    title: 'Menu',
+    title: 'A Ementa',
     url: '/menu',
     images: [
       {
         url: '/images/coffeecabana/Banana_EcoCamp-52.jpg',
         width: 1200,
         height: 630,
-        alt: 'Menu Coffee Cabana - Café Orgânico Terceira',
+        alt: 'Coffee Cabana - A Ementa',
         type: 'image/jpeg',
       },
     ],

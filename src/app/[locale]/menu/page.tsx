@@ -20,8 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const metaData = {
     en: {
-      title: 'Menu - Coffee Cabana | Organic Coffee Terceira',
-      description: 'Discover our menu with specialty coffee, teas, beverages and light meals. All products are fresh and local.',
+      title: 'Menu',
     },
   }
 
@@ -31,7 +30,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ...currentMeta,
     openGraph: {
       title: currentMeta.title,
-      description: currentMeta.description,
       url: `/${locale}/menu`,
       locale: `${locale}_${locale.toUpperCase()}`,
       images: [

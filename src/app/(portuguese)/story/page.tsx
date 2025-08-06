@@ -5,6 +5,16 @@ import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { Metadata } from "next"
+
+// Critical resource preloading for story page LCP
+const CriticalResourcePreload = () => (
+  <>
+    <link rel="preload" href="/images/coffeecabana/farm.jpeg" as="image" fetchPriority="high" />
+    <link rel="dns-prefetch" href="/images/coffeecabana/" />
+  </>
+)
+
 
 export default function StoryPage() {
   const content = {
@@ -45,16 +55,21 @@ export default function StoryPage() {
 
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <>
+      <CriticalResourcePreload />
+      <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
-        {/* Photo Background */}
+        {/* Photo Background - Optimized for LCP */}
         <div className="absolute inset-0 z-0">
-          <div 
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url("/images/coffeecabana/farm.jpeg")`
-            }}
+          <Image
+            src="/images/coffeecabana/farm.jpeg"
+            alt="Quinta de café orgânico Coffee Cabana na Terceira, Açores"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
 
@@ -217,6 +232,7 @@ export default function StoryPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 } 

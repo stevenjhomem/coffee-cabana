@@ -6,6 +6,14 @@ import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
+// Critical resource preloading for story page LCP
+const CriticalResourcePreload = () => (
+  <>
+    <link rel="preload" href="/images/coffeecabana/farm.jpeg" as="image" fetchPriority="high" />
+    <link rel="dns-prefetch" href="/images/coffeecabana/" />
+  </>
+)
+
 interface Props {
   params: Promise<{ locale: string }>
 }
@@ -62,16 +70,21 @@ export default function StoryPage({ params }: Props) {
   const t = content[locale as keyof typeof content] || content.en
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <>
+      <CriticalResourcePreload />
+      <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
-        {/* Photo Background */}
+        {/* Photo Background - Optimized for LCP */}
         <div className="absolute inset-0 z-0">
-          <div 
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url("/images/coffeecabana/farm.jpeg")`
-            }}
+          <Image
+            src="/images/coffeecabana/farm.jpeg"
+            alt="Coffee Cabana organic coffee farm in Terceira, Azores"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
 
@@ -233,6 +246,7 @@ export default function StoryPage({ params }: Props) {
           </GoogleMapsButton>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 } 

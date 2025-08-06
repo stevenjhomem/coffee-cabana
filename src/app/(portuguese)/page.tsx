@@ -4,6 +4,7 @@ import ImageCarousel from '@/components/sections/ImageCarousel'
 import OurMission from '@/components/sections/OurMission'
 
 export const metadata: Metadata = {
+  // Be sure to add in the alternates the languages you want to support as you scale the site to include more languages
   alternates: {
     canonical: '/',
     languages: {
