@@ -5,6 +5,7 @@ import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { storyContent } from "@/constants/story"
 
 // Critical resource preloading for story page LCP
 const CriticalResourcePreload = () => (
@@ -29,45 +30,6 @@ export default function StoryPage({ params }: Props) {
     getLocale()
   }, [params])
 
-  const content = {
-    en: {
-      logo: "/images/logos/story/english/ourstoryen.png",
-      hero: {
-        title: "FROM FARM TO CUP",
-      },
-      story: {
-        title: "Our Story Begins With",
-        name: "José Bernardo",
-        paragraphs: [
-          "José is the one who started it all. Born on Terceira Island, he moved to Angola, Africa, with his family in 1958 at the age of eight. From the late 1950s through the early 1970s, they managed a farm, where José gained extensive knowledge and experience in African agriculture.",
-          "When the war broke out in Angola, like many other Portuguese families, they were forced to flee—returning to Portugal empty-handed.",
-          "Soon after, they emigrated to California, USA. However, it wasn't long before José decided to return to his roots on Terceira. Back home, he worked for the regional government as the CEO of the Agriculture Department.",
-          "After retiring, he purchased a piece of land he believed had the potential to grow tropical fruits. That's when he began planting bananas and coffee.",
-          "In 2016, as a personal project and hobby, he built his first wooden cabin. Today, that vision has expanded into a beautiful eco retreat with six simple cabins, three luxury cabins, and various amenities throughout the property.",
-          "In 2019, he created Coffee Cabana. Originally intended to serve guests, it quickly became a place to share their unique, homegrown coffee with the public."
-        ]
-      },
-      coffeeCraft: {
-        title: "Our Story Continues With",
-        subtitle: "Marcel and Marta",
-        paragraphs: [
-          "Marta and Marcel, proud Azoreans, embraced this project with enthusiasm, adding innovation and charisma to it.",
-          "Marta, daughter of parents from Terceira, is deeply connected to her roots and to the resilient spirit inherited from her homeland. A nurse by training, she dedicated several years of her life to caring for others, demonstrating empathy, dedication, and a profound sense of service.",
-          "Marcel, son of a father from São Miguel and a Dutch mother, reflects a meeting of cultures that shaped his identity. He grew up in São Miguel, surrounded by Azorean nature and in constant contact with the animal world — experiences that awakened, from an early age, a deep respect for the environment. Later, he pursued a career in aviation, studying in the Netherlands.",
-          "It was during one of his missions that he met Marta, and since then they have walked together, sharing values, projects, and dreams. They built their family and raised their daughters Maria do Mar and Marion in an environment where the values of simplicity, sustainability, and connection to their origins are cultivated.",
-          "Today, they have reinvented themselves in this new path, acting in sustainable tourism and local production, promoting authentic and conscious experiences, linked to nature and the culture of the Azores."
-        ]
-      },
-      footer: {
-        title: "Come Be Part Of Our Story",
-        subtitle: "One Cup At A Time",
-        description: "Visit us to taste the difference that passion, quality, and family tradition make.",
-        button: "Come Visit Us"
-      }
-    }
-  }
-
-  const t = content[locale as keyof typeof content] || content.en
 
   return (
     <>
@@ -129,9 +91,9 @@ export default function StoryPage({ params }: Props) {
             {/* Mobile: Title + Image + Text */}
             <div className="lg:hidden">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.story.title}
+                {storyContent.en.story.title}
                 <br />
-                <span className="text-amber-600">{t.story.name}</span>
+                <span className="text-amber-600">{storyContent.en.story.name}</span>
               </h2>
               <div className="relative mb-8">
                 <Image
@@ -143,7 +105,7 @@ export default function StoryPage({ params }: Props) {
                 />
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-                {t.story.paragraphs.map((paragraph, index) => (
+                {storyContent.en.story.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -152,12 +114,12 @@ export default function StoryPage({ params }: Props) {
             {/* Desktop: Text + Image (original layout) */}
             <div className="hidden lg:block">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.story.title}
+                {storyContent.en.story.title}
                 <br />
-                <span className="text-amber-600">{t.story.name}</span>
+                <span className="text-amber-600">{storyContent.en.story.name}</span>
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-                {t.story.paragraphs.map((paragraph, index) => (
+                {storyContent.en.story.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -182,9 +144,9 @@ export default function StoryPage({ params }: Props) {
             {/* Mobile: Title + Image + Text */}
             <div className="lg:hidden">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.coffeeCraft.title}
+                {storyContent.en.coffeeCraft.title}
                 <br />
-                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600">{storyContent.en.coffeeCraft.subtitle}</span>
               </h2>
               <div className="relative mb-8">
                 <Image
@@ -196,7 +158,7 @@ export default function StoryPage({ params }: Props) {
                 />
               </div>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-                {t.coffeeCraft.paragraphs.map((paragraph, index) => (
+                {storyContent.en.coffeeCraft.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -214,12 +176,12 @@ export default function StoryPage({ params }: Props) {
             </div>
             <div className="hidden lg:block order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-light mb-8 leading-tight text-black">
-                {t.coffeeCraft.title}
+                {storyContent.en.coffeeCraft.title}
                 <br />
-                <span className="text-amber-600">{t.coffeeCraft.subtitle}</span>
+                <span className="text-amber-600">{storyContent.en.coffeeCraft.subtitle}</span>
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-                {t.coffeeCraft.paragraphs.map((paragraph, index) => (
+                {storyContent.en.coffeeCraft.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -232,17 +194,17 @@ export default function StoryPage({ params }: Props) {
       <section className="py-24 bg-stone-100">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl md:text-4xl font-light mb-8 text-black">
-            {t.footer.title}
+            {storyContent.en.footer.title}
             <br />
-            <span className="text-amber-600">{t.footer.subtitle}</span>
+            <span className="text-amber-600">{storyContent.en.footer.subtitle}</span>
           </h2>
           <p className="text-xl text-gray-700 mb-12 leading-relaxed">
-            {t.footer.description}
+            {storyContent.en.footer.description}
           </p>
           <GoogleMapsButton 
             className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg font-medium rounded-lg transition-colors duration-300"
           >
-            {t.footer.button}
+            {storyContent.en.footer.button}
           </GoogleMapsButton>
         </div>
       </section>

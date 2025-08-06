@@ -21,42 +21,28 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
     setMounted(true)
   }, [])
 
-  // Delayed video loading strategy - don't block LCP
+  // Simplified video loading strategy
   useEffect(() => {
     if (mounted && videoRef.current) {
       const video = videoRef.current
       
       // Delay video loading to not interfere with LCP
       const loadTimeout = setTimeout(() => {
-        video.preload = 'metadata' // Only load metadata first
+        video.preload = 'metadata'
+        video.muted = true
+        video.playsInline = true
         video.load()
         
-        // Load video progressively
+        // Simple play attempt - no aggressive retries
         const attemptPlay = async () => {
           try {
-            // Ensure video is muted for autoplay policies
-            video.muted = true
-            video.playsInline = true
-            
-            // First attempt - after a delay
             await video.play()
-          } catch (error1) {
-            console.log('Video play failed:', error1)
-            // Don't retry aggressively - video is optional
-            
-            // Third attempt - force reload and try again
-            try {
-              video.load()
-              await new Promise(resolve => setTimeout(resolve, 200))
-              await video.play()
-            } catch (error3) {
-              console.log('All play attempts failed:', error3)
-              setVideoError(true)
-            }
+          } catch (error) {
+            console.log('Video play failed:', error)
+            setVideoError(true)
           }
         }
         
-        // Start the attempt sequence
         attemptPlay()
       }, 2000) // 2 second delay to not interfere with LCP
       
@@ -142,12 +128,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             onLoadedData={() => setVideoLoaded(true)}
             onCanPlay={() => setVideoLoaded(true)}
             onLoadedMetadata={() => {
-              // Try to play as soon as metadata is available
-              if (videoRef.current) {
-                videoRef.current.play().catch(() => {
-                  // Ignore errors here, main retry logic is in useEffect
-                })
-              }
+              // Video metadata loaded - no need to auto-play here
             }}
             onError={() => {
               console.log('Video failed to load')
