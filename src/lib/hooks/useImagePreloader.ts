@@ -22,7 +22,7 @@ const imageList = [
   "/images/coffeecabana/cooltea.png",
   
   // Logo variations
-  "/images/logos/home/coffeecabana.png",
+  "/images/logos/home/coffeecabana.webp",
   "/images/logos/story/english/ourstoryen.png",
   "/images/logos/story/portuguese/ourstorypt3.png", 
   "/images/logos/menu/english/menulogoen.png",

@@ -80,7 +80,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         
         {/* Critical LCP image preload for homepage */}
-        <link rel="preload" href="/images/coffeecabana/initialpic.jpg" as="image" fetchPriority="high" />
+        <link rel="preload" href="/images/coffeecabana/initialpic.webp" as="image" fetchPriority="high" />
         
         {/* DNS prefetch for performance optimization */}
         <link rel="dns-prefetch" href="/images/coffeecabana/" />

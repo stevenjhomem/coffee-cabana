@@ -21,32 +21,27 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
     setMounted(true)
   }, [])
 
-  // Simplified video loading strategy
+  // Immediate video loading strategy
   useEffect(() => {
     if (mounted && videoRef.current) {
       const video = videoRef.current
       
-      // Delay video loading to not interfere with LCP
-      const loadTimeout = setTimeout(() => {
-        video.preload = 'metadata'
-        video.muted = true
-        video.playsInline = true
-        video.load()
-        
-        // Simple play attempt - no aggressive retries
-        const attemptPlay = async () => {
-          try {
-            await video.play()
-          } catch (error) {
-            console.log('Video play failed:', error)
-            setVideoError(true)
-          }
-        }
-        
-        attemptPlay()
-      }, 2000) // 2 second delay to not interfere with LCP
+      video.preload = 'metadata'
+      video.muted = true
+      video.playsInline = true
+      video.load()
       
-      return () => clearTimeout(loadTimeout)
+      // Simple play attempt - no delays
+      const attemptPlay = async () => {
+        try {
+          await video.play()
+        } catch (error) {
+          console.log('Video play failed:', error)
+          setVideoError(true)
+        }
+      }
+      
+      attemptPlay()
     }
   }, [mounted])
 
@@ -104,7 +99,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
         <div className="absolute inset-0 w-full h-full">
           {/* Poster image - optimized for LCP */}
           <Image
-            src="/images/coffeecabana/initialpic.jpg"
+            src="/images/coffeecabana/initialpic.webp"
             alt="Coffee Cabana - Organic coffee farm in Terceira, Azores"
             fill
             priority
@@ -151,7 +146,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
           <div className="flex justify-center">
             <h1 className="relative z-10 select-none">
               <Image
-                src="/images/logos/home/coffeecabana.png"
+                src="/images/logos/home/coffeecabana.webp"
                 alt="Coffee Cabana - Organic Coffee from Terceira, Azores"
                 width={600}
                 height={192}
