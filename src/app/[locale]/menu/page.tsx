@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
-import { menuContent } from '@/data/menu'
+import { menuContent } from '@/constants/menu'
 
 // Critical resource preloading for menu page LCP
 const CriticalResourcePreload = () => (

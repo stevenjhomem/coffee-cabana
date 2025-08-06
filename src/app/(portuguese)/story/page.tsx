@@ -5,7 +5,6 @@ import Image from "next/image"
 import GoogleMapsButton from "@/components/ui/GoogleMapsButton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
-import { Metadata } from "next"
 
 // Critical resource preloading for story page LCP
 const CriticalResourcePreload = () => (
