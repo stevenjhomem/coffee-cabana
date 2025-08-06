@@ -9,8 +9,7 @@ import './globals.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
-  display: 'swap',
-  preload: true
+  display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -66,7 +65,7 @@ export default function RootLayout({
         <meta name="ICBM" content="38.7333, -27.2167" />
         
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2RPXY9L0L"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2RPXY9L0L" defer></script>
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -79,6 +78,9 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
+        
+        {/* Critical LCP image preload for homepage */}
+        <link rel="preload" href="/images/coffeecabana/initialpic.jpg" as="image" fetchPriority="high" />
         
         {/* DNS prefetch for performance optimization */}
         <link rel="dns-prefetch" href="/images/coffeecabana/" />

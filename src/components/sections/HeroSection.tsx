@@ -21,33 +21,28 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
     setMounted(true)
   }, [])
 
-  // Aggressive video loading strategy
+  // Delayed video loading strategy - don't block LCP
   useEffect(() => {
     if (mounted && videoRef.current) {
       const video = videoRef.current
       
-      // Start loading immediately with aggressive settings
-      video.preload = 'auto' // Load entire video
-      video.load()
-      
-      // Multiple attempts for maximum compatibility
-      const attemptPlay = async () => {
-        try {
-          // Ensure video is muted for autoplay policies
-          video.muted = true
-          video.playsInline = true
-          
-          // First attempt
-          await video.play()
-        } catch (error1) {
-          console.log('First play attempt failed:', error1)
-          
+      // Delay video loading to not interfere with LCP
+      const loadTimeout = setTimeout(() => {
+        video.preload = 'metadata' // Only load metadata first
+        video.load()
+        
+        // Load video progressively
+        const attemptPlay = async () => {
           try {
-            // Second attempt with a small delay
-            await new Promise(resolve => setTimeout(resolve, 100))
+            // Ensure video is muted for autoplay policies
+            video.muted = true
+            video.playsInline = true
+            
+            // First attempt - after a delay
             await video.play()
-          } catch (error2) {
-            console.log('Second play attempt failed:', error2)
+          } catch (error1) {
+            console.log('Video play failed:', error1)
+            // Don't retry aggressively - video is optional
             
             // Third attempt - force reload and try again
             try {
@@ -60,10 +55,12 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             }
           }
         }
-      }
+        
+        // Start the attempt sequence
+        attemptPlay()
+      }, 2000) // 2 second delay to not interfere with LCP
       
-      // Start attempting to play as soon as possible
-      attemptPlay()
+      return () => clearTimeout(loadTimeout)
     }
   }, [mounted])
 
@@ -119,11 +116,16 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       <div className="absolute inset-0 z-0">
         {/* Video container - optimized for fastest loading globally */}
         <div className="absolute inset-0 w-full h-full">
-          {/* Poster image - always shows first */}
-          <div 
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          {/* Poster image - optimized for LCP */}
+          <Image
+            src="/images/coffeecabana/initialpic.jpg"
+            alt="Coffee Cabana - Organic coffee farm in Terceira, Azores"
+            fill
+            priority
+            quality={75}
+            sizes="(max-width: 768px) 100vw, 100vw"
+            className="object-cover"
             style={{ 
-              backgroundImage: 'url(/images/coffeecabana/initialpic.jpg)',
               zIndex: videoLoaded && !videoError ? 0 : 10
             }}
           />
@@ -135,7 +137,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="none"
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             onLoadedData={() => setVideoLoaded(true)}
             onCanPlay={() => setVideoLoaded(true)}

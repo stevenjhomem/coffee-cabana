@@ -3,9 +3,10 @@ import HeroSection from '@/components/sections/HeroSection'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 import OurMission from '@/components/sections/OurMission'
 
-// DNS prefetch for performance optimization
+// Critical resource preloading for homepage LCP
 const CriticalResourcePreload = () => (
   <>
+    <link rel="preload" href="/images/logos/home/coffeecabana.png" as="image" fetchPriority="high" />
     <link rel="dns-prefetch" href="/images/coffeecabana/" />
   </>
 )

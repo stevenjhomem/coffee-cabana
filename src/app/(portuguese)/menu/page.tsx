@@ -2,8 +2,10 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/data/menu'
 
-// Background image will load on demand
-const BackgroundPreload = () => null
+// Critical resource preloading for menu page LCP
+const BackgroundPreload = () => (
+  <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" />
+)
 
 export const metadata: Metadata = {
   title: 'Menu',

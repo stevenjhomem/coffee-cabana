@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/data/menu'
 
-// DNS prefetch for performance optimization
+// Critical resource preloading for menu page LCP
 const CriticalResourcePreload = () => (
   <>
+    <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" />
     <link rel="dns-prefetch" href="/images/coffeecabana/" />
     <link rel="dns-prefetch" href="/images/logos/menu/" />
   </>

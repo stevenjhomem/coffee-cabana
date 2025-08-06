@@ -47,8 +47,8 @@ export const useImagePreloader = () => {
       video.src = "/images/coffeecabana/1080pvid.webm"
     }
 
-    // Preload after a delay to not interfere with initial page load
-    const timer = setTimeout(preloadAssets, 2000)
+    // Preload after a longer delay to not interfere with LCP
+    const timer = setTimeout(preloadAssets, 5000)
     
     return () => clearTimeout(timer)
   }, [])
