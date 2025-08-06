@@ -79,7 +79,8 @@ export default function RootLayout({
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         
-        {/* Removed preload - image gets replaced by video quickly */}
+        {/* Preload background image first for LCP */}
+        <link rel="preload" href="/images/coffeecabana/initialpic.webp" as="image" fetchPriority="high" />
         
         {/* DNS prefetch for performance optimization */}
         <link rel="dns-prefetch" href="/images/coffeecabana/" />
