@@ -5,10 +5,8 @@ import { menuContent } from '@/constants/menu'
 // Critical resource preloading for menu page LCP
 const CriticalResourcePreload = ({ locale }: { locale: string }) => (
   <>
-    <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" />
-    <link rel="preload" href={locale === 'en' ? '/images/logos/menu/english/menulogoen.png' : '/images/logos/menu/portuguese/menulogopt.png'} as="image" fetchPriority="high" />
-    <link rel="dns-prefetch" href="/images/coffeecabana/" />
-    <link rel="dns-prefetch" href="/images/logos/menu/" />
+    <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" type="image/jpeg" />
+    <link rel="preload" href={locale === 'en' ? '/images/logos/menu/english/menulogoen.png' : '/images/logos/menu/portuguese/menulogopt.png'} as="image" fetchPriority="high" type="image/png" />
   </>
 )
 

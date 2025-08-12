@@ -38,7 +38,6 @@ interface MenuSectionProps {
 export default function MenuSection({ content, logoPath }: MenuSectionProps) {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
   const [mounted, setMounted] = useState(false)
-  const [backgroundLoaded, setBackgroundLoaded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -168,10 +167,11 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
           alt="Coffee Cabana organic coffee farm background"
           fill
           priority
-          quality={85}
-          sizes="100vw"
+          quality={75}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           className="object-cover"
-          onLoad={() => setBackgroundLoaded(true)}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
         />
       </div>
       
@@ -181,7 +181,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
         <section className="pt-48 pb-20">
           <div className="max-w-6xl mx-auto px-6">
             {/* Title and Intro */}
-            <div className="text-center mb-16 transition-opacity duration-800" style={{ opacity: mounted && backgroundLoaded ? 1 : 0 }}>
+            <div className="text-center mb-16 transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0 }}>
               <div className="flex justify-center">
                 <h1 className="relative z-20 select-none">
                   <Image
@@ -189,6 +189,8 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
                     alt="Coffee Cabana Menu - Organic Coffee & Fresh Products"
                     width={600}
                     height={192}
+                    priority
+                    sizes="(max-width: 768px) 384px, (max-width: 1024px) 500px, 600px"
                     className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 object-contain invert"
                     style={{
                       userSelect: 'none',
@@ -205,7 +207,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
             </div>
 
             {/* Tab Navigation */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12 transition-opacity duration-800" style={{ opacity: mounted && backgroundLoaded ? 1 : 0 }}>
+            <div className="flex flex-wrap justify-center gap-4 mb-12 transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0 }}>
               {Object.entries(content.tabs).map(([key, label]) => (
                 <button
                   key={key}
@@ -222,7 +224,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
             </div>
 
             {/* Menu Content - Height set to accommodate longest section (light meals on mobile) */}
-            <div className="flex justify-center transition-opacity duration-800" style={{ opacity: mounted && backgroundLoaded ? 1 : 0 }}>
+            <div className="flex justify-center transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0 }}>
               <div className="min-h-[1000px] md:min-h-[600px] flex items-start justify-center w-full">
                 {renderMenuContent()}
               </div>
