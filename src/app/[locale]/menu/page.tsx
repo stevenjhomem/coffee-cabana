@@ -3,9 +3,10 @@ import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/constants/menu'
 
 // Critical resource preloading for menu page LCP
-const CriticalResourcePreload = () => (
+const CriticalResourcePreload = ({ locale }: { locale: string }) => (
   <>
     <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" />
+    <link rel="preload" href={locale === 'en' ? '/images/logos/menu/english/menulogoen.png' : '/images/logos/menu/portuguese/menulogopt.png'} as="image" fetchPriority="high" />
     <link rel="dns-prefetch" href="/images/coffeecabana/" />
     <link rel="dns-prefetch" href="/images/logos/menu/" />
   </>
@@ -61,13 +62,11 @@ export default async function MenuPage({ params }: PageProps) {
     ? '/images/logos/menu/english/menulogoen.png'
     : '/images/logos/menu/portuguese/menulogopt.png'
   
-  // Locale-specific logo will load on demand
-  const LogoPreload = () => null
+  // Logo now preloaded above
   
   return (
     <>
-      <CriticalResourcePreload />
-      <LogoPreload />
+      <CriticalResourcePreload locale={locale} />
       <MenuSection 
         content={content} 
         logoPath={logoPath}

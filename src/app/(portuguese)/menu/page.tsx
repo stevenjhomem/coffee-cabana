@@ -3,8 +3,13 @@ import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/constants/menu'
 
 // Critical resource preloading for menu page LCP
-const BackgroundPreload = () => (
-  <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" />
+const CriticalResourcePreload = () => (
+  <>
+    <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" />
+    <link rel="preload" href="/images/logos/menu/portuguese/menulogopt.png" as="image" fetchPriority="high" />
+    <link rel="dns-prefetch" href="/images/coffeecabana/" />
+    <link rel="dns-prefetch" href="/images/logos/menu/" />
+  </>
 )
 
 export const metadata: Metadata = {
@@ -35,7 +40,7 @@ export const metadata: Metadata = {
 export default function MenuPage() {
   return (
     <>
-      <BackgroundPreload />
+      <CriticalResourcePreload />
       <MenuSection 
         content={menuContent.pt} 
         logoPath="/images/logos/menu/portuguese/menulogopt.png"

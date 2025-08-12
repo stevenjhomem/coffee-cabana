@@ -1,6 +1,7 @@
 'use client'
 
 import React, { Fragment, useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface MenuItem {
   name: string
@@ -36,12 +37,14 @@ interface MenuSectionProps {
 
 export default function MenuSection({ content, logoPath }: MenuSectionProps) {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
+  const [mounted, setMounted] = useState(false)
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false)
 
-  // Preload the background image for better performance
   useEffect(() => {
-    const img = document.createElement('img')
-    img.src = '/images/coffeecabana/Banana_EcoCamp-52.jpg'
+    setMounted(true)
   }, [])
+
+  // Background image is now handled by Next.js Image component with priority
 
   const renderMenuContent = () => {
     switch (activeTab) {
@@ -158,14 +161,17 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image - Normal positioning with consistent height */}
+      {/* Background Image - Optimized for LCP */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: 'url(/images/coffeecabana/Banana_EcoCamp-52.jpg)',
-            minHeight: '100vh'
-          }}
+        <Image
+          src="/images/coffeecabana/Banana_EcoCamp-52.jpg"
+          alt="Coffee Cabana organic coffee farm background"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover"
+          onLoad={() => setBackgroundLoaded(true)}
         />
       </div>
       
@@ -175,28 +181,31 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
         <section className="pt-48 pb-20">
           <div className="max-w-6xl mx-auto px-6">
             {/* Title and Intro */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 transition-opacity duration-800" style={{ opacity: mounted && backgroundLoaded ? 1 : 0 }}>
               <div className="flex justify-center">
-                <h1
-                  className="h-32 md:h-40 lg:h-48 w-96 md:w-[500px] lg:w-[600px] bg-contain bg-center bg-no-repeat invert relative z-20 select-none"
-                  style={{
-                    backgroundImage: `url('${logoPath}')`,
-                    userSelect: 'none',
-                    WebkitUserSelect: 'none',
-                    MozUserSelect: 'none',
-                    msUserSelect: 'none',
-                    WebkitTouchCallout: 'none'
-                  } as React.CSSProperties}
-                  draggable="false"
-                  onDragStart={(e) => e.preventDefault()}
-                >
-                  <span className="sr-only">Coffee Cabana Menu - Organic Coffee & Fresh Products</span>
+                <h1 className="relative z-20 select-none">
+                  <Image
+                    src={logoPath}
+                    alt="Coffee Cabana Menu - Organic Coffee & Fresh Products"
+                    width={600}
+                    height={192}
+                    className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 object-contain invert"
+                    style={{
+                      userSelect: 'none',
+                      WebkitUserSelect: 'none',
+                      MozUserSelect: 'none',
+                      msUserSelect: 'none',
+                      WebkitTouchCallout: 'none'
+                    } as React.CSSProperties}
+                    draggable="false"
+                    onDragStart={(e) => e.preventDefault()}
+                  />
                 </h1>
               </div>
             </div>
 
             {/* Tab Navigation */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4 mb-12 transition-opacity duration-800" style={{ opacity: mounted && backgroundLoaded ? 1 : 0 }}>
               {Object.entries(content.tabs).map(([key, label]) => (
                 <button
                   key={key}
@@ -213,7 +222,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
             </div>
 
             {/* Menu Content - Height set to accommodate longest section (light meals on mobile) */}
-            <div className="flex justify-center">
+            <div className="flex justify-center transition-opacity duration-800" style={{ opacity: mounted && backgroundLoaded ? 1 : 0 }}>
               <div className="min-h-[1000px] md:min-h-[600px] flex items-start justify-center w-full">
                 {renderMenuContent()}
               </div>
