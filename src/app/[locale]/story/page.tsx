@@ -8,7 +8,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { storyContent } from "@/constants/story"
 
 // Critical resource preloading for story page LCP
-const CriticalResourcePreload = ({ locale }: { locale: string }) => (
+const CriticalResourcePreload = () => (
   <>
     <link rel="preload" href="/images/coffeecabana/farm.webp" as="image" fetchPriority="high" />
     <link rel="dns-prefetch" href="/images/coffeecabana/" />
@@ -23,7 +23,6 @@ interface Props {
 export default function StoryPage({ params }: Props) {
   const [locale, setLocale] = useState<string>("en")
   const [mounted, setMounted] = useState(false)
-  const [backgroundLoaded, setBackgroundLoaded] = useState(false)
 
   useEffect(() => {
     const getLocale = async () => {
@@ -40,7 +39,7 @@ export default function StoryPage({ params }: Props) {
 
   return (
     <>
-      <CriticalResourcePreload locale={locale} />
+      <CriticalResourcePreload />
       <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
