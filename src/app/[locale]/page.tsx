@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import HeroSection from '@/components/sections/HeroSection'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 import OurMission from '@/components/sections/OurMission'
-import AggressivePrefetch from '@/components/performance/AggressivePrefetch'
+import PerformanceManager from '@/components/performance/PerformanceManager'
 
 // Using Next.js Image priority attribute for preloading instead of manual link tags
 
@@ -55,7 +55,7 @@ export default async function HomePage({ params }: PageProps) {
   
   return (
     <>
-      <AggressivePrefetch locale={locale} delay={1500} />
+      <PerformanceManager locale={locale} />
       <main>
         <HeroSection locale={locale} />
         <ImageCarousel />

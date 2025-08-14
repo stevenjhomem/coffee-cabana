@@ -89,3 +89,26 @@ self.addEventListener('fetch', (event) => {
     )
   }
 })
+
+// Listen for prefetch messages from the main thread
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'PREFETCH_IMAGES') {
+    const images = event.data.images
+    if (Array.isArray(images)) {
+      images.forEach((imageUrl) => {
+        fetch(imageUrl)
+          .then((response) => {
+            if (response.status === 200) {
+              return caches.open(CACHE_NAME)
+                .then((cache) => {
+                  return cache.put(imageUrl, response)
+                })
+            }
+          })
+          .catch(() => {
+            // Silently fail for prefetch requests
+          })
+      })
+    }
+  }
+})
