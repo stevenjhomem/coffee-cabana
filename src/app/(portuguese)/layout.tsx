@@ -1,5 +1,4 @@
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import UnifiedLayout from '@/components/layout/UnifiedLayout'
 
 type Props = {
   children: React.ReactNode
@@ -7,10 +6,8 @@ type Props = {
 
 export default function PortugueseLayout({ children }: Props) {
   return (
-    <>
-      <Header locale="pt" />
+    <UnifiedLayout locale="pt">
       {children}
-      <Footer locale="pt" />
-    </>
+    </UnifiedLayout>
   )
 } 

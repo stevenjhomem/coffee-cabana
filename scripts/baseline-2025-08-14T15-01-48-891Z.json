@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Portuguese Story Page",
+    "url": "http://localhost:3000/story",
+    "lcp": 904,
+    "fcp": 640,
+    "navigationStart": 1755183704753,
+    "domContentLoaded": 31,
+    "loadComplete": 320
+  },
+  {
+    "name": "English Story Page",
+    "url": "http://localhost:3000/en/story",
+    "lcp": 1260,
+    "fcp": 488,
+    "navigationStart": 1755183705685,
+    "domContentLoaded": 28,
+    "loadComplete": 55
+  },
+  {
+    "name": "Portuguese Homepage",
+    "url": "http://localhost:3000/",
+    "lcp": 884,
+    "fcp": 52,
+    "navigationStart": 1755183706978,
+    "domContentLoaded": 23,
+    "loadComplete": 326
+  },
+  {
+    "name": "English Homepage",
+    "url": "http://localhost:3000/en",
+    "lcp": 912,
+    "fcp": 76,
+    "navigationStart": 1755183707895,
+    "domContentLoaded": 25,
+    "loadComplete": 67
+  }
+]

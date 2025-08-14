@@ -2,13 +2,7 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/constants/menu'
 
-// Critical resource preloading for menu page LCP
-const CriticalResourcePreload = ({ locale }: { locale: string }) => (
-  <>
-    <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" type="image/jpeg" />
-    <link rel="preload" href={locale === 'en' ? '/images/logos/menu/english/menulogoen.png' : '/images/logos/menu/portuguese/menulogopt.png'} as="image" fetchPriority="high" type="image/png" />
-  </>
-)
+// Using Next.js Image priority attribute for preloading instead of manual link tags
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -63,12 +57,9 @@ export default async function MenuPage({ params }: PageProps) {
   // Logo now preloaded above
   
   return (
-    <>
-      <CriticalResourcePreload locale={locale} />
-      <MenuSection 
-        content={content} 
-        logoPath={logoPath}
-      />
-    </>
+    <MenuSection 
+      content={content} 
+      logoPath={logoPath}
+    />
   )
 }

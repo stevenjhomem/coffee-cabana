@@ -2,14 +2,9 @@ import type { Metadata } from 'next'
 import HeroSection from '@/components/sections/HeroSection'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 import OurMission from '@/components/sections/OurMission'
+import AggressivePrefetch from '@/components/performance/AggressivePrefetch'
 
-// Critical resource preloading for homepage LCP
-const CriticalResourcePreload = () => (
-  <>
-    {/* Removed preload - logo shows after video loads */}
-    <link rel="dns-prefetch" href="/images/coffeecabana/" />
-  </>
-)
+// Using Next.js Image priority attribute for preloading instead of manual link tags
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -60,7 +55,7 @@ export default async function HomePage({ params }: PageProps) {
   
   return (
     <>
-      <CriticalResourcePreload />
+      <AggressivePrefetch locale={locale} delay={1500} />
       <main>
         <HeroSection locale={locale} />
         <ImageCarousel />

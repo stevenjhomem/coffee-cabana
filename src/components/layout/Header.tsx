@@ -7,6 +7,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 import { defaultLocale } from '@/lib/i18n/config'
+import { navigation } from '@/lib/constants/navigation'
 
 interface HeaderProps {
   locale?: string
@@ -33,19 +34,6 @@ export default function Header({ locale = 'pt' }: HeaderProps) {
     setTimeout(() => {
       router.push(href)
     }, 100)
-  }
-
-  const navigation = {
-    pt: [
-      { name: 'Início', href: `/` },
-      { name: 'A Nossa História', href: `/story` },
-      { name: 'A Ementa', href: `/menu` },
-    ],
-    en: [
-      { name: 'Home', href: `/en` },
-      { name: 'Our Story', href: `/en/story` },
-      { name: 'Menu', href: `/en/menu` },
-    ],
   }
 
   const navItems = navigation[locale as keyof typeof navigation] || navigation.pt

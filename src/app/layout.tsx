@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import ImagePreloader from '@/components/ImagePreloader'
+import ServiceWorkerRegistration from '@/components/performance/ServiceWorkerRegistration'
 import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 import { localBusinessSchema, organizationSchema } from '@/lib/constants/schema'
 import './globals.css'
@@ -64,22 +65,10 @@ export default function RootLayout({
         <meta name="geo.position" content="38.7333;-27.2167" />
         <meta name="ICBM" content="38.7333, -27.2167" />
         
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2RPXY9L0L" defer></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-H2RPXY9L0L');
-          `
-        }} />
         <meta name="google-site-verification" content="CDrB5Y8OZEbOw2klQTldA2Ig7x7anReYqXgam6fCEws" />
         <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/images/coffeecabana/logo.svg" type="image/svg+xml" />
-        
-        {/* Removed preload - let Next.js Image component handle priority loading */}
         
         {/* DNS prefetch for performance optimization */}
         <link rel="dns-prefetch" href="/images/coffeecabana/" />
@@ -87,7 +76,6 @@ export default function RootLayout({
         {/* Font optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
         
         {/* Critical inline CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
@@ -144,7 +132,6 @@ export default function RootLayout({
           `
         }} />
 
-
         {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
@@ -189,6 +176,7 @@ export default function RootLayout({
 
       </head>
       <body className={inter.className}>
+        <ServiceWorkerRegistration />
         {children}
         <ImagePreloader />
         <Analytics />

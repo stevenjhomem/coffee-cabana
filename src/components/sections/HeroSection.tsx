@@ -35,8 +35,7 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       const attemptPlay = async () => {
         try {
           await video.play()
-        } catch (error) {
-          console.log('Video play failed:', error)
+        } catch {
           setVideoError(true)
         }
       }
@@ -126,7 +125,6 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
               // Video metadata loaded - no need to auto-play here
             }}
             onError={() => {
-              console.log('Video failed to load')
               setVideoError(true)
             }}
             style={{ 

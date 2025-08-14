@@ -34,6 +34,9 @@ const imageList = [
 
 export const useImagePreloader = () => {
   useEffect(() => {
+    // Only run in browser environment
+    if (typeof window === 'undefined') return
+
     const preloadAssets = () => {
       // Preload images
       imageList.forEach((src) => {

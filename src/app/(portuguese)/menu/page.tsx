@@ -2,13 +2,7 @@ import type { Metadata } from 'next'
 import MenuSection from '@/components/sections/MenuSection'
 import { menuContent } from '@/constants/menu'
 
-// Critical resource preloading for menu page LCP
-const CriticalResourcePreload = () => (
-  <>
-    <link rel="preload" href="/images/coffeecabana/Banana_EcoCamp-52.jpg" as="image" fetchPriority="high" type="image/jpeg" />
-    <link rel="preload" href="/images/logos/menu/portuguese/menulogopt.png" as="image" fetchPriority="high" type="image/png" />
-  </>
-)
+// Using Next.js Image priority attribute for preloading instead of manual link tags
 
 export const metadata: Metadata = {
   title: 'A Ementa',
@@ -37,12 +31,9 @@ export const metadata: Metadata = {
 
 export default function MenuPage() {
   return (
-    <>
-      <CriticalResourcePreload />
-      <MenuSection 
-        content={menuContent.pt} 
-        logoPath="/images/logos/menu/portuguese/menulogopt.png"
-      />
-    </>
+    <MenuSection 
+      content={menuContent.pt} 
+      logoPath="/images/logos/menu/portuguese/menulogopt.png"
+    />
   )
 }

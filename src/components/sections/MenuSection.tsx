@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState } from 'react'
 import Image from 'next/image'
 
 interface MenuItem {
@@ -37,13 +37,6 @@ interface MenuSectionProps {
 
 export default function MenuSection({ content, logoPath }: MenuSectionProps) {
   const [activeTab, setActiveTab] = useState('specialtyCoffeeAndTea')
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // Background image is now handled by Next.js Image component with priority
 
   const renderMenuContent = () => {
     switch (activeTab) {
@@ -160,7 +153,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image - Optimized for LCP */}
+      {/* Background Image - Persistent, no loading states */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
           src="/images/coffeecabana/Banana_EcoCamp-52.jpg"
@@ -175,13 +168,13 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
         />
       </div>
       
-      {/* Content - Always visible, no loading delay */}
+      {/* Content */}
       <div className="relative z-10">
         {/* Content Section */}
         <section className="pt-48 pb-20">
           <div className="max-w-6xl mx-auto px-6">
             {/* Title and Intro */}
-            <div className="text-center mb-16 transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0 }}>
+            <div className="text-center mb-16">
               <div className="flex justify-center">
                 <h1 className="relative z-20 select-none">
                   <Image
@@ -200,14 +193,13 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
                       WebkitTouchCallout: 'none'
                     } as React.CSSProperties}
                     draggable="false"
-                    onDragStart={(e) => e.preventDefault()}
                   />
                 </h1>
               </div>
             </div>
 
             {/* Tab Navigation */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12 transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0 }}>
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
               {Object.entries(content.tabs).map(([key, label]) => (
                 <button
                   key={key}
@@ -223,8 +215,8 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
               ))}
             </div>
 
-            {/* Menu Content - Height set to accommodate longest section (light meals on mobile) */}
-            <div className="flex justify-center transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0 }}>
+            {/* Menu Content */}
+            <div className="flex justify-center">
               <div className="min-h-[1000px] md:min-h-[600px] flex items-start justify-center w-full">
                 {renderMenuContent()}
               </div>

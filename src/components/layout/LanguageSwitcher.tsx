@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { visibleLocales, localeNames, localeFlags, defaultLocale } from '@/lib/i18n/config'
@@ -13,6 +13,7 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: LanguageSwitcherProps) {
   const pathname = usePathname()
+  const router = useRouter()
   
   const languages = visibleLocales.map(code => ({
     code,
@@ -50,6 +51,12 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
     }
   }
 
+  const handleLanguageChange = (targetLocale: string) => {
+    const newUrl = getLanguageUrl(targetLocale)
+    onToggle() // Close the dropdown
+    router.push(newUrl)
+  }
+
   return (
     <div className="relative">
       <button
@@ -67,19 +74,17 @@ export default function LanguageSwitcher({ currentLocale, isOpen, onToggle }: La
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 py-1 z-[110]">
           {languages.map((language) => {
-            const href = getLanguageUrl(language.code)
             return (
-              <a
+              <button
                 key={language.code}
-                href={href}
-                className={`flex items-center justify-end space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 ${
+                onClick={() => handleLanguageChange(language.code)}
+                className={`flex items-center justify-end space-x-3 px-4 py-2 text-sm hover:bg-white/10 transition-colors duration-200 w-full text-left ${
                   language.code === currentLocale ? 'bg-white/20 text-white font-medium' : 'text-white'
                 }`}
-                onClick={onToggle}
               >
                 <span>{language.name}</span>
                 <span>{language.flag}</span>
-              </a>
+              </button>
             )
           })}
         </div>
