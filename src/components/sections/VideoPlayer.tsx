@@ -3,18 +3,13 @@
 import { useState, useEffect, useRef } from 'react'
 
 export default function VideoPlayer() {
-  const [mounted, setMounted] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
   const [videoError, setVideoError] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  // Progressive video loading
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // Progressive video loading - only after component mounts
-  useEffect(() => {
-    if (mounted && videoRef.current) {
+    if (videoRef.current) {
       const video = videoRef.current
       
       // Delay video loading to not interfere with LCP
@@ -38,9 +33,9 @@ export default function VideoPlayer() {
       
       return () => clearTimeout(timer)
     }
-  }, [mounted])
+  }, [])
 
-  if (!mounted || videoError) {
+  if (videoError) {
     return null
   }
 

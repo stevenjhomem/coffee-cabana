@@ -16,8 +16,23 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params
   
   return (
-    <UnifiedLayout locale={locale}>
-      {children}
-    </UnifiedLayout>
+    <>
+      {/* Preload critical background images for all pages */}
+      <link
+        rel="preload"
+        as="image"
+        href="/images/coffeecabana/farm.webp"
+        type="image/webp"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/images/coffeecabana/Banana_EcoCamp-52.jpg"
+        type="image/jpeg"
+      />
+      <UnifiedLayout locale={locale}>
+        {children}
+      </UnifiedLayout>
+    </>
   )
 }

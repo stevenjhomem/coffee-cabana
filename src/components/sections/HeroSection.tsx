@@ -1,65 +1,18 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
+import VideoBackground from './VideoBackground'
 
 interface HeroSectionProps {
   locale?: string
 }
 
 export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
-  const [mounted, setMounted] = useState(false)
-  const [videoLoaded, setVideoLoaded] = useState(false)
-  const [videoError, setVideoError] = useState(false)
   const logoRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // Immediate video loading strategy
-  useEffect(() => {
-    if (mounted && videoRef.current) {
-      const video = videoRef.current
-      
-      video.preload = 'metadata'
-      video.muted = true
-      video.playsInline = true
-      video.load()
-      
-      // Simple play attempt - no delays
-      const attemptPlay = async () => {
-        try {
-          await video.play()
-        } catch {
-          setVideoError(true)
-        }
-      }
-      
-      attemptPlay()
-    }
-  }, [mounted])
-
-  useEffect(() => {
-    if (videoLoaded && logoRef.current && scrollRef.current) {
-      logoRef.current.style.opacity = '1'
-      scrollRef.current.style.opacity = '1'
-    }
-  }, [videoLoaded])
-
-  useEffect(() => {
-    const video = videoRef.current
-    return () => {
-      if (video) {
-        video.pause()
-        video.currentTime = 0
-      }
-    }
-  }, [])
 
   const content = {
     pt: {
@@ -93,54 +46,16 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
   return (
     <section className="relative h-[100vh] flex items-start justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Video container - optimized for fastest loading globally */}
-        <div className="absolute inset-0 w-full h-full">
-          {/* Poster image - optimized for LCP */}
-          <Image
-            src="/images/coffeecabana/initialpic.webp"
-            alt="Coffee Cabana - Organic coffee farm in Terceira, Azores"
-            fill
-            priority
-            quality={75}
-            sizes="(max-width: 768px) 100vw, 100vw"
-            className="object-cover"
-            style={{ 
-              zIndex: videoLoaded && !videoError ? 0 : 10
-            }}
-          />
-          
-          {/* Video element - starts hidden, appears when loaded */}
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            onLoadedData={() => setVideoLoaded(true)}
-            onCanPlay={() => setVideoLoaded(true)}
-            onLoadedMetadata={() => {
-              // Video metadata loaded - no need to auto-play here
-            }}
-            onError={() => {
-              setVideoError(true)
-            }}
-            style={{ 
-              touchAction: 'none',
-              zIndex: videoLoaded && !videoError ? 10 : 0
-            }}
-          >
-            <source src="/images/coffeecabana/1080pvid.webm" type="video/webm" />
-          </video>
-        </div>
-      </div>
+      <VideoBackground
+        posterSrc="/images/coffeecabana/initialpic.webp"
+        videoSrc="/images/coffeecabana/1080pvid.webm"
+        alt="Coffee Cabana - Organic coffee farm in Terceira, Azores"
+      />
 
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto flex flex-col items-center justify-center h-full">
         {/* Main title - Brand name stays consistent */}
-        <div ref={logoRef} className="mb-8 transition-opacity duration-800" style={{ opacity: mounted ? 1 : 0 }}>
+        <div ref={logoRef} className="mb-8 transition-opacity duration-800 opacity-100">
           <div className="flex justify-center">
             <h1 className="relative z-10 select-none">
               <Image
@@ -166,7 +81,10 @@ export default function HeroSection({ locale = 'pt' }: HeroSectionProps) {
       </div>
 
       {/* Scroll indicator - positioned within the section */}
-      <div ref={scrollRef} className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 transition-opacity duration-800" style={{ opacity: 0 }}>
+      <div 
+        ref={scrollRef} 
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 transition-opacity duration-800 opacity-100"
+      >
         <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer text-center">
           <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">{t.scroll}</div>
           <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4 mx-auto stroke-2" />

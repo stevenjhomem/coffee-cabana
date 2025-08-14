@@ -7,6 +7,7 @@ import CriticalCSS from '@/components/layout/CriticalCSS'
 import SEOMetaTags from '@/components/layout/SEOMetaTags'
 import SchemaOrg from '@/components/layout/SchemaOrg'
 import PerformanceScripts from '@/components/layout/PerformanceScripts'
+
 import { coffeeCabanaKeywords } from '@/lib/constants/seo-keywords'
 import './globals.css'
 
@@ -64,6 +65,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <PerformanceManager />
+
         {children}
         <Analytics />
         <SpeedInsights />

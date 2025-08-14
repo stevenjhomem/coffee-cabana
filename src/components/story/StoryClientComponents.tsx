@@ -7,19 +7,10 @@ import Image from "next/image"
 
 // Client component for interactive elements only
 export function ScrollIndicator({ locale }: { locale: string }) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   const scrollText = locale === 'pt' ? 'rolar' : 'scroll'
 
   return (
-    <div 
-      className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-800" 
-      style={{ opacity: mounted ? 1 : 0 }}
-    >
+    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-800 opacity-100">
       <div className="text-white hover:text-warm-tan transition-colors duration-300 cursor-pointer text-center">
         <div className="text-xs uppercase tracking-wider mb-2 opacity-80 font-semibold">{scrollText}</div>
         <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4 mx-auto stroke-2" />
@@ -30,17 +21,8 @@ export function ScrollIndicator({ locale }: { locale: string }) {
 
 // Client component for simple mounted state (legacy support)
 export function ImageLoadingState({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   return (
-    <div 
-      className="transition-opacity duration-500" 
-      style={{ opacity: mounted ? 1 : 0 }}
-    >
+    <div className="transition-opacity duration-500 opacity-100">
       {children}
     </div>
   )
@@ -88,7 +70,7 @@ export function StoryHeroSection({ locale, logoSrc, logoAlt }: StoryHeroSectionP
   return (
     <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden">
       {/* Photo Background - Show immediately when loaded */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-image-priority">
         <Image
           src="/images/coffeecabana/farm.webp"
           alt={locale === 'en' ? "Coffee Cabana organic coffee farm in Terceira, Azores" : "Quinta de café orgânico Coffee Cabana na Terceira, Açores"}
@@ -98,6 +80,7 @@ export function StoryHeroSection({ locale, logoSrc, logoAlt }: StoryHeroSectionP
           sizes="100vw"
           className="object-cover"
           onLoad={() => setBackgroundLoaded(true)}
+          style={{ zIndex: 1 }}
         />
       </div>
 
@@ -111,7 +94,6 @@ export function StoryHeroSection({ locale, logoSrc, logoAlt }: StoryHeroSectionP
                 alt={logoAlt}
                 width={600}
                 height={192}
-                priority
                 className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 object-contain brightness-0 invert"
                 style={{
                   userSelect: 'none',

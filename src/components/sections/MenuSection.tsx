@@ -154,7 +154,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
   return (
     <div className="min-h-screen relative">
       {/* Background Image - Persistent, no loading states */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full z-0 bg-image-priority">
         <Image
           src="/images/coffeecabana/Banana_EcoCamp-52.jpg"
           alt="Coffee Cabana organic coffee farm background"
@@ -163,8 +163,7 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
           quality={75}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           className="object-cover"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+          style={{ zIndex: 1 }}
         />
       </div>
       
@@ -182,7 +181,6 @@ export default function MenuSection({ content, logoPath }: MenuSectionProps) {
                     alt="Coffee Cabana Menu - Organic Coffee & Fresh Products"
                     width={600}
                     height={192}
-                    priority
                     sizes="(max-width: 768px) 384px, (max-width: 1024px) 500px, 600px"
                     className="w-96 md:w-[500px] lg:w-[600px] h-32 md:h-40 lg:h-48 object-contain invert"
                     style={{

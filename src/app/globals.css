@@ -23,3 +23,18 @@
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+/* Critical background image optimizations */
+.bg-image-priority {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Ensure background images load immediately */
+.bg-image-priority img {
+  transition: opacity 0.1s ease-out;
+  opacity: 1 !important;
+}
